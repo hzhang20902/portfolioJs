@@ -18,6 +18,8 @@ import { Earth } from "./components/earth/index";
 import NewLogin from "./components/NewLogin";
 import NavBar from "./components/navbar/NavBar";
 
+import Landing from "./components/Landing";
+
 const App = () => {
   const CanvasContainer = styled.div`
     width: 100%;
@@ -109,7 +111,7 @@ const App = () => {
 
       {/* <div className="container mt-3"> */}
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Landing/>} />
           <Route path="/home" element={<Home/>} />
           <Route path="/login" element={<NewLogin/>} />
           <Route path="/register" element={<Register/>} />
