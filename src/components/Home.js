@@ -80,6 +80,7 @@ const Home = () => {
         </Slogan>
         <UButton>Donate</UButton>
         
+        
     </TopSectionContainer>
 
 

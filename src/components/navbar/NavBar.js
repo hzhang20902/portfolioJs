@@ -153,10 +153,8 @@ export default function NavBar() {
       )}
 
           <Button 
-          
           target="_blank" 
-          href="https://www.amazon.com/hz/wishlist/ls/1F0WL8J9XEG5L/ref=nav_wishlist_lists_1?_encoding=UTF8&type=wishlist" 
-        
+          href="https://www.venmo.com/u/figgsboson" 
           sx={{ "font-weight": "bold",
           "alignSelf": 'stretch' }}>
             Donate
