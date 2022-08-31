@@ -25,7 +25,7 @@ import { FitScreen } from "@mui/icons-material";
 const App = () => {
   const CanvasContainer = styled.div`
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: black;
     flexGrow: 1;
     object-fit: cover;
@@ -131,7 +131,7 @@ const App = () => {
         backgroundColor: 'black',
         width: "100%",
         height: "100vh",
-        "objectFit": 'cover',
+        "object-fit": 'cover',
       }}>
         <Suspense fallback={null}>
           <Earth />

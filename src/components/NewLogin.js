@@ -20,7 +20,7 @@ import styled from 'styled-components';
 const TopSectionContainer = styled.div`
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     bottom: 0;
     left: 0;
     background-color: #1755cc42;
@@ -44,7 +44,7 @@ const UButton = styled.button`
     cursor: pointer;
     margin-left: 2em;
     border: 2px solid transparent;
-    transition: all 350ms ease-in-out;
+    transition: all 250ms ease-in-out;
 
     &:hover {
         background-color: transparent;

@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from "react";
 import UserService from "../services/user.service";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const TopSectionContainer = styled.div`
     position: absolute;
     width: 100%;
-    height: 92.9%;
+    height: 100vh;
     bottom: 0;
     left: 0;
+    background-color: #1755cc42;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 15%;
+    padding-top: 10%;
     z-index: 99;
     display: flex;
+    object-fit: cover;
     
 `;
 
@@ -87,7 +90,12 @@ const Home = () => {
             As a professional musician and independent artist for the past 10 years,
             I have collaborated with many community organizers in mutually beneficial ways.
         </h4>
-        <UButton>Donate</UButton>
+        <h4>
+            Click below to see with whom and where these collaborations have happened.
+        </h4>
+        <Link to={"/map"}>
+        <UButton>Collabs</UButton>
+        </Link>
         
         
     </TopSectionContainer>
