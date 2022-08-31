@@ -19,6 +19,7 @@ import NewLogin from "./components/NewLogin";
 import NavBar from "./components/navbar/NavBar";
 
 import Landing from "./components/Landing";
+import Map from "./components/map/Map";
 
 const App = () => {
   const CanvasContainer = styled.div`
@@ -111,7 +112,7 @@ const App = () => {
 
       {/* <div className="container mt-3"> */}
         <Routes>
-          <Route path="/" element={<Landing/>} />
+          <Route path="/" element={<Map/>} />
           <Route path="/home" element={<Home/>} />
           <Route path="/login" element={<NewLogin/>} />
           <Route path="/register" element={<Register/>} />

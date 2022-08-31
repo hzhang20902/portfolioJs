@@ -83,3 +83,7 @@ label {
 UButton {
   align-self: auto;
 }
+
+.map-view{
+  height: 100vh;
+}
