@@ -73,6 +73,17 @@ export default function NavBar() {
       </Typography>
           </Link>
       </UButton>
+
+      <UButton>
+      <Link to={"/map"} className="nav-link">
+      <Typography
+          variant="h6"
+          sx={{ flexGrow: 1, letterSpacing: 1 }}>
+          DIY Map
+      </Typography>
+      </Link>
+      </UButton>
+
         {showModeratorBoard && (
   
           <UButton>

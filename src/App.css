@@ -87,3 +87,12 @@ UButton {
 .map-view{
   height: 100vh;
 }
+
+h4 {
+  color: #f7f7f7;
+  margin: 0;
+  margin-top: 1em;
+  margin-left: 10em;
+  margin-right: 10em;
+  text-align: center;
+}

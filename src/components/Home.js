@@ -8,12 +8,12 @@ const TopSectionContainer = styled.div`
     height: 92.9%;
     bottom: 0;
     left: 0;
-    background-color: #1700dd82;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 15%;
     z-index: 99;
+    display: flex;
     
 `;
 
@@ -76,8 +76,17 @@ const Home = () => {
             {content}
         </Logo>
         <Slogan>
-            Our Planet, Our Future
+            Sustainability Through Collaboration
         </Slogan>
+        <h4>
+            It takes a village. Sometimes multiple villages.
+            The way independent artists and independent community organizers work is astoundingly similar;
+            both by the people, for the people.
+        </h4>
+        <h4>
+            As a professional musician and independent artist for the past 10 years,
+            I have collaborated with many community organizers in mutually beneficial ways.
+        </h4>
         <UButton>Donate</UButton>
         
         

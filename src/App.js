@@ -20,6 +20,7 @@ import NavBar from "./components/navbar/NavBar";
 
 import Landing from "./components/Landing";
 import Map from "./components/map/Map";
+import { FitScreen } from "@mui/icons-material";
 
 const App = () => {
   const CanvasContainer = styled.div`
@@ -27,6 +28,7 @@ const App = () => {
     height: 100%;
     background-color: black;
     flexGrow: 1;
+    object-fit: cover;
     `;
 
   // const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -112,8 +114,9 @@ const App = () => {
 
       {/* <div className="container mt-3"> */}
         <Routes>
-          <Route path="/" element={<Map/>} />
+          <Route path="/" element={<Landing/>} />
           <Route path="/home" element={<Home/>} />
+          <Route path="/map" element={<Map/>} />
           <Route path="/login" element={<NewLogin/>} />
           <Route path="/register" element={<Register/>} />
           <Route path="/profile" element={<Profile/>} />
@@ -126,8 +129,9 @@ const App = () => {
         camera={{ position: [-9, 0, 0], fov: 60, isPerspectiveCamera: true}}
         style={{
         backgroundColor: 'black',
-        width: (window.innerWidth - 15),
-        height: (window.innerHeight - 60),
+        width: "100%",
+        height: "100vh",
+        "objectFit": 'cover',
       }}>
         <Suspense fallback={null}>
           <Earth />

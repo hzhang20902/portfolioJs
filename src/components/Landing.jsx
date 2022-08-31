@@ -1,9 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import eklutnaWide from '../assets/eklutnaWide.mp4';
-
-
-
 
     const TopSectionContainer = styled.div`
     position: absolute;
@@ -26,6 +24,34 @@ import eklutnaWide from '../assets/eklutnaWide.mp4';
     font-size: 45px;
 `;
 
+    const Slogan = styled.h4`
+    margin: 0;
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+    margin-top: 1em;
+`;
+
+    const UButton = styled.button`
+    outline: none;
+    border: none;
+    background-color: #27b927;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 8px 2em;
+    margin-top: 3em;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 350ms ease-in-out;
+
+    &:hover {
+        background-color: transparent;
+        border: 2px solid #27b927;
+    }
+`;
+
 const Landing = () => {
 
     return (
@@ -35,8 +61,18 @@ const Landing = () => {
             <video src={eklutnaWide} autoPlay loop muted />
             <div className="content">
             <Logo>
-                Welcome
+                Henry Zhang's Portfolio
             </Logo>
+            <Slogan>
+                Welcome
+            </Slogan>
+            
+            <Link to={"/home"} className="nav-link">
+                <UButton>
+                    About
+                </UButton>
+            </Link>
+            
             </div>
         </div>
         </TopSectionContainer>
