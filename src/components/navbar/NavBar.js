@@ -79,7 +79,7 @@ export default function NavBar() {
       <Typography
           variant="h6"
           sx={{ flexGrow: 1, letterSpacing: 1 }}>
-          DIY Map
+          Co-Map
       </Typography>
       </Link>
       </UButton>
@@ -168,7 +168,7 @@ export default function NavBar() {
           href="https://www.venmo.com/u/figgsboson" 
           sx={{ "font-weight": "bold",
           "alignSelf": 'stretch' }}>
-            Donate
+            Support My Work
           </Button>
     </Toolbar>
   </AppBar>

@@ -88,7 +88,7 @@ const Home = () => {
         </h4>
         <h4>
             As a professional musician and independent artist for the past 10 years,
-            I have collaborated with many community organizers in mutually beneficial ways.
+            I have collaborated with many community organizers as well as fellow artists in mutually beneficial ways.
         </h4>
         <h4>
             Click below to see with whom and where these collaborations have happened.
