@@ -1,26 +1,28 @@
-import React, { useState, useEffect, Suspense } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import React, { Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
-import AuthService from "./services/auth.service";
-import Register from "./components/Register";
+
+import NavBar from "./components/navbar/NavBar";
+import Landing from "./components/Landing";
 import Home from "./components/Home";
+import Map from "./components/map/Map";
 import Profile from "./components/Profile";
 import BoardAdmin from "./components/BoardAdmin";
 import BoardModerator from "./components/BoardModerator";
 import BoardUser from "./components/BoardUser";
 
+import Register from "./components/Register";
+import NewLogin from "./components/NewLogin";
+
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import styled from "styled-components";
 import { Earth } from "./components/earth/index";
 
-import NewLogin from "./components/NewLogin";
-import NavBar from "./components/navbar/NavBar";
+import styled from "styled-components";
 
-import Landing from "./components/Landing";
-import Map from "./components/map/Map";
-import { FitScreen } from "@mui/icons-material";
+
+
 
 const App = () => {
   const CanvasContainer = styled.div`
@@ -31,88 +33,10 @@ const App = () => {
     object-fit: cover;
     `;
 
-  // const [showModeratorBoard, setShowModeratorBoard] = useState(false);
-  // const [showAdminBoard, setShowAdminBoard] = useState(false);
-  // const [currentUser, setCurrentUser] = useState(undefined);
-
-  // useEffect(() => {
-  //   const user = AuthService.getCurrentUser();
-  //   if (user) {
-  //     setCurrentUser(user);
-  //     setShowModeratorBoard(user.roles.includes("ROLE_MODERATOR"));
-  //     setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
-  //   }
-  // }, []);
-
-  // const logOut = () => {
-  //   AuthService.logout();
-  // };
   return (
     <CanvasContainer>
     <NavBar />
-   
-      {/* <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <Link to={"/"} className="navbar-brand">
-          Figgs
-        </Link>
-        <div className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <Link to={"/home"} className="nav-link">
-            Home
-            </Link>
-          </li>
-          {showModeratorBoard && (
-            <li className="nav-item">
-              <Link to={"/mod"} className="nav-link">
-              Moderator Board
-              </Link>
-            </li>
-          )}
-           {showAdminBoard && (
-            <li className="nav-item">
-              <Link to={"/admin"} className="nav-link">
-              Admin Board
-              </Link>
-            </li>
-          )}
-           {currentUser && (
-            <li className="nav-item">
-              <Link to={"/user"} className="nav-link">
-              User
-              </Link>
-            </li>
-          )}
-        </div>
-        {currentUser ? (
-          <div className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <Link to={"/profile"} className="nav-link">
-              {currentUser.username}
-              </Link>
-            </li>
-            <li className="nav-item">
-              <a href="/login" className="nav-link" onClick={logOut}>
-                LogOut
-              </a>
-            </li>
-          </div>
-        ) : (
-          <div className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <Link to={"/login"} className="nav-link">
-                Login
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to={"/register"} className="nav-link">
-                Sign Up
-              </Link>
-            </li>
-          </div>
-        )}
-      </nav> */}
 
-      {/* <div className="container mt-3"> */}
         <Routes>
           <Route path="/" element={<Landing/>} />
           <Route path="/home" element={<Home/>} />
@@ -124,7 +48,7 @@ const App = () => {
           <Route path="/mod" element={<BoardModerator/>} />
           <Route path="/admin" element={<BoardAdmin/>} />
         </Routes>
-      {/* </div> */}
+  
       <Canvas 
         camera={{ position: [-9, 0, 0], fov: 60, isPerspectiveCamera: true}}
         style={{

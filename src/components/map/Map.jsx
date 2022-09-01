@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useCreateMap } from "./useCreateMap";
+// import { useCreateMap } from "./useCreateMap";
 import { useSceneMap } from "./useSceneMap";
 
 const Map = () => {
