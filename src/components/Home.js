@@ -13,7 +13,7 @@ const TopSectionContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 10%;
+    padding-top: 7%;
     z-index: 99;
     display: flex;
     object-fit: cover;
@@ -83,19 +83,25 @@ const Home = () => {
         </Slogan>
         <h4>
             It takes a village. Sometimes multiple villages.
-            The way independent artists and independent community organizers work is astoundingly similar;
-            both by the people, for the people.
+            The way independent artists work is through one simple idea:
+        </h4>
+        <h3>
+            By the people, for the people.
+        </h3>
+        <h4>
+            As a professional musician and artist for the past 10 years,
+            I have been lucky to work with many people in many places to achieve independent expression.
         </h4>
         <h4>
-            As a professional musician and independent artist for the past 10 years,
-            I have collaborated with many community organizers as well as fellow artists in mutually beneficial ways.
+            Sign up below to see an interactive map!
         </h4>
-        <h4>
-            Click below to see with whom and where these collaborations have happened.
-        </h4>
-        <Link to={"/map"}>
+        <Link to={"/register"}>
         <UButton>Collabs</UButton>
         </Link>
+
+        <h6>
+            (Or use the default login info on the "Login" page)
+        </h6>
         
         
     </TopSectionContainer>

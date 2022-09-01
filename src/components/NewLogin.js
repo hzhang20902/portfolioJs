@@ -139,7 +139,11 @@ function NewLogin() {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              Default Login: 
+              "RuralJuror"
+            </Typography>
+            <Typography component="h1" variant="h5">
+              Password: "123031"
             </Typography>
             <form onSubmit={handleSubmit(onSubmit)} sx={{ mt: 1 }}>
               <TextField

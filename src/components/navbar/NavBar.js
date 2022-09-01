@@ -74,15 +74,17 @@ export default function NavBar() {
           </Link>
       </UButton>
 
-      <UButton>
-      <Link to={"/map"} className="nav-link">
-      <Typography
+      {currentUser && (
+            <UButton>
+            <Link to={"/map"} className="nav-link">
+            <Typography
           variant="h6"
           sx={{ flexGrow: 1, letterSpacing: 1 }}>
-          Co-Map
-      </Typography>
-      </Link>
-      </UButton>
+            Co-Map
+            </Typography>
+            </Link>
+            </UButton>
+        )}
 
         {showModeratorBoard && (
   
@@ -108,17 +110,7 @@ export default function NavBar() {
             </Link>
             </UButton>
         )}
-          {currentUser && (
-            <UButton>
-            <Link to={"/user"} className="nav-link">
-            <Typography
-          variant="h6"
-          sx={{ flexGrow: 1, letterSpacing: 1 }}>
-            About
-            </Typography>
-            </Link>
-            </UButton>
-        )}
+       
       
       {currentUser ? (
         <>

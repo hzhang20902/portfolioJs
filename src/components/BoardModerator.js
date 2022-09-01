@@ -5,7 +5,7 @@ import styled from "styled-components";
 const TopSectionContainer = styled.div`
     position: absolute;
     width: 100%;
-    height: 92.9%;
+    height: 100vh;
     bottom: 0;
     left: 0;
     background-color: #1755dd42;

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, Suspense } from "react";
 // import { useCreateMap } from "./useCreateMap";
 import { useSceneMap } from "./useSceneMap";
 
@@ -7,7 +7,11 @@ const Map = () => {
     // useCreateMap(mapRef);
     useSceneMap(mapRef);
 
-    return <div className="map-view" ref={mapRef} />
+    return (
+    <Suspense fallback={<div>Loading...</div>}>
+    <div className="map-view" ref={mapRef} />
+    </Suspense>
+    );
 }
 
 export default Map;
