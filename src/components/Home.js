@@ -89,7 +89,7 @@ const Home = () => {
             By the people, for the people.
         </h3>
         <h4>
-            As a professional musician and artist for the past 10 years,
+            As a professional musician and artist for the past 10 years (AKA "Figgs"),
             I have been lucky to work with many people in many places to achieve independent expression.
         </h4>
         <h4>

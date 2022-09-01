@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import UserService from "../services/user.service";
+import UserService from "../../services/user.service";
 import styled from "styled-components";
 
 const TopSectionContainer = styled.div`
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 92.9%;
     bottom: 0;
     left: 0;
     background-color: #1755dd42;
@@ -24,12 +24,11 @@ const Logo = styled.div`
     font-size: 45px;
 `;
 
-
-const BoardModerator = () => {
+const BoardUser = () => {
     const [content, setContent]  = useState("");
 
     useEffect(() => {
-        UserService.getModeratorBoard().then(
+        UserService.getUserBoard().then(
             (response) => {
                 setContent(response.data);
             },
@@ -44,11 +43,17 @@ const BoardModerator = () => {
     }, []);
 
     return(
-       <TopSectionContainer>
-        <Logo>
-            {content}
-        </Logo>
-       </TopSectionContainer>
+        <TopSectionContainer>
+            <Logo>
+                {content}
+            </Logo>
+        </TopSectionContainer>
+        
+        // <div className="container">
+        //     <header className="jumbotron">
+        //         <h3>{content}</h3>
+        //     </header>
+        // </div>
     );
 };
-export default BoardModerator;
+export default BoardUser;

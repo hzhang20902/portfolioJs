@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import UserService from "../services/user.service";
+import UserService from "../../services/user.service";
 import styled from "styled-components";
 
 const TopSectionContainer = styled.div`
@@ -23,12 +23,11 @@ const Logo = styled.div`
     font-weight: 700;
     font-size: 45px;
 `;
-
-const BoardUser = () => {
+const BoardAdmin = () => {
     const [content, setContent]  = useState("");
 
     useEffect(() => {
-        UserService.getUserBoard().then(
+        UserService.getAdminBoard().then(
             (response) => {
                 setContent(response.data);
             },
@@ -48,12 +47,6 @@ const BoardUser = () => {
                 {content}
             </Logo>
         </TopSectionContainer>
-        
-        // <div className="container">
-        //     <header className="jumbotron">
-        //         <h3>{content}</h3>
-        //     </header>
-        // </div>
     );
 };
-export default BoardUser;
+export default BoardAdmin;

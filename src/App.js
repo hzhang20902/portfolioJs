@@ -8,9 +8,9 @@ import Landing from "./components/Landing";
 import Home from "./components/Home";
 import Map from "./components/map/Map";
 import Profile from "./components/Profile";
-import BoardAdmin from "./components/BoardAdmin";
-import BoardModerator from "./components/BoardModerator";
-import BoardUser from "./components/BoardUser";
+import BoardAdmin from "./components/boards/BoardAdmin";
+import BoardModerator from "./components/boards/BoardModerator";
+import BoardUser from "./components/boards/BoardUser";
 
 import Register from "./components/Register";
 import NewLogin from "./components/NewLogin";

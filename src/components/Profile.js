@@ -12,7 +12,7 @@ const TopSectionContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 15%;
+    padding-top: 10%;
     z-index: 99;
     
 `;
