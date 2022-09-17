@@ -5,14 +5,14 @@ import styled from "styled-components";
 const TopSectionContainer = styled.div`
     position: absolute;
     width: 100%;
-    height: 92.9%;
+    height: 100vh;
     bottom: 0;
     left: 0;
     background-color: #1755dd42;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 15%;
+    padding-top: 10%;
     z-index: 99;
     
 `;
@@ -55,6 +55,14 @@ const Profile = () => {
                 currentUser.roles.map((role, index) => 
                 <li key={index}>{role}</li>)}
             </Slogan>
+
+            <h4>
+                This application uses JSON Web Tokens for authentication and authorization. 
+            </h4>
+            <h4>
+                Users register their information through a secure API with password hashing.
+                Their info is stored in a PostgreSQL database.
+            </h4>
         </TopSectionContainer>
     );
 };

@@ -42,10 +42,11 @@ const UButton = styled.button`
     cursor: pointer;
     border: 2px solid transparent;
     align: center;
-    transition: all 350ms ease-in-out;
+    transition: all 250ms ease-in-out;
 
     &:hover {
         background-color: transparent;
+        color: #27b927;
         border: 2px solid #27b927;
     }
 

@@ -5,7 +5,7 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import MenuButton from './MenuButton';
+// import MenuButton from './MenuButton';
 import AuthService from '../../services/auth.service';
 import { Typography } from '@mui/material';
 import styled from 'styled-components';
@@ -73,6 +73,19 @@ export default function NavBar() {
       </Typography>
           </Link>
       </UButton>
+
+      {currentUser && (
+            <UButton>
+            <Link to={"/map"} className="nav-link">
+            <Typography
+          variant="h6"
+          sx={{ flexGrow: 1, letterSpacing: 1 }}>
+            Co-Map
+            </Typography>
+            </Link>
+            </UButton>
+        )}
+
         {showModeratorBoard && (
   
           <UButton>
@@ -97,17 +110,7 @@ export default function NavBar() {
             </Link>
             </UButton>
         )}
-          {currentUser && (
-            <UButton>
-            <Link to={"/user"} className="nav-link">
-            <Typography
-          variant="h6"
-          sx={{ flexGrow: 1, letterSpacing: 1 }}>
-            About
-            </Typography>
-            </Link>
-            </UButton>
-        )}
+       
       
       {currentUser ? (
         <>
@@ -157,7 +160,7 @@ export default function NavBar() {
           href="https://www.venmo.com/u/figgsboson" 
           sx={{ "font-weight": "bold",
           "alignSelf": 'stretch' }}>
-            Donate
+            Support My Work
           </Button>
     </Toolbar>
   </AppBar>

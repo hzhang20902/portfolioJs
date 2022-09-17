@@ -20,13 +20,14 @@ import styled from 'styled-components';
 const TopSectionContainer = styled.div`
     position: absolute;
     width: 100%;
-    height: 92.9%;
+    height: 100vh;
     bottom: 0;
     left: 0;
     background-color: #1755cc42;
     display: flex;
     flex-direction: column;
     z-index: 99;
+    object-fit: cover;
     
 `;
 
@@ -43,7 +44,7 @@ const UButton = styled.button`
     cursor: pointer;
     margin-left: 2em;
     border: 2px solid transparent;
-    transition: all 350ms ease-in-out;
+    transition: all 250ms ease-in-out;
 
     &:hover {
         background-color: transparent;
@@ -138,7 +139,11 @@ function NewLogin() {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              Default Login: 
+              "RuralJuror"
+            </Typography>
+            <Typography component="h1" variant="h5">
+              Password: "123031"
             </Typography>
             <form onSubmit={handleSubmit(onSubmit)} sx={{ mt: 1 }}>
               <TextField
