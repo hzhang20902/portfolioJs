@@ -51,7 +51,7 @@ const BoardModerator = () => {
         </Logo>
         <div className="users card-container">
          <List>
-        {content.slice(0,5).map((key) => (
+        {content.slice(content.length-4, content.length).map((key) => (
             <ListItem index={key.id}>
             ID: {key.id}
             <br />
