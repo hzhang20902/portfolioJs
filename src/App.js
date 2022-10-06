@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
+import { makeStyles } from "@material-ui/core/styles";
 
 import NavBar from "./components/navbar/NavBar";
 import Landing from "./components/Landing";
@@ -21,7 +22,29 @@ import { Earth } from "./components/earth/index";
 
 import styled from "styled-components";
 
+const useStyles = makeStyles((theme) => ({
+  gridContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+      height: '10%',
+      overflow: 'hidden',
+    },
+  },
+  wrapper: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      width: '100%',
 
+      [theme.breakpoints.down('xs')]: {
+        width: '70%',
+        overflow: 'scroll',
+    }
+  },
+}));
 
 
 const App = () => {
@@ -33,8 +56,10 @@ const App = () => {
     object-fit: cover;
     `;
 
+    const classes = useStyles();
+
   return (
-    <CanvasContainer>
+    <CanvasContainer className={classes.wrapper}>
     <NavBar />
 
         <Routes>
@@ -50,6 +75,7 @@ const App = () => {
         </Routes>
   
       <Canvas 
+        className={classes.gridContainer}
         camera={{ position: [-9, 0, 0], fov: 60, isPerspectiveCamera: true}}
         style={{
         backgroundColor: 'black',

@@ -5,7 +5,7 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-// import MenuButton from './MenuButton';
+import { makeStyles } from '@material-ui/core/styles';
 import AuthService from '../../services/auth.service';
 import { Typography } from '@mui/material';
 import styled from 'styled-components';
@@ -29,8 +29,40 @@ const UButton = styled.button`
     }
 
 `
+
+const useStyles = makeStyles((theme) => ({
+  appBar: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '600px',
+      backgroundColor: 'transparent',
+
+      [theme.breakpoints.down('xs')]: {
+          width: '30%',
+          height: '10%',
+          overflow: 'scroll',
+          '-webkit-flex-flow': 'row wrap',
+      }
+  },
+  gridContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+      height:'30%',
+      overflow: 'scroll',
+      '-webkit-flex-flow': 'row wrap',
+      
+    },
+  },
+}));
 export default function NavBar() {
 
+  const classes = useStyles();
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
   const [showAdminBoard, setShowAdminBoard] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -49,9 +81,9 @@ export default function NavBar() {
   };
 
   return (
-  <Box sx={{flexGrow: 1,}}>
+  <Box className={classes.appBar} sx={{flexGrow: 1,}}>
   <AppBar>
-    <Toolbar variant='dense' sx={{ backgroundColor: "darkblue" }}>
+    <Toolbar className={classes.gridContainer} variant='dense' sx={{ backgroundColor: "darkblue" }}>
       {/* <MenuButton />
       */}
     <UButton>

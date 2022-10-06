@@ -9,7 +9,7 @@ import eklutnaWide from '../assets/eklutnaWide.mp4';
     height: 100%;
     bottom: 0;
     left: 0;
-    background-color: #1700dd82;
+    background-color: transparent;
     display: flex;
     flex-direction: column;
     align-items: center;

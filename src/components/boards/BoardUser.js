@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import UserService from "../../services/user.service";
 import styled from "styled-components";
+import { makeStyles } from "@material-ui/core/styles";
+import { List, Divider, ListItem, Grid, Paper, Typography } from "@mui/material";
 
 const TopSectionContainer = styled.div`
     position: absolute;
@@ -24,7 +26,41 @@ const Logo = styled.div`
     font-size: 45px;
 `;
 
+const useStyles = makeStyles((theme) => ({
+    root: {
+      display: 'flex',
+      flexDirection: 'column',
+    },
+    gridContainer: {
+      width: '100%',
+      [theme.breakpoints.down('xs')]: {
+        flexDirection: 'column',
+      },
+    },
+    container: {
+      width: '800px',
+      margin: '5px 0',
+      padding: 0,
+      [theme.breakpoints.down('xs')]: {
+        width: '80%'
+      }
+    },
+    margin: {
+      marginTop: 20,
+    },
+    padding: {
+      padding: 5,
+      fontFamily: 'futura',
+    },
+    paper: {
+      padding: '7px 30px',
+      fontFamily: 'futura',
+      border: '2px solid black',
+    },
+  }));
+
 const BoardUser = () => {
+    const classes = useStyles();
     const [content, setContent]  = useState("");
 
     useEffect(() => {
@@ -43,17 +79,36 @@ const BoardUser = () => {
     }, []);
 
     return(
-        <TopSectionContainer>
-            <Logo>
-                {content}
-            </Logo>
+        <TopSectionContainer className={classes.container}>
+        <Paper elevation={10} className={classes.paper}>
+                <Grid item xs={12} md={6} className={classes.padding}>
+                    <Typography>
+                    <Logo>
+                        List of Users (User Access)
+                    </Logo>
+                    </Typography>
+                </Grid>
+        </Paper>
+        <Paper elevation={10} className={classes.paper}>
+             <Grid container className={classes.gridContainer} columns={2}>
+                <Grid item xs={12} md={6} className={classes.padding}>
+                    <List>
+                    {content.slice(content.length-4, content.length).map((key) => (
+                        <ListItem index={key.id}>
+                        ID: {key.id}
+                        <br />
+                        Username: {key.username}
+                        <br />
+                        Email: {key.email}
+                        <Divider />
+                        </ListItem>
+                    ))}
+                    </List>
+                </Grid>
+            </Grid>
+        </Paper>
+      
         </TopSectionContainer>
-        
-        // <div className="container">
-        //     <header className="jumbotron">
-        //         <h3>{content}</h3>
-        //     </header>
-        // </div>
     );
 };
 export default BoardUser;
