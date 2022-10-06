@@ -23,7 +23,6 @@ const TopSectionContainer = styled.div`
     height: 100vh;
     bottom: 0;
     left: 0;
-    background-color: #1755cc42;
     display: flex;
     flex-direction: column;
     z-index: 99;
@@ -34,7 +33,7 @@ const TopSectionContainer = styled.div`
 const UButton = styled.button`
     outline: none;
     border: none;
-    background-color: #27b927;
+    background-color: rgba(13, 78, 217, 0.94);
     color: #fff;
     font-size: 16px;
     font-weight: 700;
@@ -48,8 +47,8 @@ const UButton = styled.button`
 
     &:hover {
         background-color: transparent;
-        color: #27b927;
-        border: 2px solid #27b927;
+        color: rgba(13, 78, 217, 0.94);
+        border: 2px solid rgba(13, 78, 217, 0.94);
     }
 
 `

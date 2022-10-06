@@ -28,9 +28,11 @@ const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
       flexDirection: 'column',
+      backgroundColor: 'transparent',
     },
     gridContainer: {
       width: '100%',
+      backgroundColor: 'transparent',
       [theme.breakpoints.down('xs')]: {
         flexDirection: 'column',
       },
@@ -39,8 +41,10 @@ const useStyles = makeStyles((theme) => ({
       width: '800px',
       margin: '5px 0',
       padding: 0,
+      backgroundColor: 'transparent',
       [theme.breakpoints.down('xs')]: {
-        width: '80%'
+        width: '80%',
+        padding: '1px'
       }
     },
     margin: {
@@ -49,11 +53,21 @@ const useStyles = makeStyles((theme) => ({
     padding: {
       padding: 5,
       fontFamily: 'futura',
+      display: 'flex',
     },
     paper: {
+      display: 'flex',
+      flexDirection: 'column',
       padding: '7px 30px',
       fontFamily: 'futura',
       border: '2px solid black',
+      backgroundColor: 'transparent',
+
+      [theme.breakpoints.down('xs')]: {
+        marginTop: '10%',
+        width: '70%',
+       
+      }
     },
   }));
 
@@ -82,8 +96,8 @@ const BoardModerator = () => {
         <Paper elevation={10} className={classes.paper}>
                 <Grid item xs={12} md={6} className={classes.padding}>
                     <Typography>
-                    <Logo>
-                        List of Users (Mod Access)
+                    <Logo sx={{ display: 'flex', flexDirection: 'column' }}>
+                        List of Users
                     </Logo>
                     </Typography>
                 </Grid>

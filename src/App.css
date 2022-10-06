@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family:  source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
 }
 
 .App-logo {
@@ -22,10 +24,14 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family:  source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
 }
 
 .App-link {
-  color: #61dafb;
+  color: rgba(0, 0, 0, 0.65);
+  font-family:  source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
 }
 
 @keyframes App-logo-spin {
@@ -40,12 +46,16 @@
 label {
   display: block;
   margin-top: 10px;
+  font-family:  source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
 }
 .card-container.card {
   max-width: 350px !important;
   padding: 40px 40px;
   align-content: center;
   align-self: center;
+  font-family:  source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
 }
 .card {
   background-color: #f7f7f7;
@@ -60,6 +70,8 @@ label {
   -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  font-family:  source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
 }
 .profile-img-card {
   width: 96px;
@@ -73,6 +85,8 @@ label {
 
 .navbar {
   padding-left: 20px;
+  font-family:  source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
 }
 
 .form-group {
@@ -82,6 +96,8 @@ label {
 
 UButton {
   align-self: auto;
+  font-family:  source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
 }
 
 .map-view{
@@ -96,16 +112,23 @@ h4 {
   margin-right: 15em;
   text-align: center;
   object-fit: cover;
+  font-family:  source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
 }
 
 h3 {
   color:#f7f7f7;
   margin-top: 1em;
+  font-family:  source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+
 }
 
 h6 {
-  color: #f7f7f7;
+  color: #ffffff;
   margin-top: 1em;
+  font-family:  source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
 }
 
 .users {

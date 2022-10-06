@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
+import './index.css';
 import { makeStyles } from "@material-ui/core/styles";
 
 import NavBar from "./components/navbar/NavBar";

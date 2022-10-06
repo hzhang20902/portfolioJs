@@ -37,7 +37,7 @@ margin-top: 1em;
 const UButton = styled.button`
     outline: none;
     border: none;
-    background-color: #27b927;
+    background-color: rgba(13, 78, 217, 0.94);
     color: #fff;
     font-size: 16px;
     font-weight: 700;
@@ -50,7 +50,7 @@ const UButton = styled.button`
 
     &:hover {
         background-color: transparent;
-        border: 2px solid #27b927;
+        border: 2px solid rgba(13, 78, 217, 0.94);
     }
 
 `

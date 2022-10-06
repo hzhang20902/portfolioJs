@@ -8,7 +8,6 @@ const TopSectionContainer = styled.div`
     height: 100vh;
     bottom: 0;
     left: 0;
-    background-color: #1755dd42;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,7 +32,9 @@ margin-top: 1em;
 `
 
 const Profile = () => {
+
     const currentUser = AuthService.getCurrentUser();
+    
     return(
        <TopSectionContainer>
                 <Logo>

@@ -13,15 +13,23 @@ import eklutnaWide from '../assets/eklutnaWide.mp4';
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     z-index: 99;
     
 `;
 
     const Logo = styled.div`
+    position: center;
+    flex-direction: column;
     margin: 0;
     color: #fff;
     font-weight: 700;
     font-size: 45px;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    flex-grow: 1;
+    
 `;
 
     const Slogan = styled.h4`
@@ -30,12 +38,13 @@ import eklutnaWide from '../assets/eklutnaWide.mp4';
     font-weight: 700;
     font-size: 30px;
     margin-top: 1em;
+    padding: 1em;
 `;
 
     const UButton = styled.button`
     outline: none;
     border: none;
-    background-color: #27b927;
+    background-color: rgba(13, 78, 217, 0.94);
     color: #fff;
     font-size: 16px;
     font-weight: 700;
@@ -48,7 +57,7 @@ import eklutnaWide from '../assets/eklutnaWide.mp4';
 
     &:hover {
         background-color: transparent;
-        border: 2px solid #27b927;
+        border: 2px solid rgba(13, 78, 217, 0.94);
     }
 `;
 
@@ -60,16 +69,17 @@ const Landing = () => {
         <div className="overlay"></div>
             <video src={eklutnaWide} autoPlay loop muted />
             <div className="content">
-            <Logo>
-                Henry Zhang's Portfolio
-            </Logo>
             <Slogan>
-                Welcome
+                Henry Zhang
             </Slogan>
-            
+            <div>
+             <Slogan>
+                Welcome to My Portfolio Hub
+             </Slogan>
+            </div>
             <Link to={"/home"} className="nav-link">
                 <UButton>
-                    About
+                    Enter
                 </UButton>
             </Link>
             
