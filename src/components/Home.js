@@ -1,118 +1,40 @@
-import React, { useState, useEffect } from "react";
-import UserService from "../services/user.service";
+import React, { Suspense } from "react";
+
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
-const TopSectionContainer = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    bottom: 0;
-    left: 0;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 7%;
-    z-index: 99;
-    display: flex;
-    object-fit: cover;
-    
-`;
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 
-const Logo = styled.div`
-    margin: 0;
-    color: #fff;
-    font-weight: 700;
-    font-size: 45px;
-`;
-
-const Slogan = styled.h4`
-margin: 0;
-color: #fff;
-font-weight: 700;
-font-size: 30px;
-margin-top: 1em;
-`
-const UButton = styled.button`
-    outline: none;
-    border: none;
-    background-color: rgba(13, 78, 217, 0.94);
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 8px;
-    padding: 8px 2em;
-    margin-top: 3em;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: all 350ms ease-in-out;
-
-    &:hover {
-        background-color: transparent;
-        border: 2px solid rgba(13, 78, 217, 0.94);
-    }
-
-`
+import { Earth } from "./earth";
+import { HomeContent } from "./ContentOverlay";
 
 const Home = () => {
-    const [content, setContent]  = useState("");
-
-    useEffect(() => {
-        UserService.getPublicContent().then(
-            (response) => {
-                setContent(response.data);
-            },
-            (error) => {
-                const _content = 
-                (error.response && error.response.data) ||
-                error.message ||
-                error.toString();
-                setContent(_content);
-            }
-        );
-    }, []);
+    const CanvasContainer = styled.div`
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    flexShrink: auto;
+    `;
 
     return(
-        <TopSectionContainer>
-        <Logo>
-            {content}
-        </Logo>
-        <Slogan>
-            Sustainability Through Collaboration
-        </Slogan>
-        <h4>
-            It takes a village. Sometimes multiple villages.
-            The way independent artists work is through one simple idea:
-        </h4>
-        <h3>
-            By the people, for the people.
-        </h3>
-        <h4>
-            As a professional musician and artist for the past 10 years (AKA "Figgs"),
-            I have been lucky to work with many people in many places to achieve independent expression.
-        </h4>
-        <h4>
-            Sign up below to see an interactive map!
-        </h4>
-        <Link to={"/register"}>
-        <UButton>Collabs</UButton>
-        </Link>
-
-        <h6>
-            (Or use the default login info on the "Login" page)
-        </h6>
-        
-        
-    </TopSectionContainer>
-
-
-
-        // <div className="container">
-        //     <header className="jumbotron">
-        //         <h3>{content}</h3>
-        //     </header>
-        // </div>
+            
+        <CanvasContainer>
+            <HomeContent />
+            <Canvas 
+                // camera={{ position: [-9, 0, 0], fov: 60, isPerspectiveCamera: true}}
+                // style={{
+                // backgroundColor: 'black',
+                // width: "100%",
+                // height: "100%",
+                // }}
+                >
+                <Suspense fallback={null}>
+                    <Earth />
+                </Suspense>
+                <OrbitControls />
+            </Canvas>
+        </CanvasContainer>
+       
     );
 };
 export default Home;

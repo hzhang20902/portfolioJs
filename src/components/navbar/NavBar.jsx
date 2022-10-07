@@ -11,6 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@mui/material';
 
 import styled from 'styled-components';
+import styles from '../../styles/Global';
 
 import BasicMenu from './MenuButton';
 import AuthService from '../../services/auth.service';
@@ -26,10 +27,9 @@ const UButton = styled.button`
     cursor: pointer;
     border: 1px solid transparent;
     transition: all 250ms ease-in-out;
-    class: d-none, d-sm-inline-block;
 
     &:hover {
-        background-color: white;
+        background-color: rgba(0, 0, 140, 1);
         color: rgba(14, 83, 197, 0.65);
         border: 1px solid white;
     }
@@ -42,7 +42,9 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      width: '600px',
+      objectFit: 'fill',
+      width: '100%',
+
       backgroundColor: 'rgba(13, 78, 217, 0.94)',
 
       [theme.breakpoints.down('xs')]: {
@@ -54,23 +56,15 @@ const useStyles = makeStyles((theme) => ({
   },
   gridContainer: {
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'left',
+    alignItems: 'left',
+    width: '100%',
 
     [theme.breakpoints.down('xs')]: {
-      flexDirection: 'column',
-      height:'30%',
-      overflow: 'scroll',
-      '-webkit-flex-flow': 'row wrap',
+      flexDirection: 'row',
     },
   },
-  mobileBtn: {
-
-    [theme.breakpoints.down('xs')]: {
-      disable: 'true',
-    },
-
-  }
 }));
 export default function NavBar() {
 
@@ -93,12 +87,12 @@ export default function NavBar() {
   // };
 
   return (
-  <Box className={classes.appBar} sx={{flexGrow: 1,  backgroundColor: "transparent",}}>
-    <AppBar>
-      <Toolbar className={classes.gridContainer} variant='dense' sx={{ backgroundColor: "rgba(13, 78, 217, 0.94)", }}>
+  <div>
+    <AppBar className={classes.gridContainer}>
+      <Toolbar variant='dense' sx={{ backgroundColor: "rgba(13, 78, 217, 0.94)", }}>
         <BasicMenu />
 
-        {/* <UButton>
+        <UButton className={styles.mobileBtn}>
           <Link to={"/"} className="nav-link">
             <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
               Welcome
@@ -106,13 +100,13 @@ export default function NavBar() {
           </Link>
         </UButton>
 
-        <UButton>
+        <UButton className={styles.mobileBtn}>
           <Link to={"/home"} className="nav-link">
-            <Typography variant="h6" sx={{ flexGrow: 1, letterSpacing: 1 }}>
-            Home
+            <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
+            About
             </Typography>
           </Link>
-        </UButton> */}
+        </UButton>
 
       {/* {currentUser && (
         <UButton>
@@ -182,16 +176,15 @@ export default function NavBar() {
         </>
       )} */}
 
-        <Button 
-          target="_blank" 
-          href="https://www.venmo.com/u/figgsboson" 
-          sx={{ "font-weight": "bold",
-          "alignSelf": 'stretch',
-          "color": 'white', }}>
-          Donate
-        </Button>
+        <UButton className={styles.mobileBtn}>
+           <a target="_blank" rel='noreferrer' href="https://www.venmo.com/u/figgsboson" className='nav-link'>
+            <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
+              Donate
+            </Typography>
+          </a>
+        </UButton>
       </Toolbar>
     </AppBar>
-  </Box>
+  </div>
   );
 }

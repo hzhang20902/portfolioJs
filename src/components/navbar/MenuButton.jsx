@@ -88,43 +88,90 @@ const BasicMenu = () => {
 
       <Menu
         id="basic-menu"
+        variant='menu'
         anchorEl={anchorEl}
         open={open}
         onClick={handleClose}
         MenuListProps={{
           'aria-labelledby': 'basic-button',
           dense: 'true',
+          divider: 'true',
+        }}
+        PaperProps={{
+          style: {
+            width: 380,
+          }
         }}
       >
 
 
-        <MenuItem component={Link} to="/">Welcome</MenuItem>
-        <MenuItem component={Link} to="/home">Home</MenuItem>
+        <MenuItem sx={{ 
+          fontSize: 20, 
+          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
+          fontWeight: 'bold',
+          color: 'rgba(14, 83, 197, 0.65)'}} component={Link} to="/">Welcome</MenuItem>
+
+        <MenuItem sx={{ 
+          fontSize: 20, 
+          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
+          fontWeight: 'bold',
+          color: 'rgba(14, 83, 197, 0.65)'}} component={Link} to="/home">About</MenuItem>
 
         {currentUser && (
-        <MenuItem component={Link} to="/profile">{currentUser.username}</MenuItem>
+        <MenuItem sx={{ 
+          fontSize: 20, 
+          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
+          fontWeight: 'bold',
+          color: 'rgba(14, 83, 197, 0.65)'}} component={Link} to="/profile">{currentUser.username}</MenuItem>
         )}
 
         {currentUser && showModeratorBoard && (
-        <MenuItem component={Link} to="/mod">Mod Dash</MenuItem>
+        <MenuItem sx={{ 
+          fontSize: 20, 
+          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
+          fontWeight: 'bold',
+          color: 'rgba(14, 83, 197, 0.65)'}} component={Link} to="/mod">Mod Dash</MenuItem>
         )}
 
         {currentUser && showAdminBoard && (
-        <MenuItem component={Link} to="/mod">Admin Access</MenuItem>
+        <MenuItem sx={{ 
+          fontSize: 20, 
+          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
+          fontWeight: 'bold',
+          color: 'rgba(14, 83, 197, 0.65)'}} component={Link} to="/mod">Admin Access</MenuItem>
         )}
 
         {currentUser && (
-        <MenuItem component={Link} to="/login" onClick={logOut}>Logout</MenuItem>
+        <MenuItem sx={{ 
+          fontSize: 20, 
+          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
+          fontWeight: 'bold',
+          color: 'rgba(14, 83, 197, 0.65)'}} component={Link} to="/login" onClick={logOut}>Logout</MenuItem>
         )}
 
 
         {!currentUser && (
-        <MenuItem component={Link} to="/login">Login</MenuItem>
+        <MenuItem sx={{ 
+          fontSize: 20, 
+          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
+          fontWeight: 'bold',
+          color: 'rgba(14, 83, 197, 0.65)'}} component={Link} to="/login">Login</MenuItem>
         )}
 
         {!currentUser && (
-        <MenuItem component={Link} to="/register">Signup</MenuItem>
+        <MenuItem sx={{ 
+          fontSize: 20, 
+          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
+          fontWeight: 'bold',
+          color: 'rgba(14, 83, 197, 0.65)'}} component={Link} to="/register">Signup</MenuItem>
         )}
+
+        <MenuItem sx={{ 
+          fontSize: 20, 
+          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
+          fontWeight: 'bold',
+          color: 'rgba(14, 83, 197, 0.65)'}} component='a' target='_blank' href="https://www.venmo.com/u/figgsboson">Donate</MenuItem>
+
       
   
       </Menu>

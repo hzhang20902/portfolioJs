@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
@@ -17,12 +17,6 @@ import BoardUser from "./components/boards/BoardUser";
 import Register from "./components/Register";
 import NewLogin from "./components/NewLogin";
 
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import { Earth } from "./components/earth/index";
-
-import styled from "styled-components";
-
 const useStyles = makeStyles((theme) => ({
   gridContainer: {
     display: 'flex',
@@ -36,7 +30,8 @@ const useStyles = makeStyles((theme) => ({
   },
   wrapper: {
       display: 'flex',
-      flexDirection: 'column',
+      flexShrink: 'auto',
+      justifyContent: 'center',
       alignItems: 'center',
       width: '100%',
 
@@ -49,20 +44,12 @@ const useStyles = makeStyles((theme) => ({
 
 
 const App = () => {
-  const CanvasContainer = styled.div`
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-    flexGrow: 1;
-    object-fit: cover;
-    `;
 
-    const classes = useStyles();
+  const classes = useStyles();
 
   return (
-    <CanvasContainer className={classes.wrapper}>
+    <div>
     <NavBar />
-
         <Routes>
           <Route path="/" element={<Landing/>} />
           <Route path="/home" element={<Home/>} />
@@ -74,23 +61,7 @@ const App = () => {
           <Route path="/mod" element={<BoardModerator/>} />
           <Route path="/admin" element={<BoardAdmin/>} />
         </Routes>
-  
-      <Canvas 
-        className={classes.gridContainer}
-        camera={{ position: [-9, 0, 0], fov: 60, isPerspectiveCamera: true}}
-        style={{
-        backgroundColor: 'black',
-        width: "100%",
-        height: "100vh",
-        "object-fit": 'cover',
-      }}>
-        <Suspense fallback={null}>
-          <Earth />
-        </Suspense>
-        <OrbitControls />
-      </Canvas>
-    
-    </CanvasContainer>
+    </div>
   );
 };
 
