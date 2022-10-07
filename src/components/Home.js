@@ -21,7 +21,7 @@ const Home = () => {
         <CanvasContainer>
             <HomeContent />
             <Canvas 
-                // camera={{ position: [-9, 0, 0], fov: 60, isPerspectiveCamera: true}}
+                camera={{ position: [0, 0, 50], fov: 60, isPerspectiveCamera: true}}
                 // style={{
                 // backgroundColor: 'black',
                 // width: "100%",

@@ -16,21 +16,26 @@ const TopSectionContainer = styled.div`
     flex-direction: column;
     align-items: center;
     padding-top: 7%;
+    padding: 1em;
     z-index: 99;
 `;
     const Logo = styled.div`
-    margin: 0;
+    margin: auto;
     color: #fff;
     font-weight: 700;
     font-size: 45px;
+    margin-top: 1em;
+    padding-top: 1em;
 `;
 
     const Slogan = styled.h4`
-    margin: 0;
+    margin: 0.4;
     color: #fff;
     font-weight: 700;
     font-size: 30px;
     margin-top: 1em;
+    margin-bottom: 2em;
+    padding: 0.3em;
 `
     const UButton = styled.button`
     outline: none;
@@ -81,24 +86,17 @@ export const HomeContent = () => {
                 It takes a village. Sometimes multiple villages.
                 The way independent artists work is through one simple idea:
             </h4>
-            <h3>
-                By the people, for the people.
-            </h3>
             <h4>
-                As a professional musician and artist for the past 10 years (AKA "Figgs"),
-                I have been lucky to work with many people in many places to achieve independent expression.
+                By the people, for the people.
             </h4>
             <h4>
-                Sign up below to see an interactive map!
+                See how that works:
             </h4>
 
-        <Link to={"/register"}>
-            <UButton>Collabs</UButton>
+        <Link to={"/login"}>
+            <UButton>Login</UButton>
         </Link>
         
-            <h6>
-                (Or use the default login info on the "Login" page)
-            </h6>
     </TopSectionContainer>
   )
 }
