@@ -8,7 +8,7 @@ import { TextureLoader } from 'three';
 import { OrbitControls, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 
-export function Earth(props){
+export function Earth(){
 
     const [clouds,
         earthClear,
@@ -31,19 +31,19 @@ export function Earth(props){
         {/* <ambientLight intensity={0.8} /> */}
         <pointLight 
         color='#f6f3ea' 
-        position={[-40, 5, 37]} 
-        intensity={7.1} 
+        position={[-10, 5, 37]} 
+        intensity={8.1} 
         />
 
         <Stars 
         radius={300} 
         depth={60} 
-        count={20000} 
-        factor={9} 
+        count={50000} 
+        factor={10} 
         saturation={0} 
         fade={true}/>
 
-        <mesh position={[0,0,-4]} ref={cloudsRef}>
+        <mesh position={[3,0,0]} ref={cloudsRef}>
             <sphereGeometry args={[3.025, 32, 32]} />
             <meshPhongMaterial 
             map={clouds}
@@ -53,7 +53,7 @@ export function Earth(props){
             side={THREE.DoubleSide} />
         </mesh>
 
-        <mesh position={[0,0,-4]} ref={earthRef}>
+        <mesh position={[3,0,0]} ref={earthRef}>
             <sphereGeometry args={[3, 32, 32]} />
             <meshPhongMaterial color='red' />
             <meshStandardMaterial 

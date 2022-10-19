@@ -20,16 +20,11 @@ const Home = () => {
             
         <CanvasContainer>
             <HomeContent />
-            <Canvas 
-                camera={{ position: [0, 0, 50], fov: 60, isPerspectiveCamera: true}}
-                // style={{
-                // backgroundColor: 'black',
-                // width: "100%",
-                // height: "100%",
-                // }}
-                >
+            <Canvas camera={{ position: [0, 0, 27], fov: 40, isPerspectiveCamera: true}}>
+            {/* <gridHelper position={[0,-5,0]}/> */}
                 <Suspense fallback={null}>
                     <Earth />
+                    
                 </Suspense>
                 <OrbitControls />
             </Canvas>

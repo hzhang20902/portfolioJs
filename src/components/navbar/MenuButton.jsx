@@ -1,46 +1,14 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import { makeStyles } from '@material-ui/core/styles';
-
 import AuthService from '../../services/auth.service';
 
-
-const useStyles = makeStyles((theme) => ({
-  appBar: {
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '600px',
-      backgroundColor: 'rgba(14, 83, 197, 0.65)',
-
-      [theme.breakpoints.down('xs')]: {
-          width: '30%',
-          height: '10%',
-          overflow: 'scroll',
-          '-webkit-flex-flow': 'row wrap',
-      }
-  },
-  gridContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-
-    [theme.breakpoints.down('xs')]: {
-      flexDirection: 'column',
-      height:'30%',
-      overflow: 'scroll',
-      '-webkit-flex-flow': 'row wrap',
-      
-    },
-  },
-}));
 
 const BasicMenu = () => {
 

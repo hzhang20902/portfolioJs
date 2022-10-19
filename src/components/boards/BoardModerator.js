@@ -27,6 +27,8 @@ const Logo = styled.div`
 const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
       flexDirection: 'column',
       backgroundColor: 'transparent',
     },
@@ -52,14 +54,12 @@ const useStyles = makeStyles((theme) => ({
     },
     padding: {
       padding: 5,
-      fontFamily: 'futura',
       display: 'flex',
     },
     paper: {
       display: 'flex',
       flexDirection: 'column',
       padding: '7px 30px',
-      fontFamily: 'futura',
       border: '2px solid black',
       backgroundColor: 'transparent',
 

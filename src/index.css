@@ -11,13 +11,9 @@ body {
   justify-content: center;
   height: 100%;
   background-color: black;
-  font-family:  source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-  monospace;
 }
 
 div {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-  monospace;
   font-style: normal;
   object-fit: cover;
 }
@@ -31,13 +27,13 @@ body,
   margin: 0;
   padding: 0;
   background-color: black;
-  font-family:  source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family:  Inter, Menlo, Monaco, Consolas, "Courier New",
   monospace;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
 }
 
 .main {
@@ -61,8 +57,10 @@ video {
   justify-content: center;
   align-items: center;
   color: white;
-  font-family:  source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-  monospace;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 56px;
 }
 
 .overlay {
@@ -87,8 +85,6 @@ h4 {
 h6 {
   color: #ffffff;
   margin-top: 1em;
-  font-family:  source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-  monospace;
 }
 
 

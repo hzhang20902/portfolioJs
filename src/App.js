@@ -8,7 +8,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import NavBar from "./components/navbar/NavBar";
 import Landing from "./components/Landing";
 import Home from "./components/Home";
-import Map from "./components/map/Map";
 import Profile from "./components/Profile";
 import BoardAdmin from "./components/boards/BoardAdmin";
 import BoardModerator from "./components/boards/BoardModerator";
@@ -45,15 +44,12 @@ const useStyles = makeStyles((theme) => ({
 
 const App = () => {
 
-  const classes = useStyles();
-
   return (
     <div>
     <NavBar />
         <Routes>
           <Route path="/" element={<Landing/>} />
           <Route path="/home" element={<Home/>} />
-          <Route path="/map" element={<Map/>} />
           <Route path="/login" element={<NewLogin/>} />
           <Route path="/register" element={<Register/>} />
           <Route path="/profile" element={<Profile/>} />
