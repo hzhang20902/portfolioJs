@@ -47,8 +47,8 @@ const BasicMenu = () => {
         size="large"
         edge="start"
         color="inherit"
-        aria-label="menu"
-        sx={{ mr: 2 }}
+      
+  
         onClick={handleClick}
       >
         <MenuIcon />
@@ -56,18 +56,14 @@ const BasicMenu = () => {
 
       <Menu
         id="basic-menu"
-        variant='menu'
+   
         anchorEl={anchorEl}
         open={open}
         onClick={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-          dense: 'true',
-          divider: 'true',
-        }}
+     
         PaperProps={{
           style: {
-            width: 380,
+            width: 300,
           }
         }}
       >

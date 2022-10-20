@@ -50,11 +50,9 @@ const useStyles = makeStyles((theme) => ({
     },
     padding: {
       padding: 5,
-      fontFamily: 'futura',
     },
     paper: {
       padding: '7px 30px',
-      fontFamily: 'futura',
       border: '2px solid black',
     },
   }));

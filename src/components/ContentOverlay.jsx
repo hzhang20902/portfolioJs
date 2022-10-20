@@ -3,40 +3,12 @@ import { useState, useEffect } from 'react';
 import UserService from '../services/user.service';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import assets from '../assets';
+
+import SectionWrapper from './hero/SectionWrapper';
+import Features from './hero/Features';
 
 
-const TopSectionContainer = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 0%;
-    top: 0;
-    left: 0;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 7%;
-    padding: 1em;
-    z-index: 99;
-`;
-    const Logo = styled.div`
-    margin: auto;
-    color: #fff;
-    font-weight: 700;
-    font-size: 45px;
-    margin-top: 1em;
-    padding-top: 1em;
-`;
-
-    const Slogan = styled.h4`
-    margin: 0.4;
-    color: #fff;
-    font-weight: 700;
-    font-size: 30px;
-    margin-top: 1em;
-    margin-bottom: 2em;
-    padding: 0.3em;
-`
     const UButton = styled.button`
     outline: none;
     border: none;
@@ -75,35 +47,19 @@ export const HomeContent = () => {
         );
     }, []);
   return (
-    <TopSectionContainer>
-        <Logo>
-            {content}
-        </Logo>
-        <Slogan>
-            Sustainability Through Collaboration
-        </Slogan>
-            <h4>
-                It takes a village. Sometimes multiple villages.
-                The way independent artists work is through one simple idea:
-            </h4>
-            <h4>
-                By the people, for the people.
-            </h4>
-            <h4>
-                See how that works:
-            </h4>
-
-        <Link to={"/login"}>
-            <UButton>Login</UButton>
-        </Link>
-        
-    </TopSectionContainer>
+       <SectionWrapper 
+        title={(content)}
+        description="The way independent artists work is through one simple idea: By the people; for the people."
+        mockupImg={assets.absEarth}
+        banner='banner'
+    />
   )
 }
 
-export const Project1Content = () => {
+export const LandingContent = () => {
     return (
-      <div>Content1</div>
+      <Features />
+      
     )
   }
 

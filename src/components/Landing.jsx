@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import eklutnaWide from '../assets/eklutnaWide.mp4';
+import { LandingContent } from "./ContentOverlay";
+import styles from "../styles/Global";
 
     const TopSectionContainer = styled.div`
     position: absolute;
@@ -64,8 +66,10 @@ const Landing = () => {
        <TopSectionContainer>
         <div className="main">
         <div className="overlay"></div>
-            <video src={eklutnaWide} autoPlay loop muted />
-            <div className="content">
+        <video src={eklutnaWide} autoPlay loop muted />
+        
+        <div className='content fadeRightMini'>
+       
             <Logo>
                 Welcome to My Portfolio Hub
             </Logo>
@@ -82,14 +86,14 @@ const Landing = () => {
                     Enter
                 </UButton>
                 </Link>
-            </div>
-                
-                
+            </div> 
+        </div>
+        <LandingContent />
             
-            </div>
         </div>
         </TopSectionContainer>
     )
 }
 
-export default Landing;
+export default Landing;  
+

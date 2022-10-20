@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import Avatar from '@mui/material/Avatar';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -16,6 +16,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import AuthService from '../services/auth.service';
 import styled from 'styled-components';
+import assets from '../assets';
 
 const TopSectionContainer = styled.div`
     position: absolute;
@@ -105,7 +106,9 @@ function NewLogin() {
     }
 
   return (
-    <TopSectionContainer>
+   
+    <TopSectionContainer> 
+   
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
@@ -115,15 +118,18 @@ function NewLogin() {
           sm={4}
           md={7}
           sx={{
-            // backgroundImage: 'url(https://youtu.be/qx8piM_GqwY?t=54)',
+            backgroundImage: 'url("../assets/absEarth.png")',
             backgroundRepeat: 'no-repeat',
-            // backgroundColor: (t) =>
-            //   t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+            backgroundColor: (t) =>
+              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         >
+       
         </Grid>
+      
+        
     
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
@@ -204,9 +210,16 @@ function NewLogin() {
             </form>
           </Box>
         </Grid>
+        
+        
       </Grid>
+      
+      
     </ThemeProvider>
+    
+    
     </TopSectionContainer>
+    
   );
 };
 
