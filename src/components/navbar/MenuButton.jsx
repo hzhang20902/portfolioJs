@@ -11,6 +11,9 @@ import AuthService from '../../services/auth.service';
 
 
 const BasicMenu = () => {
+  const sxStyling = {fontSize: 20, 
+    fontWeight: 'bold',
+    color: 'rgba(14, 83, 197, 0.65)'}
 
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
   const [showAdminBoard, setShowAdminBoard] = useState(false);
@@ -56,7 +59,7 @@ const BasicMenu = () => {
 
       <Menu
         id="basic-menu"
-   
+        className='fadeLeftMini'
         anchorEl={anchorEl}
         open={open}
         onClick={handleClose}
@@ -69,75 +72,37 @@ const BasicMenu = () => {
       >
 
 
-        <MenuItem sx={{ 
-          fontSize: 20, 
-          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
-          fontWeight: 'bold',
-          color: 'rgba(14, 83, 197, 0.65)'}} component={Link} to="/">Welcome</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/">Welcome</MenuItem>
 
-        <MenuItem sx={{ 
-          fontSize: 20, 
-          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
-          fontWeight: 'bold',
-          color: 'rgba(14, 83, 197, 0.65)'}} component={Link} to="/home">About</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/home">About</MenuItem>
 
         {currentUser && (
-        <MenuItem sx={{ 
-          fontSize: 20, 
-          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
-          fontWeight: 'bold',
-          color: 'rgba(14, 83, 197, 0.65)'}} component={Link} to="/profile">{currentUser.username}</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/profile">{currentUser.username}</MenuItem>
         )}
 
         {currentUser && showModeratorBoard && (
-        <MenuItem sx={{ 
-          fontSize: 20, 
-          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
-          fontWeight: 'bold',
-          color: 'rgba(14, 83, 197, 0.65)'}} component={Link} to="/mod">Mod Dash</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/mod">Mod Dash</MenuItem>
         )}
 
         {currentUser && showAdminBoard && (
-        <MenuItem sx={{ 
-          fontSize: 20, 
-          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
-          fontWeight: 'bold',
-          color: 'rgba(14, 83, 197, 0.65)'}} component={Link} to="/mod">Admin Access</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/mod">Admin Access</MenuItem>
         )}
 
         {currentUser && (
-        <MenuItem sx={{ 
-          fontSize: 20, 
-          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
-          fontWeight: 'bold',
-          color: 'rgba(14, 83, 197, 0.65)'}} component={Link} to="/login" onClick={logOut}>Logout</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/login" onClick={logOut}>Logout</MenuItem>
         )}
 
 
         {!currentUser && (
-        <MenuItem sx={{ 
-          fontSize: 20, 
-          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
-          fontWeight: 'bold',
-          color: 'rgba(14, 83, 197, 0.65)'}} component={Link} to="/login">Login</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/login">Login</MenuItem>
         )}
 
         {!currentUser && (
-        <MenuItem sx={{ 
-          fontSize: 20, 
-          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
-          fontWeight: 'bold',
-          color: 'rgba(14, 83, 197, 0.65)'}} component={Link} to="/register">Signup</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/register">Signup</MenuItem>
         )}
 
-        <MenuItem sx={{ 
-          fontSize: 20, 
-          fontFamily: 'source-code-pro, Menlo, Monaco, Consolas', 
-          fontWeight: 'bold',
-          color: 'rgba(14, 83, 197, 0.65)'}} component='a' target='_blank' href="https://www.venmo.com/u/figgsboson">Donate</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component='a' target='_blank' href="https://www.venmo.com/u/figgsboson">Donate</MenuItem>
 
-      
-  
       </Menu>
     </div>
   );

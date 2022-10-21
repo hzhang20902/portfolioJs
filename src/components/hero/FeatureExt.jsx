@@ -13,7 +13,7 @@ const FeatureCard = ({ iconUrl, iconText }) => (
   </div>
 );
 
-const Features = ({ pText, title, iconUrl1, iconText1, iconUrl2, iconText2, iconUrl3, iconText3 }) => {
+const FeatureExt = ({ pText, iconUrl1, iconText1, iconUrl2, iconText2, iconUrl3, iconText3 }) => {
   return (
     <div className={`
     ${styles.section}
@@ -25,9 +25,6 @@ const Features = ({ pText, title, iconUrl1, iconText1, iconUrl2, iconText2, icon
       flex-col
       text-center`}>
         <div>
-          <h1 className={`
-          ${styles.h1Text}
-          ${styles.whiteText}`}>{title}</h1>
           <p className={`
           ${styles.pText}
           ${styles.whiteText}`}>
@@ -48,7 +45,7 @@ const Features = ({ pText, title, iconUrl1, iconText1, iconUrl2, iconText2, icon
             iconUrl={iconUrl3}
             iconText={iconText3}
           />
-
+          
         </div>
         
 
@@ -59,4 +56,4 @@ const Features = ({ pText, title, iconUrl1, iconText1, iconUrl2, iconText2, icon
   )
 }
 
-export default Features
+export default FeatureExt;

@@ -1,10 +1,32 @@
 import React from 'react'
 import styles from '../../styles/Global'
 import assets from '../../assets'
-import Button from './Button'
+import { Link } from 'react-router-dom'
+import { Typography } from '@mui/material'
+import styled from 'styled-components'
 
+const UButton = styled.button`
+outline: none;
+border: none;
+background-color: rgba(13, 78, 217, 0.94);
+color: #fff;
+font-size: 16px;
+font-weight: 700;
+border-radius: 8px;
+padding: 8px 2em;
+margin-top: 3em;
+cursor: pointer;
+border: 2px solid transparent;
+transition: all 350ms ease-in-out;
 
-const SectionWrapper = ({ title, description, showBtn, mockupImg, banner, reverse, demoVid }) => {
+&:hover {
+    background-color: transparent;
+    border: 2px solid rgba(13, 78, 217, 0.94);
+}
+
+`
+
+const SectionWrapper = ({ title, description, showBtn, mockupImg, banner, reverse, route, btnText }) => {
   return (
     <div className={`
     min-h-screen 
@@ -24,10 +46,13 @@ const SectionWrapper = ({ title, description, showBtn, mockupImg, banner, revers
             ${reverse? styles.blackText : styles.whiteText}`}>{title}</h1>
             <p className={`${styles.descriptionText}`}>{description}</p>
             {showBtn && (
-                <Button 
-                    assetUrl={assets.expo}
-                    link='https://expo.dev/@hzhang20902/reactn_nft_market?serviceType=classic&distribution=expo-go'
-                />
+              <UButton>
+                <Link to={route} className="nav-link">
+                  <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
+                    {btnText}
+                  </Typography>
+                </Link>
+            </UButton>
             )}
             </div>
             <div className={`flex-1 ${styles.flexCenter} p-8 sm:px-0`}>

@@ -118,11 +118,11 @@ function NewLogin() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url("../assets/absEarth.png")',
+            // backgroundImage: 'url("../assets/absEarth.png")',
             backgroundRepeat: 'no-repeat',
-            backgroundColor: (t) =>
-              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: 'cover',
+            // backgroundColor: (t) =>
+            //   t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+            // backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         >

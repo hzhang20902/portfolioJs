@@ -1,34 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import UserService from '../services/user.service';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import assets from '../assets';
 
 import SectionWrapper from './hero/SectionWrapper';
 import Features from './hero/Features';
+import FeatureExt from './hero/FeatureExt';
 
 
-    const UButton = styled.button`
-    outline: none;
-    border: none;
-    background-color: rgba(13, 78, 217, 0.94);
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 8px;
-    padding: 8px 2em;
-    margin-top: 3em;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: all 350ms ease-in-out;
 
-    &:hover {
-        background-color: transparent;
-        border: 2px solid rgba(13, 78, 217, 0.94);
-    }
-
-`
 export const HomeContent = () => {
     const [content, setContent]  = useState("");
 
@@ -47,19 +27,46 @@ export const HomeContent = () => {
         );
     }, []);
   return (
+    <>
        <SectionWrapper 
         title={(content)}
-        description="The way independent artists work is through one simple idea: By the people; for the people."
+        description="It takes a village- sometimes, multiple villages. 
+        The way independent artists work is through one simple idea: 
+        By the people; for the people. 
+        See how artists everywhere collaborate anywhere."
         mockupImg={assets.absEarth}
+        showBtn
+        btnText='Login'
+        route='/login'
         banner='banner'
     />
+    </>
   )
 }
 
 export const LandingContent = () => {
     return (
-      <Features />
-      
+      <>
+      <Features 
+        title="Technologies"
+        pText="Client side is designed with ReactJs, ThreeJs, and Tailwind CSS."
+        iconUrl1={assets.react}
+        iconText1="React.js"
+        iconUrl2={assets.threelogo}
+        iconText2="Three.js"
+        iconUrl3={assets.tailwind}
+        iconText3="Tailwind CSS"
+      />
+      <FeatureExt 
+        pText="Server side built with Java, SpringBoot, and PostgreSQL."
+        iconUrl1={assets.javaLogo}
+        iconText1="Java"
+        iconUrl2={assets.springboot}
+        iconText2="Spring Boot"
+        iconUrl3={assets.psqlLogo}
+        iconText3="PostgreSQL"
+      />
+      </>
     )
   }
 

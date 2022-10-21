@@ -31,8 +31,8 @@ export function Earth(){
         {/* <ambientLight intensity={0.8} /> */}
         <pointLight 
         color='#f6f3ea' 
-        position={[-10, 5, 37]} 
-        intensity={7.1} 
+        position={[15, 7, 40]} 
+        intensity={9} 
         />
 
         <Stars 
@@ -43,18 +43,18 @@ export function Earth(){
         saturation={0} 
         fade={true}/>
 
-        <mesh position={[0,0,-6]} ref={cloudsRef}>
-            <sphereGeometry args={[3.025, 42, 32]} />
+        <mesh position={[-5,0,-3]} ref={cloudsRef}>
+            <sphereGeometry args={[3.025, 32, 32, 16]} />
             <meshPhongMaterial 
             map={clouds}
             transparent={true}
             depthWrite={true} 
-            opacity={0.6}
+            opacity={0.5}
             side={THREE.DoubleSide} />
         </mesh>
 
-        <mesh position={[0,0,-6]} ref={earthRef}>
-            <sphereGeometry args={[3, 42, 32]} />
+        <mesh position={[-5,0,-3]} ref={earthRef}>
+            <sphereGeometry args={[3, 32, 32, 16 ]} />
             <meshPhongMaterial color='red' />
             <meshStandardMaterial 
             map={earthClear} 

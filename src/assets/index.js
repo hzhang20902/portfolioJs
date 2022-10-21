@@ -9,7 +9,11 @@ import scene from "./scene.png";
 import mockup from "./mockup.png";
 import absEarth from './absEarth.png';
 import muiLogo from './muilogo.png';
-
+import psqlLogo from './psql.png';
+import javaLogo from './java.png';
+import springboot from './springboot.png';
+import threelogo from './threelogo.png';
+import tailwind from './tailwindlogo.png'
 
 export default {
   absEarth,
@@ -19,8 +23,13 @@ export default {
   expo,
   expo02,
   javascript,
+  javaLogo,
   react,
   scene,
   mockup,
   muiLogo,
+  psqlLogo,
+  springboot,
+  threelogo,
+  tailwind,
 };

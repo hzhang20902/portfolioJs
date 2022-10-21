@@ -52,7 +52,7 @@ export default function NavBar() {
       <Toolbar variant='dense' sx={{ backgroundColor: "#3F5BE5", opacity: '1' }}>
         <BasicMenu />
 
-        <UButton className={styles.btnText}>
+        <UButton className={styles.mobileBtn}>
           <Link to={"/"} className="nav-link">
             <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
               Welcome
@@ -60,7 +60,7 @@ export default function NavBar() {
           </Link>
         </UButton>
 
-        <UButton className={styles.btnText}>
+        <UButton className={styles.mobileBtn}>
           <Link to={"/home"} className="nav-link">
             <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
             About
@@ -68,7 +68,7 @@ export default function NavBar() {
           </Link>
         </UButton>
 
-        <UButton className={styles.btnText}>
+        <UButton className={styles.mobileBtn}>
            <a target="_blank" rel='noreferrer' href="https://www.venmo.com/u/figgsboson" className='nav-link'>
             <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
               Donate
