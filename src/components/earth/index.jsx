@@ -20,6 +20,8 @@ export function Earth(){
     const earthRef = useRef();
     const cloudsRef = useRef();
 
+    const intPos = [-4, 0, 30]
+
     useFrame(( { clock } )=>{
         const elapsedTime = clock.getElapsedTime();
         earthRef.current.rotation.y = elapsedTime / 8;
@@ -28,11 +30,11 @@ export function Earth(){
     
     return <>
 
-        {/* <ambientLight intensity={0.8} /> */}
+       
         <pointLight 
         color='#f6f3ea' 
-        position={[15, 7, 40]} 
-        intensity={9} 
+        position={[6, 12, 60]} 
+        intensity={3.1} 
         />
 
         <Stars 
@@ -43,7 +45,7 @@ export function Earth(){
         saturation={0} 
         fade={true}/>
 
-        <mesh position={[-5,0,-3]} ref={cloudsRef}>
+        <mesh position={intPos} ref={cloudsRef}>
             <sphereGeometry args={[3.025, 32, 32, 16]} />
             <meshPhongMaterial 
             map={clouds}
@@ -53,7 +55,7 @@ export function Earth(){
             side={THREE.DoubleSide} />
         </mesh>
 
-        <mesh position={[-5,0,-3]} ref={earthRef}>
+        <mesh position={intPos} ref={earthRef}>
             <sphereGeometry args={[3, 32, 32, 16 ]} />
             <meshPhongMaterial color='red' />
             <meshStandardMaterial 

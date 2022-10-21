@@ -18,6 +18,7 @@ import BoardUser from "./components/boards/BoardUser";
 import Register from "./components/Register";
 import NewLogin from "./components/NewLogin";
 import { Earth } from './components/earth'
+import WavingModel from "./components/WavingModel";
 
 
 
@@ -45,15 +46,17 @@ const App = () => {
           <Route path="/admin" element={<BoardAdmin/>} />
         </Routes>
         <Canvas 
-        camera={{ position: [0, 0, 10], fov: 50, isPerspectiveCamera: true}}
+        camera={{ position: [0, 0, 40], fov: 50, isPerspectiveCamera: true}}
         style={{
         backgroundColor: 'black',
         width: "100%",
         height: "100vh",
         "object-fit": 'cover',
       }}>
+      {/* <gridHelper position={[0,-5,0]}/> */}
         <Suspense fallback={null}>
           <Earth />
+          <WavingModel position={[-2.5,-1.7,36]}/>
         </Suspense>
         <OrbitControls />
       </Canvas>
