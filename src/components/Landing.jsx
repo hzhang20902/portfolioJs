@@ -1,9 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Suspense } from "react";
 import styled from "styled-components";
 import eklutnaWide from '../assets/eklutnaWide.mp4';
 import { LandingContent } from "./ContentOverlay";
-import styles from "../styles/Global";
+import { Canvas } from "@react-three/fiber";
+import WavingModel from "./WavingModel";
+import { OrbitControls } from "@react-three/drei";
 
     const TopSectionContainer = styled.div`
     position: absolute;
@@ -40,57 +42,39 @@ import styles from "../styles/Global";
     text-shadow: 5px 9px 50px black;
 `;
 
-    const UButton = styled.button`
-    outline: none;
-    border: none;
-    background-color: rgba(13, 78, 217, 0.94);
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 8px;
-    padding: 8px 2em;
-    margin-top: 3em;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: all 350ms ease-in-out;
-
-    &:hover {
-        background-color: transparent;
-        border: 2px solid rgba(13, 78, 217, 0.94);
-    }
-`;
 
 const Landing = () => {
-
     return (
-       <TopSectionContainer>
-        <div className="main">
-        <div className="overlay"></div>
-        <video src={eklutnaWide} autoPlay loop muted />
-        
-        <div className='content fadeRightMini'>
-       
-            <Logo>
-                Welcome to My Portfolio Hub
-            </Logo>
-
-            <div>
-             <Slogan>
-                by Henry Zhang
-             </Slogan>
-            </div>
-
-            <div className="content">
-            <Link to={"/home"}>
-                <UButton>
-                    Enter
-                </UButton>
-                </Link>
-            </div> 
-        </div>
-        <LandingContent />
+        <TopSectionContainer>
+            <div className="main">
+                <div className="overlay"></div>
+                <video src={eklutnaWide} autoPlay loop muted />
             
-        </div>
+                <div className='content fadeRightMini'>
+                    <Logo>
+                        Welcome to My Portfolio Hub
+                    </Logo>   
+                    <Slogan>
+                        by Henry Zhang
+                    </Slogan>
+
+                    <div className="content">
+                    <Canvas 
+                        camera={{ position: [1, 0, 13], fov: 20, isPerspectiveCamera: false}}
+                        style={{width: "100%", height: '100%', "object-fit": 'cover'}}>
+                        <Suspense fallback={null}>
+                            <pointLight color='#f6f3ea' position={[6, 12, 25]} intensity={1.8}  />
+                            <WavingModel position={[-0.75,-1.5,.6]}/>
+                        </Suspense>
+                        <OrbitControls 
+                            enableZoom={false}
+                            enablePan={false}
+                        />
+                    </Canvas>
+                    </div>
+                </div>
+            <LandingContent />
+            </div>
         </TopSectionContainer>
     )
 }

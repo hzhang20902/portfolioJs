@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState, Suspense } from 'react';
+import { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -16,7 +16,6 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import AuthService from '../services/auth.service';
 import styled from 'styled-components';
-import assets from '../assets';
 
 const TopSectionContainer = styled.div`
     position: absolute;

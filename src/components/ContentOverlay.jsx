@@ -2,11 +2,12 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import UserService from '../services/user.service';
 import assets from '../assets';
+import styles from '../styles/Global';
 
 import SectionWrapper from './hero/SectionWrapper';
 import Features from './hero/Features';
 import FeatureExt from './hero/FeatureExt';
-
+import Transfer from './hero/Transfer';
 
 
 export const HomeContent = () => {
@@ -48,7 +49,7 @@ export const LandingContent = () => {
     return (
       <>
       <Features 
-        title="Technologies"
+        title="Tech Stacks"
         pText="Client side is designed with ReactJs, ThreeJs, and Tailwind CSS."
         iconUrl1={assets.react}
         iconText1="React.js"
@@ -65,6 +66,10 @@ export const LandingContent = () => {
         iconText2="Spring Boot"
         iconUrl3={assets.psqlLogo}
         iconText3="PostgreSQL"
+      />
+      <Transfer 
+        title='Explore My Development'
+        reverseBtn
       />
       </>
     )

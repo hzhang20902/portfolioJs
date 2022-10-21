@@ -3,7 +3,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export default function WavingModel({ ...props }) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/waving.glb')
+  const { nodes, materials, animations } = useGLTF('./greeting.glb')
   const { actions } = useAnimations(animations, group)
 
 
@@ -13,7 +13,7 @@ export default function WavingModel({ ...props }) {
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Scene" rotation={[0, 0.8, 0]}>
+      <group name="Scene" rotation={[0, 0.3, 0]}>
         <group name="Armature">
           <primitive object={nodes.Hips} />
           <skinnedMesh name="Wolf3D_Body" geometry={nodes.Wolf3D_Body.geometry} material={materials.Wolf3D_Body} skeleton={nodes.Wolf3D_Body.skeleton} />
@@ -32,4 +32,4 @@ export default function WavingModel({ ...props }) {
   )
 }
 
-useGLTF.preload('/waving.glb')
+useGLTF.preload('./greeting.glb')

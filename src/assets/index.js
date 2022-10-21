@@ -5,7 +5,7 @@ import expo from "./expo.png";
 import expo02 from "./expo02.png";
 import javascript from "./javascript.png";
 import react from "./reactjs.png";
-import scene from "./scene.png";
+import screens from "./demoscreens.png";
 import mockup from "./mockup.png";
 import absEarth from './absEarth.png';
 import muiLogo from './muilogo.png';
@@ -25,7 +25,7 @@ export default {
   javascript,
   javaLogo,
   react,
-  scene,
+  screens,
   mockup,
   muiLogo,
   psqlLogo,

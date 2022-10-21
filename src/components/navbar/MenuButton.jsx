@@ -94,7 +94,7 @@ const BasicMenu = () => {
 
 
         {!currentUser && (
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/login">Login</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/login" state={true}>Login</MenuItem>
         )}
 
         {!currentUser && (

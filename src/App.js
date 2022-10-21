@@ -2,7 +2,7 @@ import React from "react";
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import './index.css';
@@ -18,15 +18,15 @@ import BoardUser from "./components/boards/BoardUser";
 import Register from "./components/Register";
 import NewLogin from "./components/NewLogin";
 import { Earth } from './components/earth'
-import WavingModel from "./components/WavingModel";
 
 
 
 const App = () => {
+  const location = useLocation();
 
   const CanvasContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: black;
   flexGrow: 1;
   object-fit: cover;
@@ -34,7 +34,7 @@ const App = () => {
 
   return (
     <CanvasContainer>
-    <NavBar />
+      <NavBar />
         <Routes>
           <Route path="/" element={<Landing/>} />
           <Route path="/home" element={<Home/>} />
@@ -45,23 +45,20 @@ const App = () => {
           <Route path="/mod" element={<BoardModerator/>} />
           <Route path="/admin" element={<BoardAdmin/>} />
         </Routes>
-        <Canvas 
+        {location.state && (<Canvas 
         camera={{ position: [0, 0, 40], fov: 50, isPerspectiveCamera: true}}
         style={{
         backgroundColor: 'black',
         width: "100%",
-        height: "100vh",
-        "object-fit": 'cover',
-      }}>
-      {/* <gridHelper position={[0,-5,0]}/> */}
+        "object-fit": 'cover'}}
+        >
         <Suspense fallback={null}>
           <Earth />
-          <WavingModel position={[-2.5,-1.7,36]}/>
         </Suspense>
         <OrbitControls />
-      </Canvas>
-    
+      </Canvas>)}
     </CanvasContainer>
+    
   );
 };
 

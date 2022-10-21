@@ -21,6 +21,7 @@ transition: all 350ms ease-in-out;
 
 &:hover {
     background-color: transparent;
+    color: black;
     border: 2px solid rgba(13, 78, 217, 0.94);
 }
 
