@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from '../../styles/Global'
-import assets from '../../assets'
 import { Link } from 'react-router-dom'
 import { Typography } from '@mui/material'
 import styled from 'styled-components'
@@ -27,7 +26,7 @@ transition: all 350ms ease-in-out;
 
 `
 
-const SectionWrapper = ({ title, description, showBtn, mockupImg, banner, reverse, route, btnText }) => {
+const SectionWrapper = ({ title, description, showBtn, mockupImg, banner, reverse, route, btnText, demoVid }) => {
   return (
     <div className={`
     min-h-screen 
@@ -37,7 +36,7 @@ const SectionWrapper = ({ title, description, showBtn, mockupImg, banner, revers
         <div className={`
         flex items-center 
         ${reverse? styles.boxReverseClass : styles.boxClass} 
-        w-10/12 sm:w-full minmd:w-3/4`}>
+        w-11/12 sm:w-full minmd:w-3/4`}>
             <div className={`
             ${styles.descDiv} 
             ${reverse? "fadeRightMini" : "fadeLeftMini"}
@@ -48,7 +47,7 @@ const SectionWrapper = ({ title, description, showBtn, mockupImg, banner, revers
             <p className={`${styles.descriptionText}`}>{description}</p>
             {showBtn && (
               <UButton>
-                <Link to={route} className="nav-link">
+                <Link to={route} className="nav-link" state={true}>
                   <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
                     {btnText}
                   </Typography>
@@ -57,12 +56,21 @@ const SectionWrapper = ({ title, description, showBtn, mockupImg, banner, revers
             )}
             </div>
             <div className={`flex-1 ${styles.flexCenter} p-8 sm:px-0`}>
-            <img
-            src={mockupImg} 
-            alt="mockup" 
-            className={`
-            ${reverse? "fadeRightMini" : "fadeLeftMini"}
-            ${styles.sectionImg}`} />
+              {mockupImg && (<img
+                  src={mockupImg} 
+                  alt="mockup" 
+                  className={`
+                  ${reverse? "fadeRightMini" : "fadeLeftMini"}
+                  ${styles.sectionImg}`} />)}
+              {demoVid && (<video 
+                  src={demoVid}
+                  alt="video"
+                  className={`
+                  ${reverse? "fadeRightMini" : "fadeLeftMini"}
+                  ${styles.sectionImg}`}
+                  loop
+                  muted
+                  autoPlay />)}
             </div>
         </div>
     </div>

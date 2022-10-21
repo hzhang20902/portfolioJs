@@ -6,15 +6,6 @@ import { isEmail } from "validator";
 import AuthService from "../services/auth.service";
 import styled from "styled-components";
 
-const required = (value) => {
-    if (!value){
-        return (
-            <div className="alert alert-danger" role="alert">
-                This field is required!
-            </div>
-        );
-    }
-};
 
 const TopSectionContainer = styled.div`
     position: absolute;
@@ -51,7 +42,15 @@ const UButton = styled.button`
     }
 
 `
-
+const required = (value) => {
+    if (!value){
+        return (
+            <div className="alert alert-danger" role="alert">
+                This field is required!
+            </div>
+        );
+    }
+};
 
 const validEmail = (value) => {
     if(!isEmail(value)){
@@ -136,7 +135,7 @@ const Register = () => {
     return(
        <TopSectionContainer>
             <div className="card card-container">
-                <img src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                <img src="https://source.unsplash.com/random"
                 alt="profile-img"
                 className="profile-img-card"
                 />

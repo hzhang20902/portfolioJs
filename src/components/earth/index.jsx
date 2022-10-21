@@ -33,8 +33,8 @@ export function Earth(){
        
         <pointLight 
         color='#f6f3ea' 
-        position={[6, 12, 60]} 
-        intensity={3.1} 
+        position={[7, 10, 50]} 
+        intensity={5.1} 
         />
 
         <Stars 

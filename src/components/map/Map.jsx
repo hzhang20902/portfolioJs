@@ -1,5 +1,5 @@
 // import React, { useRef, Suspense } from "react";
-// // import { useCreateMap } from "./useCreateMap";
+// import { useCreateMap } from "./useCreateMap";
 // import { useSceneMap } from "./useSceneMap";
 // import { makeStyles } from '@material-ui/core/styles';
 
@@ -19,7 +19,7 @@
 //     const classes = useStyles()
 
 //     const mapRef = useRef(null);
-//     // useCreateMap(mapRef);
+//     useCreateMap(mapRef);
 //     useSceneMap(mapRef);
 
 //     return (

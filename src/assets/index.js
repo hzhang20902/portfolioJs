@@ -13,7 +13,9 @@ import psqlLogo from './psql.png';
 import javaLogo from './java.png';
 import springboot from './springboot.png';
 import threelogo from './threelogo.png';
-import tailwind from './tailwindlogo.png'
+import tailwind from './tailwindlogo.png';
+import lake from './eklutnaWide.mp4'
+
 
 export default {
   absEarth,
@@ -32,4 +34,5 @@ export default {
   springboot,
   threelogo,
   tailwind,
+  lake,
 };

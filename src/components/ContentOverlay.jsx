@@ -2,12 +2,11 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import UserService from '../services/user.service';
 import assets from '../assets';
-import styles from '../styles/Global';
 
 import SectionWrapper from './hero/SectionWrapper';
 import Features from './hero/Features';
-import FeatureExt from './hero/FeatureExt';
 import Transfer from './hero/Transfer';
+
 
 
 export const HomeContent = () => {
@@ -50,7 +49,7 @@ export const LandingContent = () => {
       <>
       <Features 
         title="Tech Stacks"
-        pText="Client side is designed with ReactJs, ThreeJs, and Tailwind CSS."
+        pText="Client side designed with ReactJs, ThreeJs, and Tailwind CSS."
         iconUrl1={assets.react}
         iconText1="React.js"
         iconUrl2={assets.threelogo}
@@ -58,7 +57,8 @@ export const LandingContent = () => {
         iconUrl3={assets.tailwind}
         iconText3="Tailwind CSS"
       />
-      <FeatureExt 
+      <Features 
+        title={null}
         pText="Server side built with Java, SpringBoot, and PostgreSQL."
         iconUrl1={assets.javaLogo}
         iconText1="Java"
@@ -68,21 +68,88 @@ export const LandingContent = () => {
         iconText3="PostgreSQL"
       />
       <Transfer 
-        title='Explore My Development'
+        title='Explore Tech'
         reverseBtn
       />
       </>
     )
   }
 
-export const Project2Content = () => {
+export const AuthContent = () => {
     return (
-      <div>Content2</div>
+      <>
+        <SectionWrapper 
+          title='Shelter App'
+          description="Built in LaunchCode's LiftOff program with a team of three other developers"
+          reverse
+          demoVid={assets.lake}
+        />
+      </>
     )
   }
   
-export const Project3Content = () => {
+export const AdminAccess = () => {
+  const [content, setContent]  = useState([]);
+
+    useEffect(() => {
+        UserService.getAdminBoard().then(
+            (response) => {
+                setContent(response.data);
+            },
+            (error) => {
+                const _content = 
+                (error.response && error.response.data && error.response.data.message) ||
+                error.message ||
+                error.toString();
+                setContent(_content);
+            }
+        );
+    }, []);
+
     return (
-        <div>Content3</div>
+        <> 
+        {content.slice(content.length-4, content.length).map((key) => (
+          <Features
+          title={key.id}
+          pText={key.username} 
+          iconUrl1="https://source.unsplash.com/random"
+          iconText1={key.email}
+          showCard2
+          showCard3
+          />))}
+        </>
+    )
+}
+
+export const ModBoard = () => {
+  const [content, setContent]  = useState([]);
+
+  useEffect(() => {
+      UserService.getModeratorBoard().then(
+          (response) => {
+              setContent(response.data);
+          },
+          (error) => {
+              const _content = 
+              (error.response && error.response.data && error.response.data.message) ||
+              error.message ||
+              error.toString();
+              setContent(_content);
+          }
+      );
+  }, []);
+
+    return (
+        <> 
+        {content.slice(content.length-4, content.length).map((key) => (
+          <Features
+          title={key.id}
+          pText={key.username} 
+          iconUrl1="https://source.unsplash.com/random"
+          iconText1="ADMIN ONLY"
+          showCard2
+          showCard3
+          />))}
+        </>
     )
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import assets from '../../assets';
 import styles from '../../styles/Global';
 
 const FeatureCard = ({ iconUrl, iconText }) => (
@@ -13,7 +12,18 @@ const FeatureCard = ({ iconUrl, iconText }) => (
   </div>
 );
 
-const Features = ({ pText, title, iconUrl1, iconText1, iconUrl2, iconText2, iconUrl3, iconText3 }) => {
+const Features = ({ 
+  pText, 
+  title, 
+  iconUrl1, 
+  iconText1, 
+  showCard2,
+  iconUrl2, 
+  iconText2, 
+  showCard3,
+  iconUrl3, 
+  iconText3 }) => {
+
   return (
     <div className={`
     ${styles.section}
@@ -40,14 +50,14 @@ const Features = ({ pText, title, iconUrl1, iconText1, iconUrl2, iconText2, icon
             iconUrl={iconUrl1}
             iconText={iconText1}
           />
-          <FeatureCard 
+          {!showCard2 && (<FeatureCard 
             iconUrl={iconUrl2}
             iconText={iconText2}
-          />
-          <FeatureCard 
+          />)}
+          {!showCard3 && (<FeatureCard 
             iconUrl={iconUrl3}
             iconText={iconText3}
-          />
+          />)}
 
         </div>
         

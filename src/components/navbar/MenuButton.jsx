@@ -66,7 +66,7 @@ const BasicMenu = () => {
      
         PaperProps={{
           style: {
-            width: 300,
+            width: 360,
           }
         }}
       >
@@ -85,13 +85,12 @@ const BasicMenu = () => {
         )}
 
         {currentUser && showAdminBoard && (
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/mod">Admin Access</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/admin">*ADMIN ACCESS*</MenuItem>
         )}
 
         {currentUser && (
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/login" onClick={logOut}>Logout</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/login" state={true} onClick={logOut}>Logout</MenuItem>
         )}
-
 
         {!currentUser && (
         <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/login" state={true}>Login</MenuItem>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Suspense } from "react";
 import styled from "styled-components";
-import eklutnaWide from '../assets/eklutnaWide.mp4';
+import assets from "../assets";
 import { LandingContent } from "./ContentOverlay";
 import { Canvas } from "@react-three/fiber";
 import WavingModel from "./WavingModel";
@@ -48,7 +48,7 @@ const Landing = () => {
         <TopSectionContainer>
             <div className="main">
                 <div className="overlay"></div>
-                <video src={eklutnaWide} autoPlay loop muted />
+                <video src={assets.lake} autoPlay loop muted />
             
                 <div className='content fadeRightMini'>
                     <Logo>
@@ -63,7 +63,7 @@ const Landing = () => {
                         camera={{ position: [1, 0, 13], fov: 20, isPerspectiveCamera: false}}
                         style={{width: "100%", height: '100%', "object-fit": 'cover'}}>
                         <Suspense fallback={null}>
-                            <pointLight color='#f6f3ea' position={[6, 12, 25]} intensity={1.8}  />
+                            <pointLight color='#f6f3ea' position={[6, 12, 15]} intensity={1.8}  />
                             <WavingModel position={[-0.75,-1.5,.6]}/>
                         </Suspense>
                         <OrbitControls 

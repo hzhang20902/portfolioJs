@@ -17,7 +17,7 @@ import BoardModerator from "./components/boards/BoardModerator";
 import BoardUser from "./components/boards/BoardUser";
 import Register from "./components/Register";
 import NewLogin from "./components/NewLogin";
-import { Earth } from './components/earth'
+import { Earth } from './components/earth';
 
 
 

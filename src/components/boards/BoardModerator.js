@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import UserService from "../../services/user.service";
+import React from 'react';
 import styled from "styled-components";
 import { makeStyles } from '@material-ui/core/styles'
-import { List, Divider, ListItem, Grid, Paper, Typography } from "@mui/material";
+import { Grid, Paper, Typography } from "@mui/material";
+import { ModBoard } from "../ContentOverlay";
 
 const TopSectionContainer = styled.div`
     position: absolute;
@@ -39,19 +39,6 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
       },
     },
-    container: {
-      width: '800px',
-      margin: '5px 0',
-      padding: 0,
-      backgroundColor: 'transparent',
-      [theme.breakpoints.down('xs')]: {
-        width: '80%',
-        padding: '1px'
-      }
-    },
-    margin: {
-      marginTop: 20,
-    },
     padding: {
       padding: 5,
       display: 'flex',
@@ -74,49 +61,22 @@ const useStyles = makeStyles((theme) => ({
 
 const BoardModerator = () => {
     const classes = useStyles();
-    const [content, setContent]  = useState([]);
-
-    useEffect(() => {
-        UserService.getModeratorBoard().then(
-            (response) => {
-                setContent(response.data);
-            },
-            (error) => {
-                const _content = 
-                (error.response && error.response.data && error.response.data.message) ||
-                error.message ||
-                error.toString();
-                setContent(_content);
-            }
-        );
-    }, []);
-
+   
     return(
-        <TopSectionContainer className={classes.container}>
+        <TopSectionContainer className="fadeRightMini">
         <Paper elevation={10} className={classes.paper}>
                 <Grid item xs={12} md={6} className={classes.padding}>
                     <Typography>
                     <Logo sx={{ display: 'flex', flexDirection: 'column' }}>
-                        List of Users
+                        Member List
                     </Logo>
                     </Typography>
                 </Grid>
         </Paper>
-        <Paper elevation={10} className={classes.paper}>
-             <Grid container className={classes.gridContainer} columns={2}>
+        <Paper elevation={30} className="fadeLeftMini">
+             <Grid container className={classes.gridContainer} columns={4}>
                 <Grid item xs={12} md={6} className={classes.padding}>
-                    <List>
-                    {content.slice(content.length-4, content.length).map((key) => (
-                        <ListItem index={key.id}>
-                        ID: {key.id}
-                        <br />
-                        Username: {key.username}
-                        <br />
-                        Email: {key.email}
-                        <Divider />
-                        </ListItem>
-                    ))}
-                    </List>
+                    <ModBoard />
                 </Grid>
             </Grid>
         </Paper>
