@@ -48,7 +48,7 @@ const SectionWrapper = ({ title, description, showBtn, mockupImg, banner, revers
             {showBtn && (
               <UButton>
                 <Link to={route} className="nav-link" state={true}>
-                  <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
+                  <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: "bold", letterSpacing: 1 }}>
                     {btnText}
                   </Typography>
                 </Link>

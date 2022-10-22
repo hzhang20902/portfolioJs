@@ -75,41 +75,35 @@ function Copyright(props) {
 const theme = createTheme();
 
 const NewLogin = () => {
+  const [resMessage, setResMessage] = useState('');
+  const navigate = useNavigate();
+  const {
+      register,
+      handleSubmit,
+      formState: { errors },
+  } = useForm();
 
-    const navigate = useNavigate();
-
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
-
-
-    const [resMessage, setResMessage] = useState('');
-
-    const onSubmit = async(data) => {
-        let response = AuthService.login(data);
-        response.then((response) => {
-            setResMessage('');
-            if (response.status === 200){
-                console.log(response.data);
-
-            }
-            navigate('/home');
-            window.location.reload();
-        })
-        .catch((error) => {
-            console.log(error);
-            if (error.response.status === 500){
-                setResMessage('Something went wrong. Idk maybe try again? *shrugs*');
-            } else {
-                setResMessage(error.response.data.message);
-            }
-        });
-    }
+  const onSubmit = async(data) => {
+    let response = AuthService.login(data);
+    response.then((response) => {
+        setResMessage('');
+        if (response.status === 200){
+            console.log(response.data);
+        }
+        navigate('/home');
+        window.location.reload();
+    })
+    .catch((error) => {
+        console.log(error);
+        if (error.response.status === 500){
+            setResMessage('Something went wrong. Idk maybe try again? *shrugs*');
+        } else {
+            setResMessage(error.response.data.message);
+        }
+    });
+  }
 
   return (
-   
     <TopSectionContainer> 
    
     <ThemeProvider theme={theme}>
@@ -129,18 +123,16 @@ const NewLogin = () => {
             backgroundPosition: 'center',
           }}
         >
-          
         </Grid>
+
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <Box
-            sx={{
+          <Box sx={{
               my: 8,
               mx: 4,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-            }}
-          >
+            }}>
             <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
               <LockOutlinedIcon />
             </Avatar>

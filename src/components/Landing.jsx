@@ -6,6 +6,7 @@ import { LandingContent } from "./ContentOverlay";
 import { Canvas } from "@react-three/fiber";
 import WavingModel from "./WavingModel";
 import { OrbitControls } from "@react-three/drei";
+import { ThreeDots } from "./Loader";
 
     const TopSectionContainer = styled.div`
     position: absolute;
@@ -49,7 +50,6 @@ const Landing = () => {
             <div className="main">
                 <div className="overlay"></div>
                 <video src={assets.lake} autoPlay loop muted />
-            
                 <div className='content fadeRightMini'>
                     <Logo>
                         Welcome to My Portfolio Hub
@@ -60,9 +60,9 @@ const Landing = () => {
 
                     <div className="content">
                     <Canvas 
-                        camera={{ position: [1, 0, 13], fov: 20, isPerspectiveCamera: false}}
-                        style={{width: "100%", height: '100%', "object-fit": 'cover'}}>
-                        <Suspense fallback={null}>
+                        camera={{ position: [1, 0, 13], fov: 20 }}
+                        style={{width: "100%", height: '100%', objectFit: 'cover'}}>
+                        <Suspense fallback={<ThreeDots size='25'/>}>
                             <pointLight color='#f6f3ea' position={[6, 12, 15]} intensity={1.8}  />
                             <WavingModel position={[-0.75,-1.5,.6]}/>
                         </Suspense>
@@ -74,8 +74,10 @@ const Landing = () => {
                     </div>
                 </div>
             <LandingContent />
+           
             </div>
         </TopSectionContainer>
+  
     )
 }
 

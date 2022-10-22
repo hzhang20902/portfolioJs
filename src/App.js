@@ -3,8 +3,8 @@ import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Routes, Route, useLocation } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 
+import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css';
 import styled from "styled-components";
 
@@ -14,23 +14,22 @@ import Home from "./components/Home";
 import Profile from "./components/Profile";
 import BoardAdmin from "./components/boards/BoardAdmin";
 import BoardModerator from "./components/boards/BoardModerator";
-import BoardUser from "./components/boards/BoardUser";
 import Register from "./components/Register";
 import NewLogin from "./components/NewLogin";
 import { Earth } from './components/earth';
+import { Rings } from "./components/Loader";
 
 
+const CanvasContainer = styled.div`
+width: 100%;
+height: 100%;
+background-color: black;
+flexGrow: 1;
+object-fit: cover;
+`;
 
 const App = () => {
   const location = useLocation();
-
-  const CanvasContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  flexGrow: 1;
-  object-fit: cover;
-  `;
 
   return (
     <CanvasContainer>
@@ -41,7 +40,6 @@ const App = () => {
           <Route path="/login" element={<NewLogin/>} />
           <Route path="/register" element={<Register/>} />
           <Route path="/profile" element={<Profile/>} />
-          <Route path="/user" element={<BoardUser/>} />
           <Route path="/mod" element={<BoardModerator/>} />
           <Route path="/admin" element={<BoardAdmin/>} />
         </Routes>
@@ -50,9 +48,9 @@ const App = () => {
         style={{
         backgroundColor: 'black',
         width: "100%",
-        "object-fit": 'cover'}}
+        objectFit: 'cover'}}
         >
-        <Suspense fallback={null}>
+        <Suspense fallback={<Rings size='125' speed='0.5'/>}>
           <Earth />
         </Suspense>
         <OrbitControls />

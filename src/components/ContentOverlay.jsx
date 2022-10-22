@@ -9,6 +9,7 @@ import Transfer from './hero/Transfer';
 
 
 
+
 export const HomeContent = () => {
     const [content, setContent]  = useState("");
 
@@ -79,9 +80,48 @@ export const AuthContent = () => {
     return (
       <>
         <SectionWrapper 
-          title='Shelter App'
-          description="Built in LaunchCode's LiftOff program with a team of three other developers"
+          title='Project Title'
+          description="Project Description and technologies"
           reverse
+          showBtn
+          btnText='Ext Link'
+          route='/'
+          demoVid={assets.lake}
+        />
+        <SectionWrapper 
+          title='Project Title'
+          description="Project Description and technologies"
+          reverse
+          showBtn
+          btnText='Ext Link'
+          route='/'
+          demoVid={assets.lake}
+        />
+        <SectionWrapper 
+          title='Project Title'
+          description="Project Description and technologies"
+          reverse
+          showBtn
+          btnText='Ext Link'
+          route='/'
+          demoVid={assets.lake}
+        />
+        <SectionWrapper 
+          title='Project Title'
+          description="Project Description and technologies"
+          reverse
+          showBtn
+          btnText='Ext Link'
+          route='/'
+          demoVid={assets.lake}
+        />
+        <SectionWrapper 
+          title='Project Title'
+          description="Project Description and technologies"
+          reverse
+          showBtn
+          btnText='Ext Link'
+          route='/'
           demoVid={assets.lake}
         />
       </>
