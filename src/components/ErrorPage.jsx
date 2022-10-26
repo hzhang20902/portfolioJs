@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import SectionWrapper from "./hero/SectionWrapper";
+import SectionWrapper from "./higherorder/SectionWrapper";
 import assets from "../assets";
 
 const TopSectionContainer = styled.div`
@@ -17,11 +17,13 @@ const ErrorPage = () => {
 
     return(
         <TopSectionContainer>
+        <>
             <SectionWrapper 
                 title="404 Not Found"
                 mockupImg={assets.notFound}
-                reverse
+                banner='banner03'
             />
+        </>
         </TopSectionContainer>
     );
 };

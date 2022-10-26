@@ -129,14 +129,14 @@ const NewLogin = () => {
               flexDirection: 'column',
               alignItems: 'center',
             }}>
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
               <LockOutlinedIcon />
             </Avatar>
-            <Typography component="h1" variant="h5" margin='1em'>
+            <Typography component="h2" variant="h6" margin='1em'>
               Default Login: 
               "RuralJuror"
             </Typography>
-            <Typography component="h1" variant="h5" marginBottom={1}>
+            <Typography component="h2" variant="h6" marginBottom={1}>
               Password: "123031"
             </Typography>
             <form onSubmit={handleSubmit(onSubmit)} sx={{ mt: 1 }}>

@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 import UserService from '../services/user.service';
 import assets from '../assets';
 
-import SectionWrapper from './hero/SectionWrapper';
-import Features from './hero/Features';
-import Transfer from './hero/Transfer';
+import SectionWrapper from './higherorder/SectionWrapper';
+import Features from './higherorder/Features';
+import Transfer from './higherorder/Transfer';
 import AuthService from '../services/auth.service';
 
 
@@ -224,7 +224,7 @@ export const ModBoard = () => {
           title={key.id}
           pText={key.username} 
           iconUrl1="https://source.unsplash.com/random"
-          iconText1="ADMIN ONLY"
+          iconText1={key.email}
           showCard2
           showCard3
           />))}

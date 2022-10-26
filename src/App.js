@@ -11,14 +11,14 @@ import styled from "styled-components";
 import NavBar from "./components/navbar/NavBar";
 import Landing from "./components/Landing";
 import Home from "./components/Home";
-import Profile from "./components/Profile";
+import Profile from "./components/boards/Profile";
 import BoardAdmin from "./components/boards/BoardAdmin";
 import BoardModerator from "./components/boards/BoardModerator";
 import NewRegister from "./components/NewRegister";
 import NewLogin from "./components/NewLogin";
 import ErrorPage from "./components/ErrorPage";
 import { Earth } from './components/earth';
-import { Rings } from "./components/Loader";
+import { Rings } from "./components/higherorder/Loader";
 
 
 const CanvasContainer = styled.div`

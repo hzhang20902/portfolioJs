@@ -1,7 +1,7 @@
-import { data } from "autoprefixer";
 import axios from "axios";
 
 const API_URL = "https://jwtportfolio.herokuapp.com/api/auth/";
+
 const register = (data) => {
     return axios.post(API_URL + "signup", {
         username: data.username,

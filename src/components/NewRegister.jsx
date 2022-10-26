@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 
 import Typography from '@mui/material/Typography';
 
@@ -100,6 +100,8 @@ const NewRegister = () => {
         if (error.response.status === 500){
             setResMessage('Something went wrong. Idk maybe try again? *shrugs*');
        
+        } else if(error.response.status === 400) {
+            setResMessage(error.response.data.message)
         } else {
             setResMessage(error.response.data.message);
         }
@@ -133,8 +135,8 @@ const NewRegister = () => {
               flexDirection: 'column',
               alignItems: 'center',
             }}>
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
+            <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
+              <AppRegistrationIcon />
             </Avatar>
            
 
@@ -174,10 +176,10 @@ const NewRegister = () => {
                 label="Password"
                 type="password"
                 id="password"
-                {...register("password", { required: true })}
+                {...register("password", { required: true, min: '6' })}
               />
               <Typography sx={{ color: 'red', textAlign: 'center' }}>
-              {errors?.password && 'Password is required/must be 6 characters'}
+              {errors?.password && 'Password is required/minimum 6 characters'}
             </Typography>
              
               <UButton
@@ -191,10 +193,10 @@ const NewRegister = () => {
               <Typography sx={{ color: 'red', textAlign: 'center' }}>
               {resMessage && `${resMessage}`}
             </Typography>
-              <Grid container>
+              <Grid container sx={{ justifyContent:'center', alignItems: 'center'}}>
                 <Grid item>
                   <Link to='/login' state={true} variant="body2">
-                    Login
+                    Already registered?
                   </Link>
                 </Grid>
               </Grid>

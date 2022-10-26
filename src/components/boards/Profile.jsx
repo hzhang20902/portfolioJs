@@ -1,11 +1,11 @@
 import React from "react";
-import AuthService from "../services/auth.service";
+import AuthService from "../../services/auth.service";
 import styled from "styled-components";
-import BigWaveModel from "./BigWaveModel";
+import BigWaveModel from "../avatar/BigWaveModel";
 import { Suspense } from "react";
-import { Clock } from "./Loader";
+import { Clock } from "../higherorder/Loader";
 import { Canvas } from "@react-three/fiber";
-import SectionWrapper from "./hero/SectionWrapper";
+import SectionWrapper from "../higherorder/SectionWrapper";
 
 const TopSectionContainer = styled.div`
     position: absolute;

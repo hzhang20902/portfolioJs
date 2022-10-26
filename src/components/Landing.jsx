@@ -4,9 +4,9 @@ import styled from "styled-components";
 import assets from "../assets";
 import { LandingContent } from "./ContentOverlay";
 import { Canvas } from "@react-three/fiber";
-import WavingModel from "./WavingModel";
+import WavingModel from "./avatar/WavingModel";
 import { OrbitControls } from "@react-three/drei";
-import { ThreeDots } from "./Loader";
+import { ThreeDots } from "./higherorder/Loader";
 import { Link } from "react-router-dom";
 
     const TopSectionContainer = styled.div`

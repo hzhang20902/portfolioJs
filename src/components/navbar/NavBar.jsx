@@ -69,6 +69,22 @@ export default function NavBar() {
         </UButton>
 
         <UButton className={styles.mobileBtn}>
+          <Link to={"/about"} className="nav-link">
+            <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
+            About
+            </Typography>
+          </Link>
+        </UButton>
+
+        <UButton className={styles.mobileBtn}>
+          <Link to={"/contact"} className="nav-link">
+            <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
+            Contact
+            </Typography>
+          </Link>
+        </UButton>
+
+        <UButton className={styles.mobileBtn}>
            <a target="_blank" rel='noreferrer' href="https://www.venmo.com/u/figgsboson" className='nav-link'>
             <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
               Donate
