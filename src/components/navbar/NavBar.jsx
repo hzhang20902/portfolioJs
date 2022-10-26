@@ -63,7 +63,7 @@ export default function NavBar() {
         <UButton className={styles.mobileBtn}>
           <Link to={"/home"} className="nav-link">
             <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
-            About
+            Projects
             </Typography>
           </Link>
         </UButton>

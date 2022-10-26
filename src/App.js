@@ -55,6 +55,8 @@ const App = () => {
         </Suspense>
         <OrbitControls />
       </Canvas>)}
+
+      
     </CanvasContainer>
     
   );

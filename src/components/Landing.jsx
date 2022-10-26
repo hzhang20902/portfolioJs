@@ -61,7 +61,7 @@ const Landing = () => {
                     <div className="content">
                     <Canvas 
                         camera={{ position: [1, 0, 13], fov: 20 }}
-                        style={{width: "100%", height: '100%', objectFit: 'cover'}}>
+                        style={{width: "100%", height: '70%', objectFit: 'cover'}}>
                         <Suspense fallback={<ThreeDots size='25'/>}>
                             <pointLight color='#f6f3ea' position={[6, 12, 15]} intensity={1.8}  />
                             <WavingModel position={[-0.75,-1.5,.6]}/>

@@ -1,6 +1,11 @@
 import React from "react";
 import AuthService from "../services/auth.service";
 import styled from "styled-components";
+import BigWaveModel from "./BigWaveModel";
+import { Suspense } from "react";
+import { Clock } from "./Loader";
+import { Canvas } from "@react-three/fiber";
+import SectionWrapper from "./hero/SectionWrapper";
 
 const TopSectionContainer = styled.div`
     position: absolute;
@@ -11,25 +16,9 @@ const TopSectionContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 10%;
     z-index: 99;
     
 `;
-
-const Logo = styled.div`
-    margin: 0;
-    color: #fff;
-    font-weight: 700;
-    font-size: 45px;
-`;
-
-const Slogan = styled.h4`
-margin: 0;
-color: #fff;
-font-weight: 700;
-font-size: 15px;
-margin-top: 1em;
-`
 
 const Profile = () => {
 
@@ -37,33 +26,36 @@ const Profile = () => {
     
     return(
        <TopSectionContainer>
-                <Logo>
-                   {currentUser.username} Profile
-                </Logo>
-            <Slogan>
-                <strong>Token:</strong> {currentUser.accessToken.substring(0, 20)} ...{" "}
-                {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
-            </Slogan>
-            <Slogan>
-                <strong>Id:</strong> {currentUser.id}
-            </Slogan>
-            <Slogan>
-                <strong>Email:</strong> {currentUser.email}
-            </Slogan>
-            <Slogan>Authorities:</Slogan>
-            <Slogan>
-                {currentUser.roles &&
-                currentUser.roles.map((role, index) => 
-                <li key={index}>{role}</li>)}
-            </Slogan>
-
-            <h4>
-                This application uses JSON Web Tokens for authentication and authorization. 
-            </h4>
-            <h4>
-                Users register their information through a secure API with password hashing.
-                Their info is stored in a PostgreSQL database.
-            </h4>
+       <div className="main">
+       <div className="overlay"></div>
+            <div className="content" style={{ "z-index":'' }}>
+            <SectionWrapper
+            title={`${currentUser.username} Profile`} 
+            description={`Token: ${currentUser.accessToken.substring(0, 20)} ...${" "}
+            ${currentUser.accessToken.substr(currentUser.accessToken.length - 20)}`}
+            showDesc2
+            showDesc3
+            desc2="Welcome to your User profile! 
+            You are assigned a unique JSON Web Token for your credentials. 
+            Users register their information through a secure API with password hashing.
+            Their info is stored in a PostgreSQL db, hosted on Heroku."
+            desc3={`Email: ${currentUser.email}`}
+            banner='banner02'
+            mockupImg={null}
+            style={{ padding: '10%'}}
+            />
+            </div>
+          
+            {currentUser? (<Canvas 
+                camera={{ position: [1, 0, 13], fov: 20}}
+                style={{ width: "100%", objectFit: 'cover'}}>
+                <Suspense fallback={<Clock color='#fff' size='125' speed='0.5'/>}>
+                <BigWaveModel position={[1,-1,0]}/>
+                <pointLight color='#f6f3ea' position={[6, 12, 15]} intensity={1.3}  />
+                </Suspense>
+            </Canvas>) : null}
+          
+            </div>
         </TopSectionContainer>
     );
 };

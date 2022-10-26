@@ -8,13 +8,17 @@ import react from "./reactjs.png";
 import screens from "./demoscreens.png";
 import mockup from "./mockup.png";
 import absEarth from './absEarth.png';
-import muiLogo from './muilogo.png';
 import psqlLogo from './psql.png';
 import javaLogo from './java.png';
 import springboot from './springboot.png';
 import threelogo from './threelogo.png';
 import tailwind from './tailwindlogo.png';
 import lake from './eklutnaWide.mp4'
+import minecraft from './craftmines.mov'
+import shelterApp from './shelterappdemo.mp4'
+import nftDemo from './nftExpoGo.mp4'
+import ecomDemo from './ecomDemo.mov'
+import vidChatDemo from './vidchatdemo.mov'
 
 
 export default {
@@ -29,10 +33,14 @@ export default {
   react,
   screens,
   mockup,
-  muiLogo,
+  minecraft,
   psqlLogo,
   springboot,
   threelogo,
   tailwind,
   lake,
+  shelterApp,
+  nftDemo,
+  ecomDemo,
+  vidChatDemo,
 };

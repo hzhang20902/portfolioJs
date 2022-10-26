@@ -90,7 +90,7 @@ const NewLogin = () => {
         if (response.status === 200){
             console.log(response.data);
         }
-        navigate('/home');
+        navigate('/profile', {state:false});
         window.location.reload();
     })
     .catch((error) => {
@@ -115,11 +115,7 @@ const NewLogin = () => {
           sm={4}
           md={7}
           sx={{
-            // backgroundImage: 'url("../assets/absEarth.png")',
             backgroundRepeat: 'no-repeat',
-            // backgroundColor: (t) =>
-            //   t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            // backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         >

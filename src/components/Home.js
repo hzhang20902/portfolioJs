@@ -1,7 +1,6 @@
 import React from "react";
-import { HomeContent, AuthContent } from "./ContentOverlay";
+import { HomeContent } from "./ContentOverlay";
 import styled from "styled-components";
-import { useLocation } from "react-router-dom";
 
 const TopSectionContainer = styled.div`
     position: absolute;
@@ -13,12 +12,11 @@ const TopSectionContainer = styled.div`
 `;
 
 const Home = () => {
-    const location = useLocation();
+
 
     return(
         <TopSectionContainer>
             <HomeContent />
-            {!location.state && (<AuthContent />)}
         </TopSectionContainer>
     );
 };

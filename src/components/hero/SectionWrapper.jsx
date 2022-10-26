@@ -26,7 +26,7 @@ transition: all 350ms ease-in-out;
 
 `
 
-const SectionWrapper = ({ title, description, showBtn, mockupImg, banner, reverse, route, btnText, demoVid }) => {
+const SectionWrapper = ({ title, description, showDesc2, desc2, showDesc3, desc3, showBtn, extLink, mockupImg, banner, reverse, route, btnText, demoVid }) => {
   return (
     <div className={`
     min-h-screen 
@@ -45,14 +45,25 @@ const SectionWrapper = ({ title, description, showBtn, mockupImg, banner, revers
             ${styles.h1Text}
             ${reverse? styles.blackText : styles.whiteText}`}>{title}</h1>
             <p className={`${styles.descriptionText}`}>{description}</p>
+            {showDesc2 && (<p className={`${styles.descriptionText}`}>{desc2}</p>)}
+            {showDesc3 && (<p className={`${styles.descriptionText}`}>{desc3}</p>)}
             {showBtn && (
-              <UButton>
-                <Link to={route} className="nav-link" state={true}>
+              <Link to={route} className="nav-link" state={true}>
+                <UButton>
                   <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: "bold", letterSpacing: 1 }}>
                     {btnText}
                   </Typography>
-                </Link>
-            </UButton>
+                </UButton>
+               </Link>
+            )}
+            {extLink && (
+              <a target="_blank" rel='noreferrer' href={route} className='nav-link'>
+                <UButton className={styles.btnPrimary}>
+                  <Typography sx={{ "font-weight": "bold"}}>
+                    {btnText}
+                  </Typography>
+                </UButton>
+              </a>
             )}
             </div>
             <div className={`flex-1 ${styles.flexCenter} p-8 sm:px-0`}>
