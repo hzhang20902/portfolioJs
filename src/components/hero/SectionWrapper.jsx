@@ -26,7 +26,7 @@ transition: all 350ms ease-in-out;
 
 `
 
-const SectionWrapper = ({ title, description, showDesc2, desc2, showDesc3, desc3, showBtn, extLink, mockupImg, banner, reverse, route, btnText, demoVid }) => {
+const SectionWrapper = ({ title, description, srcLink, gitUrl, showDesc2, desc2, showDesc3, desc3, showBtn, extLink, mockupImg, banner, reverse, route, btnText, demoVid }) => {
   return (
     <div className={`
     min-h-screen 
@@ -47,6 +47,7 @@ const SectionWrapper = ({ title, description, showDesc2, desc2, showDesc3, desc3
             <p className={`${styles.descriptionText}`}>{description}</p>
             {showDesc2 && (<p className={`${styles.descriptionText}`}>{desc2}</p>)}
             {showDesc3 && (<p className={`${styles.descriptionText}`}>{desc3}</p>)}
+            {srcLink && (<a target="_blank" rel='noreferrer' href={gitUrl} className='nav-link'>Source Code</a>)}
             {showBtn && (
               <Link to={route} className="nav-link" state={true}>
                 <UButton>

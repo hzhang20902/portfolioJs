@@ -10,7 +10,7 @@ import SectionWrapper from "./hero/SectionWrapper";
 const TopSectionContainer = styled.div`
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     bottom: 0;
     left: 0;
     display: flex;
@@ -31,18 +31,15 @@ const Profile = () => {
             <div className="content" style={{ "z-index":'' }}>
             <SectionWrapper
             title={`${currentUser.username} Profile`} 
-            description={`Token: ${currentUser.accessToken.substring(0, 20)} ...${" "}
-            ${currentUser.accessToken.substr(currentUser.accessToken.length - 20)}`}
+            description={`Token: ${currentUser.accessToken.substring(0, 18)} ...`}
             showDesc2
             showDesc3
-            desc2="Welcome to your User profile! 
-            You are assigned a unique JSON Web Token for your credentials. 
-            Users register their information through a secure API with password hashing.
-            Their info is stored in a PostgreSQL db, hosted on Heroku."
-            desc3={`Email: ${currentUser.email}`}
+            desc3="Welcome to your User profile! You can return to 'Projects' with logged in credentials.
+            Users register/authenticate through Spring Security, and are assigned a unique JSON Web Token.
+            Their info is stored in a PostgreSQL db, with relational USER ROLES to determine their access level."
+            desc2={`Email: ${currentUser.email}.`}
             banner='banner02'
             mockupImg={null}
-            style={{ padding: '10%'}}
             />
             </div>
           

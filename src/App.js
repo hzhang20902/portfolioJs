@@ -14,8 +14,9 @@ import Home from "./components/Home";
 import Profile from "./components/Profile";
 import BoardAdmin from "./components/boards/BoardAdmin";
 import BoardModerator from "./components/boards/BoardModerator";
-import Register from "./components/Register";
+import NewRegister from "./components/NewRegister";
 import NewLogin from "./components/NewLogin";
+import ErrorPage from "./components/ErrorPage";
 import { Earth } from './components/earth';
 import { Rings } from "./components/Loader";
 
@@ -38,10 +39,11 @@ const App = () => {
           <Route path="/" element={<Landing/>} />
           <Route path="/home" element={<Home/>} />
           <Route path="/login" element={<NewLogin/>} />
-          <Route path="/register" element={<Register/>} />
+          <Route path="/register" element={<NewRegister/>} />
           <Route path="/profile" element={<Profile/>} />
           <Route path="/mod" element={<BoardModerator/>} />
           <Route path="/admin" element={<BoardAdmin/>} />
+          <Route path="*" element={<ErrorPage/>} />
         </Routes>
         {location.state && (<Canvas 
         camera={{ position: [0, 0, 40], fov: 50, isPerspectiveCamera: true}}

@@ -1,8 +1,6 @@
 import homeHero from "./home_hero.png";
 import homeCards from "./home_cards.png";
 import feature from "./feature.png";
-import expo from "./expo.png";
-import expo02 from "./expo02.png";
 import javascript from "./javascript.png";
 import react from "./reactjs.png";
 import screens from "./demoscreens.png";
@@ -19,6 +17,7 @@ import shelterApp from './shelterappdemo.mp4'
 import nftDemo from './nftExpoGo.mp4'
 import ecomDemo from './ecomDemo.mov'
 import vidChatDemo from './vidchatdemo.png'
+import notFound from './notfound.png'
 
 
 export default {
@@ -26,8 +25,6 @@ export default {
   homeHero,
   homeCards,
   feature,
-  expo,
-  expo02,
   javascript,
   javaLogo,
   react,
@@ -43,4 +40,5 @@ export default {
   nftDemo,
   ecomDemo,
   vidChatDemo,
+  notFound,
 };

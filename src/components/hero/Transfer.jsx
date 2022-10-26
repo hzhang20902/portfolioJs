@@ -24,7 +24,7 @@ transition: all 350ms ease-in-out;
 }
 `;
 
-const Transfer = ({ desText, reverseBtn, title }) => {
+const Transfer = ({ srcLinkFront, srcLinkBack, showBtn, title }) => {
   return (
     <div className={`
     ${styles.section}
@@ -37,18 +37,15 @@ const Transfer = ({ desText, reverseBtn, title }) => {
           <h1 className={`
           ${styles.h1Text}
           ${styles.blackText}`}>{title}</h1>
-          <p className={`
-          ${styles.pText}
-          ${styles.blackText}`}>{desText}</p>
-        </div>
-        {reverseBtn? (<Link to={"/home"}>
+          {srcLinkFront && (<a target="_blank" rel='noreferrer' href="https://github.com/hzhang20902/portfolioJs" className='nav-link'>Client Source Code</a>)}
+          {srcLinkBack && (<a target="_blank" rel='noreferrer' href="https://github.com/hzhang20902/jwtSetup" className='nav-link'>Server Source Code</a>)}
+        {showBtn && (
+          <Link to={"/home"}>
           <UButton>
             Enter
           </UButton>
-        </Link>) : 
-        (<button className={styles.btnPrimary}
-        onClick={() => window.open('https://github.com/hzhang20902/reactn_nft_market', '_blank')}>Source Code</button>
-        )}
+        </Link>)}
+        </div>
         <div className={styles.flexCenter}>
           <img 
             src={assets.screens}

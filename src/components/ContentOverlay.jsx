@@ -53,6 +53,8 @@ export const HomeContent = () => {
           desc2="Next.js, React.js, Stripe API, Sanity.io"
           reverse
           extLink
+          srcLink
+          gitUrl="https://github.com/hzhang20902/ecommerceReact"
           btnText='Store Demo'
           route='https://ecommerce-react-hzhang20902.vercel.app/'
           demoVid={assets.ecomDemo}
@@ -65,6 +67,8 @@ export const HomeContent = () => {
           desc2="Three.js, React Three Fiber/Drei/Cannon"
           reverse
           extLink
+          srcLink
+          gitUrl="https://github.com/hzhang20902/minecraft3clone"
           btnText='App Demo'
           route='https://minecraft3clone-g8o6.vercel.app/'
           demoVid={assets.minecraft}
@@ -76,20 +80,11 @@ export const HomeContent = () => {
           desc2="React Native, Landing: React.js, Tailwind CSS"
           reverse
           extLink
+          srcLink
+          gitUrl="https://github.com/hzhang20902/reactn_nft_market"
           btnText='Landing Page'
           route='https://cold-waterfall-0983.on.fleek.co/'
           demoVid={assets.nftDemo}
-        />
-        <SectionWrapper 
-          title='Animal Shelter Volunteer App'
-          description="A collaborative CRUD app created using AGILE methodology. The app is designed for volunteers to signup and log activities with shelter animal cats and dogs; and the housekeeping tasks associated."
-          showDesc2
-          desc2="React.js, MUI, Java, SpringBoot, PSQL"
-          reverse
-          extLink
-          btnText='App Demo'
-          route='https://liftoffanimalshelterapp.vercel.app/'
-          demoVid={assets.shelterApp}
         />
         <SectionWrapper 
           title='Video Chat App'
@@ -98,17 +93,35 @@ export const HomeContent = () => {
           desc2="React.js/Express.js/Socket.io/WebRTC/Node.js"
           reverse
           extLink
+          srcLink
+          gitUrl="https://github.com/hzhang20902/videochatappfs"
           btnText='App Demo'
           route='https://effervescent-yeot-a07484.netlify.app/'
           mockupImg={assets.vidChatDemo}
         />
+        <SectionWrapper 
+          title='Animal Shelter Volunteer App'
+          description="A collaborative CRUD app created using AGILE methodology. The app is designed for volunteers to signup and log activities with shelter animal cats and dogs; and the housekeeping tasks associated."
+          showDesc2
+          desc2="React.js, MUI, Java, SpringBoot, PSQL"
+          reverse
+          extLink
+          srcLink
+          gitUrl="https://github.com/hzhang20902/animalShelterApp-frontend"
+          btnText='App Demo'
+          route='https://liftoffanimalshelterapp.vercel.app/'
+          demoVid={assets.shelterApp}
+        />
+        
         </>
     ) : (<SectionWrapper 
         title={(content)}
         description="It takes a village- sometimes, multiple villages. 
         The way independent artists work is through one simple idea: 
         By the people; for the people. 
-        See how artists everywhere collaborate anywhere- login below:"
+        See how artists everywhere collaborate anywhere."
+        showDesc2
+        desc2="Login below with the default credentials to see my work:"
         mockupImg={assets.absEarth}
         showBtn
         btnText='Login'
@@ -145,7 +158,9 @@ export const LandingContent = () => {
       />
       <Transfer 
         title='Explore Tech'
-        reverseBtn
+        showBtn
+        srcLinkFront
+        srcLinkBack
       />
       </>
     )
