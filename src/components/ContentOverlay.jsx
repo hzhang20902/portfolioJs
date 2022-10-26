@@ -95,7 +95,7 @@ export const HomeContent = () => {
           title='Video Chat App'
           description="A video chat app with no credentials stored or needed. Each refresh generates a new temporary ID which can be used to call someone else using the app."
           showDesc2
-          desc2="React.js/Express.js/Socket.io/WebRTC"
+          desc2="React.js/Express.js/Socket.io/WebRTC/Node.js"
           reverse
           extLink
           btnText='App Demo'
