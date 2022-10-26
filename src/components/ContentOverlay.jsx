@@ -100,7 +100,7 @@ export const HomeContent = () => {
           extLink
           btnText='App Demo'
           route='https://effervescent-yeot-a07484.netlify.app/'
-          demoVid={assets.vidChatDemo}
+          mockupImg={assets.vidChatDemo}
         />
         </>
     ) : (<SectionWrapper 

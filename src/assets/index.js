@@ -18,7 +18,7 @@ import minecraft from './craftmines.mov'
 import shelterApp from './shelterappdemo.mp4'
 import nftDemo from './nftExpoGo.mp4'
 import ecomDemo from './ecomDemo.mov'
-import vidChatDemo from './vidchatdemo.mov'
+import vidChatDemo from './vidchatdemo.png'
 
 
 export default {
