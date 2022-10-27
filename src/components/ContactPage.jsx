@@ -74,7 +74,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 const contactSubmit = (data) => {
-    return axios.post( {
+    return axios.post( "/api/contact", {
         name: data.name,
         email: data.email,
         message: data.message,
