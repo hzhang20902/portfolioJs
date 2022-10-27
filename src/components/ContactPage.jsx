@@ -74,7 +74,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 const contactSubmit = (data) => {
-    return axios.post("http://localhost:5000/contact", {
+    return axios.post("https://jwtportfoliofrontend.vercel.app/contact", {
         name: data.name,
         email: data.email,
         message: data.message,
