@@ -16,7 +16,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
-import app from '../api/server';
+
 
 
 
@@ -74,7 +74,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 const contactSubmit = (data) => {
-    return axios.post(app.router.post, {
+    return axios.post( {
         name: data.name,
         email: data.email,
         message: data.message,
