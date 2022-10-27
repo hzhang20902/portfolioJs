@@ -18,6 +18,8 @@ import styled from 'styled-components';
 import axios from 'axios';
 
 
+
+
 const TopSectionContainer = styled.div`
     position: absolute;
     width: 100%;
@@ -72,7 +74,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 const contactSubmit = (data) => {
-    return axios.post("https://jwtportfoliofrontend.vercel.app//contact", {
+    return axios.post("http://localhost:5000/contact", {
         name: data.name,
         email: data.email,
         message: data.message,
