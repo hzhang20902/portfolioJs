@@ -4,19 +4,18 @@ import { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import { Link } from 'react-router-dom';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import MessageIcon from '@mui/icons-material/Message';
 
 import Typography from '@mui/material/Typography';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import AuthService from '../services/auth.service';
 import styled from 'styled-components';
+import axios from 'axios';
 
 
 const TopSectionContainer = styled.div`
@@ -72,41 +71,45 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-
-
-const NewRegister = () => {
-
-
-  const [resMessage, setResMessage] = useState('');
-  const navigate = useNavigate();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-} = useForm();
-
-  const onSubmit = async(data) => {
-    let response = AuthService.register(data);
-    response.then((response) => {
-        setResMessage('');
-        if (response.status === 200){
-            console.log(response.data);
-        }
-        navigate('/login', {state:true});
-        window.location.reload();
-    })
-    .catch((error) => {
-        console.log(error);
-        if (error.response.status === 500){
-            setResMessage('Something went wrong. Idk maybe try again? *shrugs*');
-       
-        } else if(error.response.status === 400) {
-            setResMessage(error.response.data.message)
-        } else {
-            setResMessage(error.response.data.message);
-        }
+const contactSubmit = (data) => {
+    return axios.post("https://jwtportfoliofrontend.vercel.app//contact", {
+        name: data.name,
+        email: data.email,
+        message: data.message,
     });
-  }
+};
+
+
+
+const ContactPage = () => {
+
+    const [status, setStatus] = useState("Submit");
+    const [resMessage, setResMessage] = useState('');
+    const navigate = useNavigate();
+
+    const {
+      register,
+      handleSubmit,
+      formState: { errors },
+  } = useForm();
+
+    const onSubmit = async (data) => {
+        setStatus("Sending...");
+        setResMessage('');
+        let response = contactSubmit(data);
+        response.then((response) => {
+            if (response.status === 200) {
+                console.log(response.data);
+            }
+           
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+        alert((await response).data.status);
+        setStatus("Submit");
+        window.location.reload()
+    };
 
   return (
     <TopSectionContainer> 
@@ -136,7 +139,7 @@ const NewRegister = () => {
               alignItems: 'center',
             }}>
             <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
-              <AppRegistrationIcon />
+              <MessageIcon />
             </Avatar>
            
 
@@ -146,14 +149,14 @@ const NewRegister = () => {
                 type="text"
                 required
                 fullWidth
-                id="username"
-                label="Username"
-                name="username"
+                id="name"
+                label="Name"
+                name="name"
                 autoFocus
-                {...register("username", { required: true })}
+                {...register("name", { required: true })}
               />
               <Typography sx={{ color: 'red', textAlign: 'center' }}>
-              {errors?.username && 'Username already in use'}
+              {errors?.username && 'Name cannot be blank!'}
             </Typography>
               <TextField
                 margin="normal"
@@ -169,17 +172,20 @@ const NewRegister = () => {
               {errors?.password && 'Email is required'}
             </Typography>
             <TextField
-                margin="normal"
+                margin="dense"
                 required
                 fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                {...register("password", { required: true, min: '6' })}
+                multiline
+                minRows='6'
+                maxRows='10'
+                name="message"
+                label="Message"
+                type="text"
+                id="message"
+                {...register("message", { required: true })}
               />
               <Typography sx={{ color: 'red', textAlign: 'center' }}>
-              {errors?.password && 'Password is required/minimum 6 characters'}
+              {errors?.password && 'Message cannot be blank!'}
             </Typography>
              
               <UButton
@@ -188,16 +194,16 @@ const NewRegister = () => {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign Up
+                {status}
               </UButton>
               <Typography sx={{ color: 'red', textAlign: 'center' }}>
               {resMessage && `${resMessage}`}
             </Typography>
               <Grid container sx={{ justifyContent:'center', alignItems: 'center'}}>
                 <Grid item>
-                  <Link to='/login' state={true} variant="body2">
-                    Already registered?
-                  </Link>
+                  <a target="_blank" rel='noreferrer' href="https://www.venmo.com/u/figgsboson">
+                    Support my work!
+                  </a>
                 </Grid>
               </Grid>
               <Copyright sx={{ mt: 5 }} />
@@ -217,4 +223,4 @@ const NewRegister = () => {
   );
 };
 
-export default NewRegister;
+export default ContactPage;

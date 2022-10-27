@@ -14,6 +14,7 @@ import Home from "./components/Home";
 import Profile from "./components/boards/Profile";
 import BoardAdmin from "./components/boards/BoardAdmin";
 import BoardModerator from "./components/boards/BoardModerator";
+import ContactPage from "./components/ContactPage";
 import NewRegister from "./components/NewRegister";
 import NewLogin from "./components/NewLogin";
 import ErrorPage from "./components/ErrorPage";
@@ -43,6 +44,7 @@ const App = () => {
           <Route path="/profile" element={<Profile/>} />
           <Route path="/mod" element={<BoardModerator/>} />
           <Route path="/admin" element={<BoardAdmin/>} />
+          <Route path="/contact" element={<ContactPage/>} />
           <Route path="*" element={<ErrorPage/>} />
         </Routes>
         {location.state && (<Canvas 
