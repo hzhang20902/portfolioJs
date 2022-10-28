@@ -1,22 +1,23 @@
 import * as React from 'react';
 import { useState } from 'react';
+import { 
+  Avatar,
+  Box,
+  CssBaseline,
+  Grid,
+  Paper,
+  TextField,
+  Typography } from '@mui/material'
 
-import Avatar from '@mui/material/Avatar';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import { Link } from 'react-router-dom';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 
-import Typography from '@mui/material/Typography';
-
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
-import AuthService from '../services/auth.service';
 import styled from 'styled-components';
+
+import { useForm } from 'react-hook-form';
+import { useNavigate, Link } from 'react-router-dom';
+import AuthService from '../services/auth.service';
+
 
 
 const TopSectionContainer = styled.div`
@@ -75,15 +76,13 @@ const theme = createTheme();
 
 
 const NewRegister = () => {
-
-
   const [resMessage, setResMessage] = useState('');
   const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
-} = useForm();
+  } = useForm();
 
   const onSubmit = async(data) => {
     let response = AuthService.register(data);

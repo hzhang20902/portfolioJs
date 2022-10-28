@@ -13,7 +13,7 @@ import AuthService from '../../services/auth.service';
 const BasicMenu = () => {
   const sxStyling = {fontSize: 20, 
     fontWeight: 'bold',
-    color: 'rgba(14, 83, 197, 0.65)'}
+    color: 'rgba(13, 78, 217, 0.94)'}
 
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
   const [showAdminBoard, setShowAdminBoard] = useState(false);
@@ -30,6 +30,7 @@ const BasicMenu = () => {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -48,10 +49,8 @@ const BasicMenu = () => {
     <div>
       <IconButton
         size="large"
-        edge="start"
+ 
         color="inherit"
-      
-  
         onClick={handleClick}
       >
         <MenuIcon />
@@ -63,7 +62,6 @@ const BasicMenu = () => {
         anchorEl={anchorEl}
         open={open}
         onClick={handleClose}
-     
         PaperProps={{
           style: {
             width: 360,
@@ -72,41 +70,50 @@ const BasicMenu = () => {
       >
 
 
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/">Welcome</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/">
+        Welcome</MenuItem>
 
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/home">Projects</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/home">
+        Projects</MenuItem>
 
         {currentUser && (
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/profile">{currentUser.username}</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/profile">
+        {currentUser.username}</MenuItem>
         )}
 
         {currentUser && showModeratorBoard && (
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/mod">Mod Dash</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/mod">
+        Mod Dash</MenuItem>
         )}
 
         {currentUser && showAdminBoard && (
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/admin">*ADMIN ACCESS*</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/admin">
+        *ADMIN ACCESS*</MenuItem>
         )}
 
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/about">About</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/about">
+        About</MenuItem>
 
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/contact">Contact</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/contact">
+        Contact</MenuItem>
 
         {currentUser && (
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/login" state={true} onClick={logOut}>Logout</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/login" state={true} onClick={logOut}>
+        Logout</MenuItem>
         )}
 
         {!currentUser && (
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/login" state={true}>Login</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/login" state={true}>
+        Login</MenuItem>
         )}
 
         {!currentUser && (
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/register">Signup</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/register">
+        Signup</MenuItem>
         )}
 
-        
-
-        <MenuItem className='fadeRightMini' sx={sxStyling} component='a' target='_blank' href="https://www.venmo.com/u/figgsboson">Donate</MenuItem>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component='a' target='_blank' href="https://www.venmo.com/u/figgsboson">
+        Support</MenuItem>
 
       </Menu>
     </div>

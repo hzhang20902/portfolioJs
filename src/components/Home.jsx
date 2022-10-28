@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 const TopSectionContainer = styled.div`
     position: absolute;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

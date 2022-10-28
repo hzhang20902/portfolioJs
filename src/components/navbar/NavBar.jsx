@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 
-import { makeStyles } from '@material-ui/core/styles';
+
 import { Typography } from '@mui/material';
+
 
 import styled from 'styled-components';
 import styles from '../../styles/Global';
@@ -15,7 +16,7 @@ import BasicMenu from './MenuButton';
 const UButton = styled.button`
     outline: none;
     border: none;
-    background-color: #3F5BE5;
+    background-color: rgba(13, 78, 217, 0.94);
     color: #fff;
     font-size: 1px;
     border-radius: 3px;
@@ -33,28 +34,19 @@ const UButton = styled.button`
 
 `
 
-const useStyles = makeStyles((theme) => ({
- 
-  gridContainer: {
-    display: 'flex',
-    justifyContent: 'left',
-    alignItems: 'left',
-
-  },
-}));
 export default function NavBar() {
 
-  const classes = useStyles();
+  const sxStyle={ flexGrow: 1, fontWeight: "bold", letterSpacing: 1 }
 
   return (
   
-    <AppBar className={classes.gridContainer}>
-      <Toolbar variant='dense' sx={{ backgroundColor: "#3F5BE5", opacity: '1' }}>
+    <AppBar>
+      <Toolbar variant='dense' sx={{ backgroundColor: "rgba(13, 78, 217, 0.94)" }}>
         <BasicMenu />
 
         <UButton className={styles.mobileBtn}>
           <Link to={"/"} className="nav-link">
-            <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
+            <Typography variant="h6" sx={sxStyle}>
               Welcome
             </Typography>
           </Link>
@@ -62,7 +54,7 @@ export default function NavBar() {
 
         <UButton className={styles.mobileBtn}>
           <Link to={"/home"} className="nav-link">
-            <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
+            <Typography variant="h6" sx={sxStyle}>
             Projects
             </Typography>
           </Link>
@@ -70,7 +62,7 @@ export default function NavBar() {
 
         <UButton className={styles.mobileBtn}>
           <Link to={"/about"} className="nav-link">
-            <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
+            <Typography variant="h6" sx={sxStyle}>
             About
             </Typography>
           </Link>
@@ -78,7 +70,7 @@ export default function NavBar() {
 
         <UButton className={styles.mobileBtn}>
           <Link to={"/contact"} className="nav-link">
-            <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
+            <Typography variant="h6" sx={sxStyle}>
             Contact
             </Typography>
           </Link>
@@ -86,8 +78,8 @@ export default function NavBar() {
 
         <UButton className={styles.mobileBtn}>
            <a target="_blank" rel='noreferrer' href="https://www.venmo.com/u/figgsboson" className='nav-link'>
-            <Typography variant="h6" sx={{ flexGrow: 1, "font-weight": "bold", letterSpacing: 1 }}>
-              Donate
+            <Typography variant="h6" sx={sxStyle}>
+              Support
             </Typography>
           </a>
         </UButton>

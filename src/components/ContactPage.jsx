@@ -1,20 +1,22 @@
 import * as React from 'react';
 import { useState } from 'react';
+import { 
+  Avatar,
+  Box,
+  CssBaseline,
+  Grid,
+  Paper,
+  TextField,
+  Typography } from '@mui/material'
 
-import Avatar from '@mui/material/Avatar';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 import MessageIcon from '@mui/icons-material/Message';
 
-import Typography from '@mui/material/Typography';
-
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import styled from 'styled-components';
+
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+
 import axios from 'axios';
 
 
@@ -201,27 +203,22 @@ const ContactPage = () => {
               <Typography sx={{ color: 'red', textAlign: 'center' }}>
               {resMessage && `${resMessage}`}
             </Typography>
-              <Grid container sx={{ justifyContent:'center', alignItems: 'center'}}>
+              <Grid container sx={{ margin:'auto', justifyContent:'center', alignItems: 'center'}}>
                 <Grid item>
                   <a target="_blank" rel='noreferrer' href="https://www.venmo.com/u/figgsboson">
-                    Support my work!
+                    Support my work
                   </a>
                 </Grid>
               </Grid>
               <Copyright sx={{ mt: 5 }} />
             </form>
           </Box>
-        </Grid>
-        
-        
+        </Grid>        
       </Grid>
-      
-      
+  
     </ThemeProvider>
     
-    
-    </TopSectionContainer>
-    
+    </TopSectionContainer> 
   );
 };
 

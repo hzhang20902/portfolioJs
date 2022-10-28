@@ -13,7 +13,9 @@ const FeatureCard = ({ iconUrl, iconText }) => (
 );
 
 const Features = ({ 
+  banner,
   pText, 
+  pText2,
   title, 
   iconUrl1, 
   iconText1, 
@@ -28,20 +30,26 @@ const Features = ({
     <div className={`
     ${styles.section}
     ${styles.bgPrimary}
-    banner03`}>
+    ${banner}`}>
     
       <div className={`
       ${styles.subSection}
       flex-col
       text-center`}>
         <div>
-          <h1 className={`
+          {title && (<h1 className={`
           ${styles.h1Text}
-          ${styles.whiteText}`}>{title}</h1>
+          ${styles.whiteText}`}>{title}</h1>)}
+
           <p className={`
           ${styles.pText}
           ${styles.whiteText}`}>
           {pText}</p>
+
+          {pText2 && (<p className={`
+          ${styles.pText}
+          ${styles.whiteText}`}>
+          {pText2}</p>)}
         </div>
         
         <div className={styles.flexWrap}>

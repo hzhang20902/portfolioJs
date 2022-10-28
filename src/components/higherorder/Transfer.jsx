@@ -3,6 +3,7 @@ import styles from '../../styles/Global'
 import assets from '../../assets'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { Typography } from '@mui/material'
 
 const UButton = styled.button`
 outline: none;
@@ -40,11 +41,13 @@ const Transfer = ({ srcLinkFront, srcLinkBack, showBtn, title }) => {
           {srcLinkFront && (<a target="_blank" rel='noreferrer' href="https://github.com/hzhang20902/portfolioJs" className='nav-link'>Client Source Code</a>)}
           {srcLinkBack && (<a target="_blank" rel='noreferrer' href="https://github.com/hzhang20902/jwtSetup" className='nav-link'>Server Source Code</a>)}
         {showBtn && (
-          <Link to={"/home"}>
-          <UButton>
-            Enter
-          </UButton>
-        </Link>)}
+          <Link to={"/home"} className='nav-link'>
+            <UButton className={styles.btnPrimary}>          
+              <Typography variant="h5" sx={{ flexGrow: 1, fontWeight: "bold", letterSpacing: 1 }}>
+                Enter
+              </Typography>
+            </UButton>
+          </Link>)}
         </div>
         <div className={styles.flexCenter}>
           <img 

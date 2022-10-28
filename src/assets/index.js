@@ -13,10 +13,10 @@ import threelogo from './threelogo.png';
 import tailwind from './tailwindlogo.png';
 import lake from './eklutnaWide.mp4'
 import minecraft from './craftmines.mov'
-import shelterApp from './shelterappdemo.mp4'
+import shelterApp from './shelterappdemo.mov'
 import nftDemo from './nftExpoGo.mp4'
 import ecomDemo from './ecomDemo.mov'
-import vidChatDemo from './vidchatdemo.png'
+import vidChatDemo from './vidchat.mp4'
 import notFound from './notfound.png'
 
 

@@ -7,6 +7,7 @@ import SectionWrapper from './higherorder/SectionWrapper';
 import Features from './higherorder/Features';
 import Transfer from './higherorder/Transfer';
 import AuthService from '../services/auth.service';
+import { Grid } from '@mui/material';
 
 
 
@@ -47,8 +48,7 @@ export const HomeContent = () => {
         />
         <SectionWrapper 
           title='Webstore App'
-          description="A simple yet elegant webstore with stateful management of in-cart products, dynamic UI, and secure checkout.
-         (Use '42' repeating to checkout with test card)."
+          description="A simple yet elegant webstore with stateful management of in-cart products, dynamic UI, and Stripe checkout."
           showDesc2
           desc2="Next.js, React.js, Stripe API, Sanity.io"
           reverse
@@ -61,9 +61,7 @@ export const HomeContent = () => {
         />
         <SectionWrapper 
           title='Minecraft Clone'
-          description="A serverless, browser recreation of Minecraft that has stateful management for Cube implementation as well as saving a game to local storage. 
-          Keyboard mapped with custom hooks; saving and reset implemented with custom context."
-          showDesc2
+          description="A serverless, browser recreation of Minecraft that has stateful management for Cube generation and game saves to local storage."
           desc2="Three.js, React Three Fiber/Drei/Cannon"
           reverse
           extLink
@@ -87,21 +85,21 @@ export const HomeContent = () => {
           demoVid={assets.nftDemo}
         />
         <SectionWrapper 
-          title='Video Chat App'
-          description="A video chat app with no credentials stored or needed. Each refresh generates a new temporary ID which can be used to call someone else using the app."
+          title='Zoom Type App'
+          description="A lite-weight video chat app. Each refresh generates a new temp ID which can be used to call someone via WebRTC datastream."
           showDesc2
-          desc2="React.js/Express.js/Socket.io/WebRTC/Node.js"
+          desc2="React.js/Express.js/Socket.io/WebRTC"
           reverse
           extLink
           srcLink
           gitUrl="https://github.com/hzhang20902/videochatappfs"
           btnText='App Demo'
           route='https://effervescent-yeot-a07484.netlify.app/'
-          mockupImg={assets.vidChatDemo}
+          demoVid={assets.vidChatDemo}
         />
         <SectionWrapper 
           title='Animal Shelter Volunteer App'
-          description="A collaborative CRUD app created using AGILE methodology. The app is designed for volunteers to signup and log activities with shelter animal cats and dogs; and the housekeeping tasks associated."
+          description="CRUD app created using AGILE methodology on 4-person dev team for LaunchCode bootcamp. The app is designed for volunteers to signup and log activities with shelter animal cats and dogs; and the housekeeping tasks associated."
           showDesc2
           desc2="React.js, MUI, Java, SpringBoot, PSQL"
           reverse
@@ -145,9 +143,9 @@ export const LandingContent = () => {
         iconText2="Three.js"
         iconUrl3={assets.tailwind}
         iconText3="Tailwind CSS"
+        banner='banner03'
       />
       <Features 
-        title={null}
         pText="Server side built with Java, SpringBoot, and PostgreSQL."
         iconUrl1={assets.javaLogo}
         iconText1="Java"
@@ -155,6 +153,7 @@ export const LandingContent = () => {
         iconText2="Spring Boot"
         iconUrl3={assets.psqlLogo}
         iconText3="PostgreSQL"
+        banner='banner'
       />
       <Transfer 
         title='Explore Tech'
@@ -219,15 +218,18 @@ export const ModBoard = () => {
 
     return (
         <> 
-        {content.slice(content.length-4, content.length).map((key) => (
+        {content.map((key) => (
+          <Grid item xs={12} md={2} zeroMinWidth>
           <Features
-          title={key.id}
-          pText={key.username} 
+          pText2={key.username}
+          pText={`ID: ${key.id}`}
           iconUrl1="https://source.unsplash.com/random"
-          iconText1={key.email}
+          iconText1={`Email: ${key.email.substring(0,3)}****`}
           showCard2
           showCard3
-          />))}
+          banner='banner02'
+          />
+          </Grid>))}
         </>
     )
 }
