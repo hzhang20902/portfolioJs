@@ -197,7 +197,7 @@ const ContactPage = () => {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mx: 5 }}
+                sx={{ ml: 2 }}
               >
                 {status}
               </UButton>
