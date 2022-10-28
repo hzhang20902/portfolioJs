@@ -6,6 +6,7 @@ const TopSectionContainer = styled.div`
     position: absolute;
     width: 100%;
     display: flex;
+    padding-top: 5%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -17,9 +18,9 @@ const Home = () => {
 
     return(
         <TopSectionContainer>
-            <div>
+           
             <HomeContent />
-            </div>
+           
         </TopSectionContainer>
     );
 };

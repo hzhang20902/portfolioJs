@@ -113,6 +113,7 @@ const ContactPage = () => {
         alert((await response).data.status);
         setStatus("Submit");
         window.location.reload()
+        navigate('/')
     };
 
   return (
@@ -196,7 +197,6 @@ const ContactPage = () => {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
               >
                 {status}
               </UButton>
