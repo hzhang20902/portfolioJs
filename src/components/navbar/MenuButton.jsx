@@ -94,8 +94,6 @@ const BasicMenu = () => {
         <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/about">
         About</MenuItem>
 
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/contact">
-        Contact</MenuItem>
 
         {currentUser && (
         <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/login" state={true} onClick={logOut}>
@@ -112,8 +110,13 @@ const BasicMenu = () => {
         Signup</MenuItem>
         )}
 
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/contact">
+        Contact</MenuItem>
+        
         <MenuItem className='fadeRightMini' sx={sxStyling} component='a' target='_blank' href="https://www.venmo.com/u/figgsboson">
         Support</MenuItem>
+
+        
 
       </Menu>
     </div>

@@ -185,6 +185,7 @@ const NewRegister = () => {
                 type="submit"
                 fullWidth
                 variant="contained"
+                sx={{ mx: 5 }}
               >
                 Sign Up
               </UButton>
