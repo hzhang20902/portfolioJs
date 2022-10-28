@@ -43,9 +43,9 @@ const UButton = styled.button`
     font-weight: 700;
     border-radius: 8px;
     padding: 8px 2em;
-    margin-top: 2em;
+    margin: 2.5em;
     cursor: pointer;
-    margin-left: 2em;
+    
     border: 2px solid transparent;
     transition: all 250ms ease-in-out;
 
