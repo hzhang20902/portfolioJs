@@ -25,7 +25,7 @@ import axios from 'axios';
 const TopSectionContainer = styled.div`
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     bottom: 0;
     left: 0;
     display: flex;

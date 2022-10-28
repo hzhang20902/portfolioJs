@@ -17,7 +17,9 @@ const Home = () => {
 
     return(
         <TopSectionContainer>
+            <div>
             <HomeContent />
+            </div>
         </TopSectionContainer>
     );
 };
