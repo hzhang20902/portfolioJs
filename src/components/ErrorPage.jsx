@@ -5,7 +5,6 @@ import { SContainer } from "./higherorder/StyledComp";
 
 const ErrorPage = () => {
 
-
     return(
         <SContainer>
             <SectionWrapper 

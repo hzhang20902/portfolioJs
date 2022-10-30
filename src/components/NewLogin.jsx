@@ -15,28 +15,12 @@ import {
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import styled from 'styled-components';
-import { SButton } from './higherorder/StyledComp';
+import { SButton, MainContainer } from './higherorder/StyledComp';
 
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import AuthService from '../services/auth.service';
 
-
-
-const TopSectionContainer = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    z-index: 99;
-    object-fit: cover;
-    padding-top: 1.5em;
-    
-`;
 
 function Copyright(props) {
 
@@ -84,7 +68,7 @@ const NewLogin = () => {
   }
 
   return (
-    <TopSectionContainer> 
+    <MainContainer> 
    
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
@@ -186,7 +170,7 @@ const NewLogin = () => {
     </ThemeProvider>
     
     
-    </TopSectionContainer>
+    </MainContainer>
     
   );
 };

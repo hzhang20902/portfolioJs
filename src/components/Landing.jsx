@@ -7,21 +7,7 @@ import WavingModel from "./avatar/WavingModel";
 import { OrbitControls } from "@react-three/drei";
 import { ThreeDots } from "./higherorder/Loader";
 import { Link } from "react-router-dom";
-import { MainButton } from "./higherorder/StyledComp";
-
-    const TopSectionContainer = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    left: 0;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 99;
-`;
+import { MainButton, MainContainer } from "./higherorder/StyledComp";
 
     const Slogan = styled.div`
     margin: 0;
@@ -31,7 +17,6 @@ import { MainButton } from "./higherorder/StyledComp";
     margin-top: 2.5em;
     padding: 1em;
     text-shadow: 5px 9px 50px black;
-    
 `;
 
     const Logo = styled.h4`
@@ -46,7 +31,7 @@ import { MainButton } from "./higherorder/StyledComp";
 
 const Landing = () => {
     return (
-        <TopSectionContainer>
+        <MainContainer>
             <div className="main">
                 <div className="overlay"></div>
                 <video src={assets.lake} autoPlay loop muted />
@@ -81,7 +66,7 @@ const Landing = () => {
             <LandingContent />
            
             </div>
-        </TopSectionContainer>
+        </MainContainer>
   
     )
 }

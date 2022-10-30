@@ -1,21 +1,7 @@
 import styled from "styled-components";
 import { Grid, Paper } from "@mui/material";
 import { AdminAccess } from "../ContentOverlay";
-
-const TopSectionContainer = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    background-color: black;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10%;
-    z-index: 99;
-    
-`;
+import { BoardContainer } from "../higherorder/StyledComp";
 
 const Logo = styled.div`
     margin: 0;
@@ -27,7 +13,7 @@ const Logo = styled.div`
 const BoardAdmin = () => {
 
   return(
-    <TopSectionContainer className="fadeRightMini">
+    <BoardContainer className="fadeRightMini">
       <Logo sx={{ display: 'flex', flexDirection: 'column' }}>
           Edit Users
       </Logo>
@@ -36,7 +22,7 @@ const BoardAdmin = () => {
           <AdminAccess />
         </Grid>
       </Paper>
-    </TopSectionContainer>
+    </BoardContainer>
   );
 };
 export default BoardAdmin;

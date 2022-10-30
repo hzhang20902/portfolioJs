@@ -1,29 +1,17 @@
 import AuthService from "../../services/auth.service";
-import styled from "styled-components";
 import BigWaveModel from "../avatar/BigWaveModel";
 import { React, Suspense } from "react";
 import { Clock } from "../higherorder/Loader";
 import { Canvas } from "@react-three/fiber";
 import SectionWrapper from "../higherorder/SectionWrapper";
-
-const TopSectionContainer = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 99;
-`;
+import { MainContainer } from "../higherorder/StyledComp";
 
 const currentUser = AuthService.getCurrentUser();
 
 const Profile = () => {
     
     return(
-       <TopSectionContainer>
+       <MainContainer>
        <div className="main">
        <div className="overlay"></div>
             <div className="content" style={{ "z-index":'' }}>
@@ -51,7 +39,7 @@ const Profile = () => {
             </Canvas>) : null}
           
             </div>
-        </TopSectionContainer>
+        </MainContainer>
     );
 };
 export default Profile;

@@ -15,7 +15,7 @@ const NavButton = styled.button`
         color: #3F5BE5;  
     }
     text-shadow: 1px 1px 15px gray;
-`
+`;
 
 const MainButton = styled(NavButton)`
     text-shadow: unset;
@@ -34,7 +34,7 @@ const SButton = styled(MainButton)`
     &:hover {
         color: rgba(13, 78, 217, 0.94);
     }
-`
+`;
 
 const SContainer = styled.div`
     position: absolute;
@@ -43,6 +43,8 @@ const SContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: transparent;
+    object-fit: cover;
 `;
 
 const MainContainer = styled(SContainer)`
@@ -50,7 +52,13 @@ const MainContainer = styled(SContainer)`
     bottom: 0;
     left: 0;
     z-index: 99;
+    padding-top: 1.5em;
+`;
 
-`
+const BoardContainer = styled(MainContainer)`
+    justify-content: unset;
+    object-fit: unset;
+    padding: 10%;
+`;
 
-export { NavButton, MainButton, SButton, SContainer, MainContainer };
+export { NavButton, MainButton, SButton, SContainer, MainContainer, BoardContainer };
