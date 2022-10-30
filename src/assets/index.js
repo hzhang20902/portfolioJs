@@ -1,10 +1,6 @@
-import homeHero from "./home_hero.png";
-import homeCards from "./home_cards.png";
-import feature from "./feature.png";
 import javascript from "./javascript.png";
 import react from "./reactjs.png";
 import screens from "./demoscreens.png";
-import mockup from "./mockup.png";
 import absEarth from './absEarth.png';
 import psqlLogo from './psql.png';
 import javaLogo from './java.png';
@@ -18,18 +14,14 @@ import nftDemo from './nftExpoGo.mp4'
 import ecomDemo from './ecomDemo.mov'
 import vidChatDemo from './vidchat.mp4'
 import notFound from './notfound.png'
-
+import express from './express.png'
 
 export default {
   absEarth,
-  homeHero,
-  homeCards,
-  feature,
   javascript,
   javaLogo,
   react,
   screens,
-  mockup,
   minecraft,
   psqlLogo,
   springboot,
@@ -41,4 +33,5 @@ export default {
   ecomDemo,
   vidChatDemo,
   notFound,
+  express,
 };

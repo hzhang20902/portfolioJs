@@ -1,5 +1,4 @@
-import React from "react";
-import { Suspense } from "react";
+import { React, Suspense } from "react";
 import styled from "styled-components";
 import assets from "../assets";
 import { LandingContent } from "./ContentOverlay";
@@ -8,6 +7,7 @@ import WavingModel from "./avatar/WavingModel";
 import { OrbitControls } from "@react-three/drei";
 import { ThreeDots } from "./higherorder/Loader";
 import { Link } from "react-router-dom";
+import { MainButton } from "./higherorder/StyledComp";
 
     const TopSectionContainer = styled.div`
     position: absolute;
@@ -44,27 +44,6 @@ import { Link } from "react-router-dom";
     text-shadow: 5px 9px 50px black;
 `;
 
-const UButton = styled.button`
-outline: none;
-border: none;
-background-color: rgba(13, 78, 217, 0.94);
-color: #fff;
-font-size: 16px;
-font-weight: 700;
-border-radius: 8px;
-padding: 8px 2em;
-margin-top: 3em;
-cursor: pointer;
-border: 2px solid transparent;
-transition: all 350ms ease-in-out;
-
-&:hover {
-    background-color: transparent;
-    border: 2px solid rgba(13, 78, 217, 0.94);
-}
-`;
-
-
 const Landing = () => {
     return (
         <TopSectionContainer>
@@ -76,9 +55,9 @@ const Landing = () => {
                         Welcome to My Portfolio Hub
                     </Logo>   
                     <Link to={"/home"} style={{zIndex: '1'}}>
-                    <UButton>
+                    <MainButton>
                         Enter
-                    </UButton>
+                    </MainButton>
                     </Link>
                     <Slogan>
                         by Henry Zhang

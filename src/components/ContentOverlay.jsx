@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
+import { React, useState, useEffect } from 'react';
 import UserService from '../services/user.service';
 import assets from '../assets';
 
@@ -8,9 +7,6 @@ import Features from './higherorder/Features';
 import Transfer from './higherorder/Transfer';
 import AuthService from '../services/auth.service';
 import { Grid } from '@mui/material';
-
-
-
 
 export const HomeContent = () => {
 
@@ -117,14 +113,13 @@ export const HomeContent = () => {
         description="It takes a village- sometimes, multiple villages. 
         The way independent artists work is through one simple idea: 
         By the people; for the people. 
-        See how artists everywhere collaborate anywhere."
-        showDesc2
-        desc2="Login below with the default credentials to see my work:"
+        See how artists everywhere collaborate anywhere. Login below with the default credentials to see my work:"
         mockupImg={assets.absEarth}
         showBtn
         btnText='Login'
         route='/login'
         banner='banner'
+        state={true}
     />
     )}
     </>
@@ -135,8 +130,7 @@ export const LandingContent = () => {
     return (
       <>
       <Features 
-        title="Tech Stacks"
-        pText="Client side designed with ReactJs, ThreeJs, and Tailwind CSS."
+        title="Tech Stack"
         iconUrl1={assets.react}
         iconText1="React.js"
         iconUrl2={assets.threelogo}
@@ -146,7 +140,16 @@ export const LandingContent = () => {
         banner='banner03'
       />
       <Features 
-        pText="Server side built with Java, SpringBoot, and PostgreSQL."
+        title="API"
+        iconUrl1={assets.express}
+        iconText1="Express.js"
+        iconUrl2={assets.springboot}
+        iconText2="Spring Boot"
+        showCard3
+        banner='banner03'
+      />
+      <Features 
+        title="Backend"
         iconUrl1={assets.javaLogo}
         iconText1="Java"
         iconUrl2={assets.springboot}
@@ -185,15 +188,18 @@ export const AdminAccess = () => {
 
     return (
         <> 
-        {content.slice(content.length-4, content.length).map((key) => (
+         {content.map((key) => (
+          <Grid item xs={6} md={2} zeroMinWidth>
           <Features
-          title={key.id}
-          pText={key.username} 
+          pText2={key.username}
+          pText={`ID: ${key.id}`}
           iconUrl1="https://source.unsplash.com/random"
-          iconText1={key.email}
+          iconText1={`Email: ${key.email}`}
           showCard2
           showCard3
-          />))}
+          banner='banner02'
+          />
+          </Grid>))}
         </>
     )
 }
@@ -219,7 +225,7 @@ export const ModBoard = () => {
     return (
         <> 
         {content.map((key) => (
-          <Grid item xs={12} md={2} zeroMinWidth>
+          <Grid item xs={6} md={2} zeroMinWidth>
           <Features
           pText2={key.username}
           pText={`ID: ${key.id}`}

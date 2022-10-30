@@ -1,8 +1,7 @@
-import React from "react";
 import AuthService from "../../services/auth.service";
 import styled from "styled-components";
 import BigWaveModel from "../avatar/BigWaveModel";
-import { Suspense } from "react";
+import { React, Suspense } from "react";
 import { Clock } from "../higherorder/Loader";
 import { Canvas } from "@react-three/fiber";
 import SectionWrapper from "../higherorder/SectionWrapper";
@@ -17,12 +16,11 @@ const TopSectionContainer = styled.div`
     flex-direction: column;
     align-items: center;
     z-index: 99;
-    
 `;
 
-const Profile = () => {
+const currentUser = AuthService.getCurrentUser();
 
-    const currentUser = AuthService.getCurrentUser();
+const Profile = () => {
     
     return(
        <TopSectionContainer>

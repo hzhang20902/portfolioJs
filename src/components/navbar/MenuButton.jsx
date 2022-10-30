@@ -2,9 +2,7 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import IconButton from '@mui/material/IconButton';
+import { Menu, MenuItem, IconButton }from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 
 import AuthService from '../../services/auth.service';
@@ -18,6 +16,8 @@ const BasicMenu = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
   const [showAdminBoard, setShowAdminBoard] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
 
   useEffect(() => {
     const user = AuthService.getCurrentUser();
@@ -28,8 +28,7 @@ const BasicMenu = () => {
     }
   }, []);
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+  
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -49,7 +48,7 @@ const BasicMenu = () => {
     <div>
       <IconButton
         size="large"
- 
+        edge='start'
         color="inherit"
         onClick={handleClick}
       >

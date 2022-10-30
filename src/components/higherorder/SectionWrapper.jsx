@@ -2,31 +2,9 @@ import React from 'react'
 import styles from '../../styles/Global'
 import { Link } from 'react-router-dom'
 import { Typography } from '@mui/material'
-import styled from 'styled-components'
+import { MainButton } from './StyledComp'
 
-const UButton = styled.button`
-outline: none;
-border: none;
-background-color: rgba(13, 78, 217, 0.94);
-color: #fff;
-font-size: 16px;
-font-weight: 700;
-border-radius: 8px;
-padding: 8px 2em;
-margin-top: 3em;
-cursor: pointer;
-border: 2px solid transparent;
-transition: all 350ms ease-in-out;
-
-&:hover {
-    background-color: transparent;
-    color: black;
-    border: 2px solid rgba(13, 78, 217, 0.94);
-}
-
-`
-
-const SectionWrapper = ({ title, description, srcLink, gitUrl, showDesc2, desc2, showDesc3, desc3, showBtn, extLink, mockupImg, banner, reverse, route, btnText, demoVid }) => {
+const SectionWrapper = ({ title, description, srcLink, gitUrl, showDesc2, desc2, showDesc3, desc3, showBtn, extLink, mockupImg, banner, reverse, route, btnText, demoVid, state }) => {
   return (
     <div className={`
     min-h-screen 
@@ -49,21 +27,21 @@ const SectionWrapper = ({ title, description, srcLink, gitUrl, showDesc2, desc2,
             {showDesc3 && (<p className={`${styles.descriptionText}`}>{desc3}</p>)}
             
             {showBtn && (
-              <Link to={route} className="nav-link" state={true}>
-                <UButton>
+              <Link to={route} className="nav-link" state={state}>
+                <MainButton>
                   <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: "bold", letterSpacing: 1 }}>
                     {btnText}
                   </Typography>
-                </UButton>
+                </MainButton>
                </Link>
             )}
             {extLink && (
               <a target="_blank" rel='noreferrer' href={route} className='nav-link'>
-                <UButton className={styles.btnPrimary}>
+                <MainButton>
                   <Typography sx={{ "font-weight": "bold"}}>
                     {btnText}
                   </Typography>
-                </UButton>
+                </MainButton>
               </a>
             )}
             {srcLink && (<a target="_blank" rel='noreferrer' href={gitUrl} className='nav-link'>

@@ -13,6 +13,7 @@ import MessageIcon from '@mui/icons-material/Message';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import styled from 'styled-components';
+import { SButton } from './higherorder/StyledComp';
 
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
@@ -35,28 +36,6 @@ const TopSectionContainer = styled.div`
     padding-top: 1.5em;
     
 `;
-
-const UButton = styled.button`
-    outline: none;
-    border: none;
-    background-color: rgba(13, 78, 217, 0.94);
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 8px;
-    padding: 8px 2em;
-    margin: 2.5em;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: all 250ms ease-in-out;
-
-    &:hover {
-        background-color: transparent;
-        color: rgba(13, 78, 217, 0.94);
-        border: 2px solid rgba(13, 78, 217, 0.94);
-    }
-
-`
 
 function Copyright(props) {
 
@@ -192,14 +171,14 @@ const ContactPage = () => {
               {errors?.password && 'Message cannot be blank!'}
             </Typography>
              
-              <UButton
+              <SButton
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ ml: 2 }}
               >
                 {status}
-              </UButton>
+              </SButton>
               <Typography sx={{ color: 'red', textAlign: 'center' }}>
               {resMessage && `${resMessage}`}
             </Typography>
