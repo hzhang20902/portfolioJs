@@ -3,8 +3,9 @@ import styles from '../../styles/Global'
 import { Link } from 'react-router-dom'
 import { Typography } from '@mui/material'
 import { MainButton } from './StyledComp'
+import EmbedYoutube from './EmbedYoutube'
 
-const SectionWrapper = ({ title, description, srcLink, gitUrl, showDesc2, desc2, showDesc3, desc3, showBtn, extLink, mockupImg, banner, reverse, route, btnText, demoVid, state }) => {
+const SectionWrapper = ({ title, description, srcLink, gitUrl, showDesc2, desc2, showDesc3, desc3, showBtn, extLink, mockupImg, banner, reverse, route, btnText, demoVid, state, youtubeLink }) => {
   return (
     <div className={`
     min-h-screen 
@@ -23,7 +24,7 @@ const SectionWrapper = ({ title, description, srcLink, gitUrl, showDesc2, desc2,
             ${styles.h1Text}
             ${reverse? styles.blackText : styles.whiteText}`}>{title}</h1>
             <p className={`${styles.descriptionText}`}>{description}</p>
-            {showDesc2 && (<p className={`${styles.descriptionText}`}>{desc2}</p>)}
+            {showDesc2 && (<p className={`${styles.descriptionText} p-0`}>{desc2}</p>)}
             {showDesc3 && (<p className={`${styles.descriptionText}`}>{desc3}</p>)}
             
             {showBtn && (
@@ -38,7 +39,7 @@ const SectionWrapper = ({ title, description, srcLink, gitUrl, showDesc2, desc2,
             {extLink && (
               <a target="_blank" rel='noreferrer' href={route} className='nav-link'>
                 <MainButton>
-                  <Typography sx={{ "font-weight": "bold"}}>
+                  <Typography sx={{fontWeight : "bold"}}>
                     {btnText}
                   </Typography>
                 </MainButton>
@@ -47,13 +48,14 @@ const SectionWrapper = ({ title, description, srcLink, gitUrl, showDesc2, desc2,
             {srcLink && (<a target="_blank" rel='noreferrer' href={gitUrl} className='nav-link'>
             <Typography color={'black'}>[Source Code]</Typography></a>)}
             </div>
+            
             <div className={`flex-1 ${styles.flexCenter} p-8 sm:px-0`}>
-              {mockupImg && (<img
+              {mockupImg? (<img
                   src={mockupImg} 
                   alt="mockup" 
                   className={`
                   ${reverse? "fadeRightMini" : "fadeLeftMini"}
-                  ${styles.sectionImg}`} />)}
+                  ${styles.sectionImg}`} />) : null}
               {demoVid && (<video 
                   src={demoVid}
                   alt="video"
@@ -63,7 +65,12 @@ const SectionWrapper = ({ title, description, srcLink, gitUrl, showDesc2, desc2,
                   loop
                   muted
                   autoPlay />)}
+                   {youtubeLink && (
+                <EmbedYoutube embedId={youtubeLink}/>
+              )}
+              
             </div>
+        
         </div>
     </div>
   )

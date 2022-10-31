@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { Typography } from '@mui/material'
 import { MainButton } from './StyledComp'
 
-const Transfer = ({ srcLinkFront, srcLinkBack, showBtn, title }) => {
+const Transfer = ({ image, srcLinkFront, srcLinkBack, showBtn, title }) => {
   return (
     <div className={`
     ${styles.section}
@@ -31,7 +31,7 @@ const Transfer = ({ srcLinkFront, srcLinkBack, showBtn, title }) => {
         </div>
         <div className={styles.flexCenter}>
           <img 
-            src={assets.screens}
+            src={image}
             alt='download img'
             className={styles.fullImg}
           />

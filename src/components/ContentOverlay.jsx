@@ -162,6 +162,7 @@ export const LandingContent = () => {
         showBtn
         srcLinkFront
         srcLinkBack
+        image={assets.screens}
       />
       </>
     )
@@ -237,4 +238,54 @@ export const ModBoard = () => {
           </Grid>))}
         </>
     )
+}
+
+export const AboutSection = () => {
+  return (
+  <>
+  <SectionWrapper 
+      reverse
+      title="So many great artists bring joy and empathy to humanity... "
+      description="...yet so few are heard or seen because even fewer decide it is a worthwhile investment. I am one of the few who decided it is."
+      showDesc2
+      desc2="Who am I?"
+      mockupImg={assets.henry}
+    />
+    <SectionWrapper 
+      title="My name is Henry Zhang aka. Figgs"
+      description="I am a classically trained violinist turned professional Jazz/Rnb guitarist turned Software Developer.
+      I thrive on change and the new challenges as well as successes it can bring. I have a passion for helping humanity through any way I can."
+      youtubeLink='rulQQNQryCU'
+      reverse
+      showDesc2
+      desc2="Before, I could only do that through
+      the emotional, the spiritual, the aesthetic; music and the joys it can bring to people. 
+      My other lifelong passion for technology and science was always in the background, manifesting through hobby and curiosity.
+      I had never thought of myself as a serious 'engineer' of any kind besides an audio one."
+    />
+    <SectionWrapper 
+      reverse
+      youtubeLink='2xAy6lxBZLY'
+      description='I have had an extensive career as a professional guitarist in Philadelphia and around the US East Coast from 2013-2022.
+      During that decade, I wore many hats: independent artist, bandleader, music director, audio engineer, mix/master engineer, producer, executive producer, corporate band guitarist, arranger/instrumentalist, promoter, videographer--
+      and subsequently found myself overextended and a bit disillusioned with the musician lifestyle/lifecycle.'
+      showDesc2
+      desc2="I saw how contradictory the industry of music was relative to the joy that music and the musicians who make it bring. It treated its workers, artists, and visionaries as nothing more than a product to market, sell, and profit from.
+      Far be it from me to call myself a visionary. However I have certainly been lucky enough to work with and make music with more than a few who can be called such. And to see them chewed up, swallowed, and spit out by this industry in such an uncaring way- it changed my
+      outlook on what I should be doing with my life."
+    />
+    <SectionWrapper 
+      banner='banner04'
+      youtubeLink='R6bBF_57KaY'
+      description="For the last two years, I have been learning, coding, and building to improve my skills as a software engineer. Along with my deep-dive into securities analytics, I envision this as the best way to help people and artists around the world: 
+      AI-powered algo-trading platforms to generate passive yet substantial funding for community-first musical and artistic initiatives."
+      showDesc2
+      desc2='If this is something that interests you, please reach out and send me a message!'
+      showBtn
+      route='/contact'
+      btnText='Contact'
+    />
+    
+  </>
+  )
 }

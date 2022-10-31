@@ -1,5 +1,4 @@
-import React from "react";
-import { Suspense } from "react";
+import { React, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -18,6 +17,7 @@ import ContactPage from "./components/ContactPage";
 import NewRegister from "./components/NewRegister";
 import NewLogin from "./components/NewLogin";
 import ErrorPage from "./components/ErrorPage";
+import AboutPage from "./components/AboutPage";
 import { Earth } from './components/earth';
 import { Rings } from "./components/higherorder/Loader";
 
@@ -45,6 +45,7 @@ const App = () => {
           <Route path="/mod" element={<BoardModerator/>} />
           <Route path="/admin" element={<BoardAdmin/>} />
           <Route path="/contact" element={<ContactPage/>} />
+          <Route path="/about" element={<AboutPage/>} />
           <Route path="*" element={<ErrorPage/>} />
         </Routes>
         {location.state && (<Canvas 

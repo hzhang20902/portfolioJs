@@ -15,6 +15,7 @@ import ecomDemo from './ecomDemo.mov'
 import vidChatDemo from './vidchat.mp4'
 import notFound from './notfound.png'
 import express from './express.png'
+import henry from './henryPic.png'
 
 export default {
   absEarth,
@@ -34,4 +35,5 @@ export default {
   vidChatDemo,
   notFound,
   express,
+  henry
 };
