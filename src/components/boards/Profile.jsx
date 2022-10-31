@@ -34,7 +34,7 @@ const Profile = () => {
           
             {currentUser? (<Canvas 
                 camera={{ position: [1, 0, 13], fov: 20}}
-                style={{ width: "100%", height: '80%', zIndex: "2"}}>
+                style={{ width: "100%", height: '73%', zIndex: "2"}}>
                 <Suspense fallback={<Clock color='#fff' size='125' speed='0.5'/>}>
                 <BigWaveModel position={[1.15,-1.35,5]}/>
                 <pointLight color='#f6f3ea' position={[6, 12, 15]} intensity={1.3}  />
