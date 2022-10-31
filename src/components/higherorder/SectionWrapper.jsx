@@ -29,7 +29,7 @@ const SectionWrapper = ({ title, description, srcLink, gitUrl, showDesc2, desc2,
             {showBtn && (
               <Link to={route} className="nav-link" state={state}>
                 <MainButton>
-                  <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: "bold", letterSpacing: 1 }}>
+                  <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: "bold", letterSpacing: 1, zIndex: '3' }}>
                     {btnText}
                   </Typography>
                 </MainButton>
