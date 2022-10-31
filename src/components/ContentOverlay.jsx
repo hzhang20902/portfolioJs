@@ -129,7 +129,7 @@ export const LandingContent = () => {
     return (
       <>
       <Features 
-        title="Tech Stack"
+        title="UI/UX Build"
         iconUrl1={assets.react}
         iconText1="React.js"
         iconUrl2={assets.threelogo}
@@ -162,6 +162,7 @@ export const LandingContent = () => {
         showBtn
         srcLinkFront
         srcLinkBack
+        srcLinkExp
         image={assets.screens}
       />
       </>

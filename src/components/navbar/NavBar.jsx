@@ -10,7 +10,7 @@ import { NavButton } from '../higherorder/StyledComp';
 
 const NavBar = () => {
 
-  const sxStyle={ flexGrow: 1, fontWeight: "bold", letterSpacing: 1 }
+  const sxStyle={ flexGrow: 1, fontWeight: "bold", letterSpacing: 1, color: 'white' }
 
   return (
   
@@ -20,7 +20,7 @@ const NavBar = () => {
 
         <NavButton className={styles.mobileBtn}>
           <Link to={"/"} className="nav-link">
-            <Typography variant="h6" sx={sxStyle}>
+            <Typography sx={sxStyle}>
               Welcome
             </Typography>
           </Link>
@@ -28,7 +28,7 @@ const NavBar = () => {
 
         <NavButton className={styles.mobileBtn}>
           <Link to={"/home"} className="nav-link">
-            <Typography variant="h6" sx={sxStyle}>
+            <Typography sx={sxStyle}>
             Projects
             </Typography>
           </Link>
@@ -36,7 +36,7 @@ const NavBar = () => {
 
         <NavButton className={styles.mobileBtn}>
           <Link to={"/about"} className="nav-link">
-            <Typography variant="h6" sx={sxStyle}>
+            <Typography sx={sxStyle}>
             About
             </Typography>
           </Link>
@@ -44,7 +44,7 @@ const NavBar = () => {
 
         <NavButton className={styles.mobileBtn}>
           <Link to={"/contact"} className="nav-link">
-            <Typography variant="h6" sx={sxStyle}>
+            <Typography sx={sxStyle}>
             Contact
             </Typography>
           </Link>
@@ -52,7 +52,7 @@ const NavBar = () => {
 
         <NavButton className={styles.mobileBtn}>
            <a target="_blank" rel='noreferrer' href="https://www.venmo.com/u/figgsboson" className='nav-link'>
-            <Typography variant="h6" sx={sxStyle}>
+            <Typography sx={sxStyle}>
               Support
             </Typography>
           </a>

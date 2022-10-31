@@ -35,5 +35,5 @@ export default {
   vidChatDemo,
   notFound,
   express,
-  henry
-};
+  henry,
+}

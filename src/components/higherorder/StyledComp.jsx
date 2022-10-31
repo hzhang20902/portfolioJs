@@ -5,7 +5,7 @@ const NavButton = styled.button`
     border: none;
     background-color: rgba(13, 78, 217, 0.94);
     color: #fff;
-    font-size: 16px;
+    font-size: 3px;
     border-radius: 3px;
     cursor: pointer;
     border: 2px solid transparent;
@@ -14,11 +14,11 @@ const NavButton = styled.button`
         background-color: rgba(0, 0, 140, 1);
         color: #3F5BE5;  
     }
-    text-shadow: 1px 1px 15px gray;
+    
 `;
 
 const MainButton = styled(NavButton)`
-    text-shadow: unset;
+    font-size: 16px;
     font-weight: 700;
     border-radius: 8px;
     padding: 8px 2em;
