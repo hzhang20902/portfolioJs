@@ -68,19 +68,6 @@ export const HomeContent = () => {
           demoVid={assets.minecraft}
         />
         <SectionWrapper 
-          title='NFT Market UI/UX Mobile Demo'
-          description="A frontend demo of a web3.0 store for NFTs. Visit the landing page for more info."
-          showDesc2
-          desc2="React Native, Landing: React.js, Tailwind CSS"
-          reverse
-          extLink
-          srcLink
-          gitUrl="https://github.com/hzhang20902/reactn_nft_market"
-          btnText='Landing Page'
-          route='https://cold-waterfall-0983.on.fleek.co/'
-          demoVid={assets.nftDemo}
-        />
-        <SectionWrapper 
           title='Zoom Type App'
           description="A lite-weight video chat app. Each refresh generates a new temp ID which can be used to call someone via WebRTC datastream."
           showDesc2
@@ -106,8 +93,20 @@ export const HomeContent = () => {
           route='https://liftoffanimalshelterapp.vercel.app/'
           demoVid={assets.shelterApp}
         />
-        
-        </>
+        <SectionWrapper 
+          title='NFT Market UI/UX Mobile Demo'
+          description="A frontend demo of a web3.0 store for NFTs. Visit the landing page for more info."
+          showDesc2
+          desc2="React Native, Landing: React.js, Tailwind CSS"
+          reverse
+          extLink
+          srcLink
+          gitUrl="https://github.com/hzhang20902/reactn_nft_market"
+          btnText='Landing Page'
+          route='https://cold-waterfall-0983.on.fleek.co/'
+          demoVid={assets.nftDemo}
+        />
+      </>
     ) : (<SectionWrapper 
         title={(content)}
         description="It takes a village- sometimes, multiple villages. 
