@@ -3,13 +3,17 @@ import { useState } from 'react';
 import { 
   Avatar,
   Box,
+  Button,
   CssBaseline,
   Grid,
+  IconButton,
   Paper,
+  Snackbar,
   TextField,
   Typography } from '@mui/material'
 
 import MessageIcon from '@mui/icons-material/Message';
+import CloseIcon from '@mui/icons-material/Close'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { SButton, MainContainer } from './higherorder/StyledComp';
@@ -18,6 +22,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
+
 
 function Copyright(props) {
 
@@ -46,7 +51,7 @@ const contactSubmit = (data) => {
 
 
 const ContactPage = () => {
-
+    const [open, setOpen] = useState(true);
     const [status, setStatus] = useState("Submit");
     const [resMessage, setResMessage] = useState('');
     const navigate = useNavigate();
@@ -75,6 +80,29 @@ const ContactPage = () => {
         window.location.reload()
         navigate('/')
     };
+
+    const handleClose = (event, reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+      setOpen(false)
+    };
+
+    const action = (
+      <div>
+        <Button color="secondary" size="small" onClick={handleClose}>
+          CLOSE
+        </Button>
+        <IconButton
+          size="small"
+          aria-label="close"
+          color="inherit"
+          onClick={handleClose}
+        >
+          <CloseIcon fontSize="small" />
+        </IconButton>
+      </div>
+    );
 
   return (
     <MainContainer> 
@@ -174,6 +202,13 @@ const ContactPage = () => {
               <Copyright sx={{ mt: 5 }} />
             </form>
           </Box>
+          <Snackbar
+            open={open}
+            autoHideDuration={20000}
+            onClose={handleClose}
+            message="This contact form uses a second server, created with Express.js as a standalone API, to relay messages to my Gmail."
+            action={action}
+          />
         </Grid>        
       </Grid>
   

@@ -27,17 +27,17 @@ const NavBar = () => {
         </NavButton>
 
         <NavButton className={styles.mobileBtn}>
-          <Link to={"/home"} className="nav-link">
+          <Link to={"/about"} className="nav-link">
             <Typography sx={sxStyle}>
-            Projects
+            About
             </Typography>
           </Link>
         </NavButton>
 
         <NavButton className={styles.mobileBtn}>
-          <Link to={"/about"} className="nav-link">
+          <Link to={"/home"} className="nav-link">
             <Typography sx={sxStyle}>
-            About
+            Projects
             </Typography>
           </Link>
         </NavButton>
@@ -50,13 +50,13 @@ const NavBar = () => {
           </Link>
         </NavButton>
 
-        <NavButton className={styles.mobileBtn}>
+        {/* <NavButton className={styles.mobileBtn}>
            <a target="_blank" rel='noreferrer' href="https://www.venmo.com/u/figgsboson" className='nav-link'>
             <Typography sx={sxStyle}>
               Support
             </Typography>
           </a>
-        </NavButton>
+        </NavButton> */}
       </Toolbar>
     </AppBar>
   );

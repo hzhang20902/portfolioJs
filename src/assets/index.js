@@ -16,6 +16,8 @@ import vidChatDemo from './vidchat.mp4'
 import notFound from './notfound.png'
 import express from './express.png'
 import henry from './henryPic.png'
+import reactCube from './reactCube.png'
+import java2 from './java2.png'
 
 export default {
   absEarth,
@@ -36,4 +38,6 @@ export default {
   notFound,
   express,
   henry,
+  reactCube,
+  java2
 }

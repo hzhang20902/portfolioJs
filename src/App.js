@@ -20,6 +20,7 @@ import ErrorPage from "./components/ErrorPage";
 import AboutPage from "./components/AboutPage";
 import { Earth } from './components/earth';
 import { Rings } from "./components/higherorder/Loader";
+import TopSection from "./components/earth/TopSection";
 
 
 const CanvasContainer = styled.div`
@@ -48,18 +49,24 @@ const App = () => {
           <Route path="/about" element={<AboutPage/>} />
           <Route path="*" element={<ErrorPage/>} />
         </Routes>
-        {location.state && (<Canvas 
-        camera={{ position: [0, 0, 40], fov: 50, isPerspectiveCamera: true}}
+        {location.state && (
+          <>
+          <TopSection />
+          <Canvas 
+        camera={{ position: [0,0,40], fov: 50, isPerspectiveCamera: true}}
         style={{
         backgroundColor: 'black',
         width: "100%",
         objectFit: 'cover'}}
         >
+        {/* <gridHelper position={[-5,-7,20]} /> */}
         <Suspense fallback={<Rings size='125' speed='0.5'/>}>
+          
           <Earth />
         </Suspense>
         <OrbitControls />
-      </Canvas>)}
+      </Canvas>
+      </>)}
 
       
     </CanvasContainer>

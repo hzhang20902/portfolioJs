@@ -3,16 +3,20 @@ import { useState } from 'react';
 import { 
   Avatar,
   Box,
+  Button,
   Checkbox,
   CssBaseline,
   FormControlLabel,
   Grid,
+  IconButton,
   Link,
   Paper,
+  Snackbar,
   TextField,
   Typography } from '@mui/material'
 
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import CloseIcon from '@mui/icons-material/Close'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { SButton, MainContainer } from './higherorder/StyledComp';
@@ -39,7 +43,9 @@ function Copyright(props) {
 const theme = createTheme();
 
 const NewLogin = () => {
+  const [open, setOpen] = useState(true)
   const [resMessage, setResMessage] = useState('');
+  const [status, setStatus] = useState("Sign In")
   const navigate = useNavigate();
   const {
       register,
@@ -48,12 +54,14 @@ const NewLogin = () => {
   } = useForm();
 
   const onSubmit = async(data) => {
+    setStatus("Sending...")
     let response = AuthService.login(data);
     response.then((response) => {
         setResMessage('');
         if (response.status === 200){
             console.log(response.data);
         }
+        setStatus("Success!")
         navigate('/profile', {state:false});
         window.location.reload();
     })
@@ -64,8 +72,32 @@ const NewLogin = () => {
         } else {
             setResMessage(error.response.data.message);
         }
+        setStatus("Sign In")
     });
   }
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false)
+  };
+
+  const action = (
+    <div>
+      <Button color="secondary" size="small" onClick={handleClose}>
+        CLOSE
+      </Button>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleClose}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </div>
+  );
 
   return (
     <MainContainer> 
@@ -141,7 +173,7 @@ const NewLogin = () => {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                {status}
               </SButton>
               <Typography sx={{ color: 'red', textAlign: 'center' }}>
               {resMessage && `${resMessage}`}
@@ -161,6 +193,13 @@ const NewLogin = () => {
               <Copyright sx={{ mt: 5 }} />
             </form>
           </Box>
+          <Snackbar
+            open={open}
+            autoHideDuration={20000}
+            onClose={handleClose}
+            message="This page has a Three.js render as the backdrop. It may take a second to load! You should see a globe with tech icons in its orbit."
+            action={action}
+          />
         </Grid>
         
         

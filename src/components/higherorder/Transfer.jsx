@@ -24,7 +24,7 @@ const Transfer = ({ image, srcLinkFront, srcLinkBack, srcLinkExp, showBtn, title
           <Link to={"/home"} className='nav-link'>
             <MainButton className={styles.btnPrimary}>          
               <Typography variant="h5" sx={{ flexGrow: 1, fontWeight: "bold", letterSpacing: 1 }}>
-                Enter
+                Projects
               </Typography>
             </MainButton>
           </Link>)}

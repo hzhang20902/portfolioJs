@@ -5,7 +5,7 @@ import { Typography } from '@mui/material'
 import { MainButton } from './StyledComp'
 import EmbedYoutube from './EmbedYoutube'
 
-const SectionWrapper = ({ title, description, srcLink, gitUrl, showDesc2, desc2, showDesc3, desc3, showBtn, extLink, mockupImg, banner, reverse, route, btnText, demoVid, state, youtubeLink }) => {
+const SectionWrapper = ({ title, titleBlack, description, srcLink, gitUrl, showDesc2, desc2, showDesc3, desc3, showBtn, extLink, mockupImg, banner, reverse, route, btnText, demoVid, state, youtubeLink }) => {
   return (
     <div className={`
     min-h-screen 
@@ -23,6 +23,9 @@ const SectionWrapper = ({ title, description, srcLink, gitUrl, showDesc2, desc2,
             <h1 className={`
             ${styles.h1Text}
             ${reverse? styles.blackText : styles.whiteText}`}>{title}</h1>
+             <h1 className={`
+            ${styles.h1Text}
+            ${titleBlack? styles.blackText : styles.whiteText}`}>{titleBlack}</h1>
             <p className={`${styles.descriptionText}`}>{description}</p>
             {showDesc2 && (<p className={`${styles.descriptionText} p-0`}>{desc2}</p>)}
             {showDesc3 && (<p className={`${styles.descriptionText}`}>{desc3}</p>)}

@@ -39,7 +39,7 @@ const Landing = () => {
                     <Logo>
                         Welcome to My Portfolio Hub
                     </Logo>   
-                    <Link to={"/home"} style={{zIndex: '1'}}>
+                    <Link to={"/about"} style={{zIndex: '1'}}>
                     <MainButton>
                         Enter
                     </MainButton>

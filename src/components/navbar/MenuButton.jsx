@@ -72,6 +72,9 @@ const BasicMenu = () => {
         <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/">
         Welcome</MenuItem>
 
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/about">
+        About</MenuItem>
+
         <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/home">
         Projects</MenuItem>
 
@@ -89,9 +92,6 @@ const BasicMenu = () => {
         <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/admin">
         *ADMIN ACCESS*</MenuItem>
         )}
-
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/about">
-        About</MenuItem>
 
 
         {currentUser && (
@@ -112,8 +112,8 @@ const BasicMenu = () => {
         <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/contact">
         Contact</MenuItem>
         
-        <MenuItem className='fadeRightMini' sx={sxStyling} component='a' target='_blank' href="https://www.venmo.com/u/figgsboson">
-        Support</MenuItem>
+        {/* <MenuItem className='fadeRightMini' sx={sxStyling} component='a' target='_blank' href="https://www.venmo.com/u/figgsboson">
+        Support</MenuItem> */}
 
         
 

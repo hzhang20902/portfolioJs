@@ -3,13 +3,17 @@ import { useState } from 'react';
 import { 
   Avatar,
   Box,
+  Button,
   CssBaseline,
   Grid,
+  IconButton,
   Paper,
+  Snackbar,
   TextField,
   Typography } from '@mui/material'
 
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import CloseIcon from "@mui/icons-material/Close"
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { SButton, MainContainer } from './higherorder/StyledComp';
@@ -37,6 +41,8 @@ const theme = createTheme();
 
 
 const NewRegister = () => {
+  const [open, setOpen] = useState(true)
+  const [status, setStatus] = useState("Sign Up")
   const [resMessage, setResMessage] = useState('');
   const navigate = useNavigate();
   const {
@@ -47,11 +53,13 @@ const NewRegister = () => {
 
   const onSubmit = async(data) => {
     let response = AuthService.register(data);
+    setStatus("Sending...")
     response.then((response) => {
         setResMessage('');
         if (response.status === 200){
             console.log(response.data);
         }
+        setStatus("Success!")
         navigate('/login', {state:true});
         window.location.reload();
     })
@@ -65,8 +73,32 @@ const NewRegister = () => {
         } else {
             setResMessage(error.response.data.message);
         }
+        setStatus("Sign Up")
     });
   }
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false)
+  };
+
+  const action = (
+    <div>
+      <Button color="secondary" size="small" onClick={handleClose}>
+        CLOSE
+      </Button>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleClose}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </div>
+  );
 
   return (
     <MainContainer> 
@@ -148,7 +180,7 @@ const NewRegister = () => {
                 variant="contained"
                 sx={{ ml: 4 }}
               >
-                Sign Up
+                {status}
               </SButton>
               <Typography sx={{ color: 'red', textAlign: 'center' }}>
               {resMessage && `${resMessage}`}
@@ -163,6 +195,13 @@ const NewRegister = () => {
               <Copyright sx={{ mt: 5 }} />
             </form>
           </Box>
+          <Snackbar
+            open={open}
+            autoHideDuration={20000}
+            onClose={handleClose}
+            message="When you register, you'll be assigned a unique JSON Web Token. Even though I have access to the DB, your password is hashed and I will never be able to know what it is!"
+            action={action}
+          />
         </Grid>
         
         
