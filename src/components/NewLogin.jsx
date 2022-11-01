@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { 
+  Alert,
   Avatar,
   Box,
-  Button,
   Checkbox,
   CssBaseline,
   FormControlLabel,
@@ -82,22 +82,6 @@ const NewLogin = () => {
     }
     setOpen(false)
   };
-
-  const action = (
-    <div>
-      <Button color="secondary" size="small" onClick={handleClose}>
-        CLOSE
-      </Button>
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={handleClose}
-      >
-        <CloseIcon fontSize="small" />
-      </IconButton>
-    </div>
-  );
 
   return (
     <MainContainer> 
@@ -193,13 +177,16 @@ const NewLogin = () => {
               <Copyright sx={{ mt: 5 }} />
             </form>
           </Box>
-          <Snackbar
-            open={open}
-            autoHideDuration={20000}
-            onClose={handleClose}
-            message="This page has a Three.js render as the backdrop. It may take a second to load! You should see a globe with tech icons in its orbit."
-            action={action}
-          />
+          <Snackbar open={open} autoHideDuration={12000} onClose={handleClose}>
+            <Alert severity='success'>
+            This page has a Three.js render as the backdrop. 
+            It may take a second to load! 
+            You should see a globe with tech icons in its orbit.
+              <IconButton size="small" aria-label="close" onClick={handleClose}>
+                <CloseIcon fontSize="small" />
+              </IconButton>
+            </Alert>
+          </Snackbar>
         </Grid>
         
         

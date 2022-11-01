@@ -107,7 +107,9 @@ export const HomeContent = () => {
           demoVid={assets.nftDemo}
         />
       </>
-    ) : (<SectionWrapper 
+    ) : (
+      <>
+      <SectionWrapper 
         title={(content)}
         description="My projects include webstores for merchandise, browser games, and secured apps like this one.
         Some behind the scenes work include this page locked by JWT Authentication. If you see the title loaded above, that means connection to the server has been established! Login below with the default credentials or even create your own:"
@@ -115,18 +117,10 @@ export const HomeContent = () => {
         showBtn
         btnText='Login'
         route='/login'
-        banner='banner'
+        banner='banner03'
         state={true}
     />
-    )}
-    </>
-  )
-}
-
-export const LandingContent = () => {
-    return (
-      <>
-      <Features 
+    <Features 
         title="UI/UX Build"
         iconUrl1={assets.react}
         iconText1="React.js"
@@ -134,7 +128,7 @@ export const LandingContent = () => {
         iconText2="Three.js"
         iconUrl3={assets.tailwind}
         iconText3="Tailwind CSS"
-        banner='banner03'
+        banner='banner'
       />
       <Features 
         title="API"
@@ -155,9 +149,31 @@ export const LandingContent = () => {
         iconText3="PostgreSQL"
         banner='banner'
       />
+      </>
+    )}
+    </>
+  )
+}
+
+export const LandingContent = () => {
+    return (
+      <>
+      <Features 
+        title="Links"
+        iconUrl1={assets.linkedin}
+        iconText1="LinkedIn"
+        linkText1={"https://linkedin.com/in/henryzthatsme"}
+        iconUrl2={assets.github}
+        iconText2="Github"
+        linkText2={"https://github.com/hzhang20902"}
+        iconUrl3={assets.instagram}
+        iconText3="Instagram"
+        linkText3={"https://instagram.com/figgsboson"}
+        banner='banner02'
+      />
       <Transfer 
-        title='Explore Tech'
-        showBtn
+        title='Source Code For This Site'
+       
         srcLinkFront
         srcLinkBack
         srcLinkExp
@@ -245,7 +261,7 @@ export const AboutSection = () => {
   <SectionWrapper 
       banner="banner03"
       title="Hi! My name is Henry... "
-      description="and I'm a former professional guitarist in the Philadelphia area turned software developer! I have a lifelong passion for learning. My hobbies and passions are history, film, music, and technology!"
+      description="...and I'm a former professional guitarist in the Philadelphia area turned software developer! I have a lifelong passion for learning. My hobbies and passions are history, film, music, and technology!"
       mockupImg={assets.henry}
     />
     <SectionWrapper 
@@ -260,7 +276,7 @@ export const AboutSection = () => {
       youtubeLink="2xAy6lxBZLY"
       description="Checkout what I've been working on as a software developer:"
       showBtn
-      route='/Projects'
+      route='/home'
       btnText='Projects'
     />
   </>

@@ -31,7 +31,7 @@ const SectionWrapper = ({ title, titleBlack, description, srcLink, gitUrl, showD
             {showDesc3 && (<p className={`${styles.descriptionText}`}>{desc3}</p>)}
             
             {showBtn && (
-              <Link to={route} className="nav-link" state={state}>
+              <Link to={route} className="nav-link" state={state} onClick={()=>window.scrollY(0)}>
                 <MainButton>
                   <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: "bold", letterSpacing: 1, zIndex: '3' }}>
                     {btnText}

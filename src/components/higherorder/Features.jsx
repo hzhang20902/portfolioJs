@@ -1,13 +1,15 @@
 import React from 'react'
 import styles from '../../styles/Global';
 
-const FeatureCard = ({ iconUrl, iconText }) => (
+const FeatureCard = ({ iconUrl, iconText, linkUrl }) => (
   <div className={styles.featureCard}>
+  <a target="_blank" rel='noreferrer' href={linkUrl}>
     <img 
       src={iconUrl}
       alt='icon'
       className={styles.featureImg}
     />
+    </a>
     <p className={styles.featureText}>{iconText}</p>
   </div>
 );
@@ -17,6 +19,9 @@ const Features = ({
   pText, 
   pText2,
   title, 
+  linkText1,
+  linkText2,
+  linkText3,
   iconUrl1, 
   iconText1, 
   showCard2,
@@ -57,14 +62,17 @@ const Features = ({
           <FeatureCard 
             iconUrl={iconUrl1}
             iconText={iconText1}
+            linkUrl={linkText1}
           />
           {!showCard2 && (<FeatureCard 
             iconUrl={iconUrl2}
             iconText={iconText2}
+            linkUrl={linkText2}
           />)}
           {!showCard3 && (<FeatureCard 
             iconUrl={iconUrl3}
             iconText={iconText3}
+            linkUrl={linkText3}
           />)}
 
         </div>

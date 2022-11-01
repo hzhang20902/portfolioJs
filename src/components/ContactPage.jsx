@@ -2,8 +2,8 @@ import * as React from 'react';
 import { useState } from 'react';
 import { 
   Avatar,
+  Alert,
   Box,
-  Button,
   CssBaseline,
   Grid,
   IconButton,
@@ -87,22 +87,6 @@ const ContactPage = () => {
       }
       setOpen(false)
     };
-
-    const action = (
-      <div>
-        <Button color="secondary" size="small" onClick={handleClose}>
-          CLOSE
-        </Button>
-        <IconButton
-          size="small"
-          aria-label="close"
-          color="inherit"
-          onClick={handleClose}
-        >
-          <CloseIcon fontSize="small" />
-        </IconButton>
-      </div>
-    );
 
   return (
     <MainContainer> 
@@ -202,13 +186,14 @@ const ContactPage = () => {
               <Copyright sx={{ mt: 5 }} />
             </form>
           </Box>
-          <Snackbar
-            open={open}
-            autoHideDuration={20000}
-            onClose={handleClose}
-            message="This contact form uses a second server, created with Express.js as a standalone API, to relay messages to my Gmail."
-            action={action}
-          />
+          <Snackbar open={open} autoHideDuration={12000} onClose={handleClose}>
+            <Alert severity='success'>
+            This contact form uses a second server, created with Express.js as a standalone API, to relay messages to my Gmail.
+              <IconButton size="small" aria-label="close" onClick={handleClose}>
+                <CloseIcon fontSize="small" />
+              </IconButton>
+            </Alert>
+          </Snackbar>
         </Grid>        
       </Grid>
   

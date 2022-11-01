@@ -69,27 +69,27 @@ const BasicMenu = () => {
       >
 
 
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/">
+        <MenuItem className='fadeRightMini' sx={sxStyling} onClick={()=>window.scrollY(0)} component={Link} to="/">
         Welcome</MenuItem>
 
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/about">
+        <MenuItem className='fadeRightMini' sx={sxStyling} onClick={()=>window.scrollY(0)} component={Link} to="/about">
         About</MenuItem>
 
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/home">
+        <MenuItem className='fadeRightMini' sx={sxStyling} onClick={()=>window.scrollY(0)} component={Link} to="/home">
         Projects</MenuItem>
 
         {currentUser && (
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/profile">
+        <MenuItem className='fadeRightMini' sx={sxStyling} onClick={()=>window.scrollY(0)} component={Link} to="/profile">
         {currentUser.username}</MenuItem>
         )}
 
         {currentUser && showModeratorBoard && (
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/mod">
+        <MenuItem className='fadeRightMini' sx={sxStyling} onClick={()=>window.scrollY(0)} component={Link} to="/mod">
         Mod Dash</MenuItem>
         )}
 
         {currentUser && showAdminBoard && (
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/admin">
+        <MenuItem className='fadeRightMini' sx={sxStyling} onClick={()=>window.scrollY(0)} component={Link} to="/admin">
         *ADMIN ACCESS*</MenuItem>
         )}
 
@@ -100,16 +100,16 @@ const BasicMenu = () => {
         )}
 
         {!currentUser && (
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/login" state={true}>
+        <MenuItem className='fadeRightMini' sx={sxStyling} onClick={()=>window.scrollY(0)} component={Link} to="/login" state={true}>
         Login</MenuItem>
         )}
 
         {!currentUser && (
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/register">
+        <MenuItem className='fadeRightMini' sx={sxStyling} onClick={()=>window.scrollY(0)} component={Link} to="/register">
         Signup</MenuItem>
         )}
 
-        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/contact">
+        <MenuItem className='fadeRightMini' sx={sxStyling} onClick={()=>window.scrollY(0)} component={Link} to="/contact">
         Contact</MenuItem>
         
         {/* <MenuItem className='fadeRightMini' sx={sxStyling} component='a' target='_blank' href="https://www.venmo.com/u/figgsboson">

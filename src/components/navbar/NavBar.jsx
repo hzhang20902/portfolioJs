@@ -19,7 +19,7 @@ const NavBar = () => {
         <BasicMenu />
 
         <NavButton className={styles.mobileBtn}>
-          <Link to={"/"} className="nav-link">
+          <Link to={"/"} className="nav-link" onClick={()=>window.scrollY(0)}>
             <Typography sx={sxStyle}>
               Welcome
             </Typography>
@@ -27,7 +27,7 @@ const NavBar = () => {
         </NavButton>
 
         <NavButton className={styles.mobileBtn}>
-          <Link to={"/about"} className="nav-link">
+          <Link to={"/about"} className="nav-link" onClick={()=>window.scrollY(0)}>
             <Typography sx={sxStyle}>
             About
             </Typography>
@@ -35,7 +35,7 @@ const NavBar = () => {
         </NavButton>
 
         <NavButton className={styles.mobileBtn}>
-          <Link to={"/home"} className="nav-link">
+          <Link to={"/home"} className="nav-link" onClick={()=>window.scrollY(0)}>
             <Typography sx={sxStyle}>
             Projects
             </Typography>
@@ -43,7 +43,7 @@ const NavBar = () => {
         </NavButton>
 
         <NavButton className={styles.mobileBtn}>
-          <Link to={"/contact"} className="nav-link">
+          <Link to={"/contact"} className="nav-link" onClick={()=>window.scrollY(0)}>
             <Typography sx={sxStyle}>
             Contact
             </Typography>

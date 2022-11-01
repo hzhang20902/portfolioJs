@@ -2,8 +2,8 @@ import * as React from 'react';
 import { useState } from 'react';
 import { 
   Avatar,
+  Alert,
   Box,
-  Button,
   CssBaseline,
   Grid,
   IconButton,
@@ -83,22 +83,6 @@ const NewRegister = () => {
     }
     setOpen(false)
   };
-
-  const action = (
-    <div>
-      <Button color="secondary" size="small" onClick={handleClose}>
-        CLOSE
-      </Button>
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={handleClose}
-      >
-        <CloseIcon fontSize="small" />
-      </IconButton>
-    </div>
-  );
 
   return (
     <MainContainer> 
@@ -195,13 +179,16 @@ const NewRegister = () => {
               <Copyright sx={{ mt: 5 }} />
             </form>
           </Box>
-          <Snackbar
-            open={open}
-            autoHideDuration={20000}
-            onClose={handleClose}
-            message="When you register, you'll be assigned a unique JSON Web Token. Even though I have access to the DB, your password is hashed and I will never be able to know what it is!"
-            action={action}
-          />
+   
+          <Snackbar open={open} autoHideDuration={12000} onClose={handleClose}>
+            <Alert severity='success'>
+            When you register, you'll be assigned a unique JSON Web Token. 
+            Even though I have access to the DB, your password is hashed and I will never be able to know what it is!
+              <IconButton size="small" aria-label="close" onClick={handleClose}>
+                <CloseIcon fontSize="small" />
+              </IconButton>
+            </Alert>
+          </Snackbar>
         </Grid>
         
         

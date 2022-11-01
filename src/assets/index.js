@@ -18,6 +18,9 @@ import express from './express.png'
 import henry from './henryPic.png'
 import reactCube from './reactCube.png'
 import java2 from './java2.png'
+import instagram from './instagram.png'
+import linkedin from './linkedin.png'
+import github from './github.png'
 
 export default {
   absEarth,
@@ -39,5 +42,8 @@ export default {
   express,
   henry,
   reactCube,
-  java2
+  java2,
+  instagram,
+  linkedin,
+  github
 }
