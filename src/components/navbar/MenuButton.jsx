@@ -100,7 +100,7 @@ const BasicMenu = () => {
         )}
 
         {!currentUser && (
-        <MenuItem className='fadeRightMini' sx={sxStyling} onClick={()=>window.scrollY(0)} component={Link} to="/login" state={true}>
+        <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/login" state={true}>
         Login</MenuItem>
         )}
 
