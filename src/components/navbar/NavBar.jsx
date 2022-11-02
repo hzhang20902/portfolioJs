@@ -4,18 +4,31 @@ import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography } from '@mui/material';
 
 import styles from '../../styles/Global';
+import styled from 'styled-components';
 
 import BasicMenu from './MenuButton';
 import { NavButton } from '../higherorder/StyledComp';
 
-const NavBar = () => {
+const AppB = styled(AppBar)`
+ 
+  display: none;
+  border: none;
+  outline: none;
+  opacity: 0.5;
+  &:hover{ opacity: 1;
+    transition: opacity 250ms ease-in-out;}
+`;
 
-  const sxStyle={ flexGrow: 1, fontWeight: "bold", letterSpacing: 1, color: 'white' }
+
+const sxStyle={ flexGrow: 1, fontWeight: "bold", letterSpacing: 1, color: 'white'}
+
+
+const NavBar = () => {
 
   return (
   
-    <AppBar>
-      <Toolbar variant='dense' sx={{ backgroundColor: "rgba(13, 78, 217, 0.94)" }}>
+    <AppB color='transparent'>
+      <Toolbar variant='dense' sx={{ backgroundColor: "transparent"}}>
         <BasicMenu />
 
         <NavButton className={styles.mobileBtn}>
@@ -43,6 +56,14 @@ const NavBar = () => {
         </NavButton>
 
         <NavButton className={styles.mobileBtn}>
+          <Link to={"/skills"} className="nav-link" onClick={()=>window.scrollY(0)}>
+            <Typography sx={sxStyle}>
+            Skills
+            </Typography>
+          </Link>
+        </NavButton>
+        
+        <NavButton className={styles.mobileBtn}>
           <Link to={"/contact"} className="nav-link" onClick={()=>window.scrollY(0)}>
             <Typography sx={sxStyle}>
             Contact
@@ -58,7 +79,7 @@ const NavBar = () => {
           </a>
         </NavButton> */}
       </Toolbar>
-    </AppBar>
+    </AppB>
   );
 }
 

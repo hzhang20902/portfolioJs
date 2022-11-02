@@ -3,21 +3,19 @@ import styled from 'styled-components'
 const NavButton = styled.button`
     outline: none;
     border: none;
-    background-color: rgba(13, 78, 217, 0.94);
     color: #fff;
-    font-size: 3px;
     border-radius: 3px;
     cursor: pointer;
     border: 2px solid transparent;
     transition: all 250ms ease-in-out;
     &:hover{
-        background-color: rgba(0, 0, 140, 1);
+        background-color: rgba(13, 78, 217, 0.94);
         color: #3F5BE5;  
     }
-    
 `;
 
 const MainButton = styled(NavButton)`
+    background-color: rgba(13, 78, 217, 0.94);
     font-size: 16px;
     font-weight: 700;
     border-radius: 8px;
@@ -52,7 +50,7 @@ const MainContainer = styled(SContainer)`
     bottom: 0;
     left: 0;
     z-index: 99;
-    padding-top: 1.5em;
+  
 `;
 
 const BoardContainer = styled(MainContainer)`

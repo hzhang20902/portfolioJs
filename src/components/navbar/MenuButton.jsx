@@ -7,11 +7,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import AuthService from '../../services/auth.service';
 
+const sxStyling = {fontSize: 20, 
+  fontWeight: 'bold',
+  color: 'rgba(13, 78, 217, 0.94)',
+  }
 
 const BasicMenu = () => {
-  const sxStyling = {fontSize: 20, 
-    fontWeight: 'bold',
-    color: 'rgba(13, 78, 217, 0.94)'}
+  
 
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
   const [showAdminBoard, setShowAdminBoard] = useState(false);
@@ -49,7 +51,7 @@ const BasicMenu = () => {
       <IconButton
         size="large"
         edge='start'
-        color="inherit"
+        color="primary"
         onClick={handleClick}
       >
         <MenuIcon />
@@ -57,6 +59,8 @@ const BasicMenu = () => {
 
       <Menu
         id="basic-menu"
+        selected
+        variant='menu'
         className='fadeLeftMini'
         anchorEl={anchorEl}
         open={open}
@@ -64,10 +68,10 @@ const BasicMenu = () => {
         PaperProps={{
           style: {
             width: 360,
+            opacity: '0.8',
           }
         }}
       >
-
 
         <MenuItem className='fadeRightMini' sx={sxStyling} onClick={()=>window.scrollY(0)} component={Link} to="/">
         Welcome</MenuItem>
@@ -93,7 +97,6 @@ const BasicMenu = () => {
         *ADMIN ACCESS*</MenuItem>
         )}
 
-
         {currentUser && (
         <MenuItem className='fadeRightMini' sx={sxStyling} component={Link} to="/login" state={true} onClick={logOut}>
         Logout</MenuItem>
@@ -109,14 +112,12 @@ const BasicMenu = () => {
         Signup</MenuItem>
         )}
 
+        <MenuItem className='fadeRightMini' sx={sxStyling} onClick={()=>window.scrollY(0)} component={Link} to="/skills">
+        Skills</MenuItem>
+
         <MenuItem className='fadeRightMini' sx={sxStyling} onClick={()=>window.scrollY(0)} component={Link} to="/contact">
         Contact</MenuItem>
         
-        {/* <MenuItem className='fadeRightMini' sx={sxStyling} component='a' target='_blank' href="https://www.venmo.com/u/figgsboson">
-        Support</MenuItem> */}
-
-        
-
       </Menu>
     </div>
   );

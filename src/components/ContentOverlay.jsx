@@ -33,12 +33,9 @@ export const HomeContent = () => {
       <>
         <SectionWrapper 
         title={(content)}
-        description="It takes a village- sometimes, multiple villages. 
-        The way independent artists work is through one simple idea: 
-        By the people; for the people. 
-        See how artists everywhere collaborate anywhere."
+        description="If you're seeing this, that means you've successfully logged in!"
         showDesc2
-        desc2="Scroll down to view and demo my projects."
+        desc2="Scroll down to view and demo some of my projects."
         mockupImg={assets.absEarth}
         banner='banner'
         />

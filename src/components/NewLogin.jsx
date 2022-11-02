@@ -96,6 +96,7 @@ const NewLogin = () => {
           md={7}
           sx={{
             backgroundRepeat: 'no-repeat',
+            backgroundImage: "url(https://source.unsplash.com/random)",
             backgroundPosition: 'center',
           }}
         >
@@ -179,9 +180,7 @@ const NewLogin = () => {
           </Box>
           <Snackbar open={open} autoHideDuration={12000} onClose={handleClose}>
             <Alert severity='success'>
-            This page has a Three.js render as the backdrop. 
-            It may take a second to load! 
-            You should see a globe with tech icons in its orbit.
+            Login with the default credentials listed above, or register your own user profile!
               <IconButton size="small" aria-label="close" onClick={handleClose}>
                 <CloseIcon fontSize="small" />
               </IconButton>

@@ -1,17 +1,21 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import GroundTexture from '../../textures/groundTexture.jpg';
 import EarthClear from '../../textures/earth_noClouds.jpg';
 import Clouds from '../../textures/clouds.jpeg';
 import assets from '../../assets';
 
 import { useFrame, useLoader } from '@react-three/fiber';
-import { TextureLoader } from 'three';
+import { DoubleSide, TextureLoader } from 'three';
 import { OrbitControls, Stars } from '@react-three/drei';
 import * as THREE from 'three';
+import CamAnimate from './CamAnimate';
 
 
 
-export function Earth( ){
+const Earth = ({ isDbc }) => {
+
+    
+    const [button, setButton] = useState(false) 
 
     const ThreeLogo = assets.threelogo
     const ReactLogo = assets.reactCube
@@ -31,23 +35,25 @@ export function Earth( ){
 
     const earthRef = useRef();
     const cloudsRef = useRef();
-    const threeRef = useRef();
+
     const reactRef = useRef();
-    const javaScriptRef = useRef();
-    const javaRef = useRef();
+    const javaScriptRef = useRef();    
+    const threeRef = useRef();
+    const tailRef = useRef();
     const expRef = useRef();
+    const javaRef = useRef();
     const springRef = useRef();
     const postRef = useRef();
-    const tailRef = useRef();
+
+    const frontRef = useRef();
+    const designRef = useRef();
+    const apiRef = useRef();
+    const reverseRef = useRef();
+    const cameraRef = useRef();
 
     const randomX = Math.round(Math.random()*10)
     const randomY = Math.round(Math.random()*10)
     const randomZ = Math.round(Math.random()*10)
-
-    const intPos = [-4.8, -.3, 26]
-
-    console.log(randomX, randomY, randomZ)
-
 
     useFrame(( { clock } )=>{
         const elapsedTime = clock.getElapsedTime();
@@ -55,39 +61,43 @@ export function Earth( ){
         const cubeRotationX = elapsedTime/randomX
         const cubeRotationY = elapsedTime/randomY
         const cubeRotationZ = elapsedTime/randomZ
-
-        const threeR = threeRef.current.rotation
+        
         const reactR = reactRef.current.rotation
-        const javaR = javaRef.current.rotation
         const javaScriptR = javaScriptRef.current.rotation
+        const threeR = threeRef.current.rotation
+        const tailR = tailRef.current.rotation
         const expR = expRef.current.rotation
+        const javaR = javaRef.current.rotation
         const springR = springRef.current.rotation
         const postR = postRef.current.rotation
-        const tailR = tailRef.current.rotation
 
         //rotation
-        earthRef.current.rotation.y = elapsedTime/8;
-        cloudsRef.current.rotation.y = elapsedTime/8
-
-        threeR.x = cubeRotationZ
-        threeR.y = cubeRotationX
-        threeR.z = cubeRotationY
+        earthRef.current.rotation.y = elapsedTime/25;
+        cloudsRef.current.rotation.y = elapsedTime/25
 
         reactR.x = cubeRotationX
         reactR.y = cubeRotationZ
         reactR.z = cubeRotationY
 
-        javaR.x = cubeRotationY
-        javaR.y = cubeRotationZ
-        javaR.z = cubeRotationX
-
         javaScriptR.x = cubeRotationZ
         javaScriptR.y = cubeRotationY
         javaScriptR.z = cubeRotationX
 
+        threeR.x = cubeRotationZ
+        threeR.y = cubeRotationX
+        threeR.z = cubeRotationY
+
+        tailR.x = cubeRotationX
+        tailR.y = cubeRotationZ
+        tailR.z = cubeRotationY
+
         expR.x = cubeRotationZ
         expR.y = cubeRotationY
         expR.z = cubeRotationX
+
+        javaR.x = cubeRotationY
+        javaR.y = cubeRotationZ
+        javaR.z = cubeRotationX
 
         springR.x = cubeRotationX
         springR.y = cubeRotationY
@@ -97,42 +107,33 @@ export function Earth( ){
         postR.y = cubeRotationX
         postR.z = cubeRotationZ
 
-        tailR.x = cubeRotationX
-        tailR.y = cubeRotationZ
-        tailR.z = cubeRotationY
-
         //orbit
-        // threeRef.current.position.z = elapsedTime
-        // threeRef.current.position.y = 5-elapsedTime/5
-        // threeRef.current.position.x = -elapsedTime/100
+        frontRef.current.rotation.y = -elapsedTime*randomZ/19
+        // frontRef.current.rotation.x = elapsedTime*randomX/17
 
-        // reactRef.current.position.z = elapsedTime
-        // reactRef.current.position.y = 5-elapsedTime/5
-        // reactRef.current.position.x = (elapsedTime/9)-8
- 
-        // if (elapsedTime > 40){
-        //     clock.start()
-        // } 
+        designRef.current.rotation.y = -elapsedTime*randomY/22
+        // designRef.current.rotation.x = -elapsedTime/7
+
+        apiRef.current.rotation.y = -elapsedTime*randomY/17
+        // apiRef.current.rotation.x = elapsedTime*randomZ/24
+
+        reverseRef.current.rotation.y = elapsedTime*randomX/16
+        // reverseRef.current.rotation.x = -elapsedTime*randomX/23
+
     })
+
+
+
+    const intPos = [0,0,0]
     
     return <>
+        <CamAnimate cubeClick={button} doubleClick={isDbc}/>
+        <pointLight color='#f6f3ea' position={[3, 5, 20]} intensity={7.1} />
 
-        <pointLight 
-        color='#f6f3ea' 
-        position={[3, 10, 50]} 
-        intensity={5.1} 
-        />
+        <Stars radius={300} depth={60} count={50000} factor={10} saturation={0} fade={true}/>
 
-        <Stars 
-        radius={300} 
-        depth={60} 
-        count={50000} 
-        factor={10} 
-        saturation={0} 
-        fade={true}/>
-
-        <mesh position={intPos} ref={cloudsRef}>
-            <sphereGeometry args={[3.025, 32, 32, 16]} />
+        <mesh receiveShadow position={intPos} ref={cloudsRef}>
+            <sphereGeometry args={[4.07, 32, 32, 16]} />
             <meshPhongMaterial 
             map={clouds}
             transparent={true}
@@ -140,9 +141,8 @@ export function Earth( ){
             opacity={0.5}
             side={THREE.DoubleSide} />
         </mesh>
-
-        <mesh position={intPos} ref={earthRef}>
-            <sphereGeometry args={[3, 32, 32, 16 ]} />
+        <mesh receiveShadow position={intPos} ref={earthRef}>
+            <sphereGeometry args={[4, 50, 50, 16 ]} />
             <meshPhongMaterial color='red' />
             <meshStandardMaterial 
             map={earthClear} 
@@ -150,68 +150,74 @@ export function Earth( ){
             metalness={0.6}
             roughness={0.3}/>
             <OrbitControls 
-                enableZoom={true} 
-                enablePan={true}
-                enableRotate={true}
                 zoomSpeed={0.6}
                 panSpeed={0.5}
                 rotateSpeed={0.4} />
         </mesh>
 
-        <mesh position={[0,2,30]} rotation={[1,2,1]} ref={threeRef}>
-            <boxGeometry args={[1,1,1,1]} />
-            <meshPhongMaterial 
-            map={threeLogo}
-            color="grey"/>
-        </mesh>
-
-        <mesh position={[-6.5,-0.5,31]} rotation={[1,2,1]} ref={reactRef}>
+        <group ref={frontRef}>
+        <mesh castShadow position={[0,-2,7]} ref={reactRef} onClick={(e) => {setButton(true)}}>
             <boxGeometry args={[1,1,1,1]} />
             <meshPhongMaterial 
             map={reactLogo}
-            color="grey"/>
+            color="grey"
+            side={THREE.DoubleSide}
+            />
         </mesh>
-
-        <mesh position={[-7,-3,30]} rotation={[1,2,1]} ref={javaRef}>
-            <boxGeometry args={[1,1,1,1]} />
-            <meshPhongMaterial 
-            map={javaLogo}
-            color="grey"/>
-        </mesh>
-        <mesh position={[-3,3,30]} rotation={[1,2,1]} ref={javaScriptRef}>
+        <mesh castShadow position={[1,2,-5]} ref={javaScriptRef}>
             <boxGeometry args={[1,1,1,1]} />
             <meshPhongMaterial 
             map={jLogo}
             color="grey"/>
         </mesh>
-        <mesh position={[-2,-3,30]} rotation={[1,2,1]} ref={expRef}>
+        </group>
+
+        <group ref={designRef}>
+        <mesh castShadow position={[-2,0,-6]} ref={threeRef}>
             <boxGeometry args={[1,1,1,1]} />
             <meshPhongMaterial 
-            map={expLogo}
-            side={THREE.DoubleSide}
+            map={threeLogo}
             color="grey"/>
         </mesh>
-        <mesh position={[-8,2,28]} rotation={[1,2,1]} ref={springRef}>
-            <boxGeometry args={[1,1,1,1]} />
-            <meshPhongMaterial 
-            map={spring}
-            side={THREE.DoubleSide}
-            color="grey"/>
-        </mesh>
-        <mesh position={[0.3,-1.5,31]} rotation={[1,2,1]} ref={postRef}>
-            <boxGeometry args={[1,1,1,1]} />
-            <meshPhongMaterial 
-            map={postgres}
-            side={THREE.DoubleSide}
-            color="grey"/>
-        </mesh>
-        <mesh position={[-5,-4,29]} rotation={[1,2,1]} ref={tailRef}>
+        <mesh castShadow position={[3,1.2,5.5]} ref={tailRef}>
             <boxGeometry args={[1,1,1,1]} />
             <meshPhongMaterial 
             map={tailwind}
-            side={THREE.DoubleSide}
             color="grey"/>
         </mesh>
-    </>
+        </group>
 
+        <group ref={apiRef}>
+        <mesh castShadow position={[1,-1,-6.3]} ref={expRef}>
+            <boxGeometry args={[1,1,1,1]} />
+            <meshPhongMaterial 
+            map={expLogo}
+            color="grey"/>
+        </mesh>
+        </group>
+
+        <group ref={reverseRef}>
+        <mesh castShadow position={[3,0,4.7]} ref={javaRef}>
+            <boxGeometry args={[1,1,1,1]} />
+            <meshPhongMaterial 
+            map={javaLogo}
+            color="grey"/>
+        </mesh>
+        <mesh castShadow position={[-2,-2.3,5.8]}  ref={springRef}>
+            <boxGeometry args={[1,1,1,1]} />
+            <meshPhongMaterial 
+            map={spring}
+            color="grey"/>
+        </mesh>
+        <mesh castShadow position={[0,0,-6]} ref={postRef}>
+            <boxGeometry args={[1,1,1,1]} />
+            <meshPhongMaterial 
+            map={postgres}
+            color="grey"/>
+        </mesh>
+        </group>
+        {/* <gridHelper position={[0,-5,0]} /> */}
+    </>
 }
+
+export default Earth;

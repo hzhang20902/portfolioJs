@@ -21,7 +21,7 @@ const TopSection = () => {
   return (
     <Contain>
         <Logo>
-            My Website Tech:
+            Tech Skills:
         </Logo>
     </Contain>
   )
