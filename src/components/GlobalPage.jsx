@@ -4,12 +4,18 @@ import Earth from './earth'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import TopSection from './earth/TopSection'
-
-
-
+import { Snackbar, Alert, IconButton } from '@mui/material'
+import CloseIcon from '@mui/icons-material/Close'
 
 
 const GlobalPage = () => {
+  const [open, setOpen] = useState(true)
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false)
+  };
   const [dbc, setDbc] = useState(false)
   return (
     <>
@@ -27,6 +33,14 @@ const GlobalPage = () => {
         
         />
     </Canvas>
+    <Snackbar open={open} autoHideDuration={10000} onClose={handleClose}>
+            <Alert severity='info'>
+            This page contains a Three.js rendering of an earth with tech icons. It may take a sec to load!
+              <IconButton size="small" aria-label="close" onClick={handleClose}>
+                <CloseIcon fontSize="small" />
+              </IconButton>
+            </Alert>
+          </Snackbar>
     </>
   )
 }
