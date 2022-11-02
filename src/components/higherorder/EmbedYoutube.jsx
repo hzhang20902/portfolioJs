@@ -2,7 +2,7 @@ import React from 'react'
 
 const EmbedYoutube = ({ embedId }) => {
   return (
-    <div className='video-responsive'>
+    // <div className='video-responsive'>
     <iframe
         width='851'
         height='480'
@@ -12,7 +12,7 @@ const EmbedYoutube = ({ embedId }) => {
       allowFullScreen
       title="Embedded youtube"
     />
-    </div>
+    // </div>
 );
 
 }

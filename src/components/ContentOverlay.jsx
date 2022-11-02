@@ -258,12 +258,16 @@ export const AboutSection = () => {
   <SectionWrapper 
       banner="banner03"
       title="Hi! My name is Henry... "
-      description="...and I'm a former professional guitarist in the Philadelphia area turned software developer! I have a lifelong passion for learning. My hobbies and passions are history, film, music, and technology!"
-      mockupImg={assets.henry}
+      description="...and I'm a former professional guitarist in the Philadelphia area turned software developer! I have a lifelong passion for learning. My hobbies and passions are history, film, music, and technology! This page has some content that I enjoy, including topics about mental health, history, and my own music endeavors as an independent artist."
+      youtubeLink="jtIZZs-GAOA"
+      showDesc2
+      desc2="(Video Desc: Jon Oliver pontificating on mental health advocacy)"
     />
     <SectionWrapper 
       title="I have a passion for helping people any way I can."
-      youtubeLink="R6bBF_57KaY"
+      youtubeLink="0faCad2kKeg"
+      showDesc2
+      desc2="(Video Desc: The fascinating history of how radio and binary led to wifi and cell phones)"
       description="I thrive on change and the new challenges as well as successes it can bring. For the last two years, I have been learning, coding, and building..."
       banner='banner'
     />
@@ -273,6 +277,8 @@ export const AboutSection = () => {
       youtubeLink="2xAy6lxBZLY"
       description="Checkout what I've been working on as a software developer:"
       showBtn
+      showDesc2
+      desc2="(Video Desc: Some of my work as an independent musician)"
       route='/home'
       btnText='Projects'
     />
