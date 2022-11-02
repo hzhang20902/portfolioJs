@@ -273,7 +273,7 @@ export const AboutSection = () => {
     />
     <SectionWrapper 
       banner='banner04'
-      titleBlack="...to make my dream of funding community-first music and art initiatives a reality!"
+      titleBlack="...to make funding community-first music and artistics initiatives a reality!"
       youtubeLink="2xAy6lxBZLY"
       description="Checkout what I've been working on as a software developer:"
       showBtn
