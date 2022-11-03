@@ -6,7 +6,77 @@ import SectionWrapper from './higherorder/SectionWrapper';
 import Features from './higherorder/Features';
 import Transfer from './higherorder/Transfer';
 import AuthService from '../services/auth.service';
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
+
+export const LandingContent = () => {
+    return (
+      <>
+      <Features 
+        title="Links"
+        iconUrl1={assets.linkedin}
+        iconText1="LinkedIn"
+        linkText1={"https://linkedin.com/in/henryzthatsme"}
+        iconUrl2={assets.github}
+        iconText2="Github"
+        linkText2={"https://github.com/hzhang20902"}
+        iconUrl3={assets.instagram}
+        iconText3="Instagram"
+        linkText3={"https://instagram.com/figgsboson"}
+        banner='banner02'
+      />
+      <Transfer 
+        title='Source Code For This Site'
+        srcLinkFront
+        srcLinkBack
+        srcLinkExp
+        image={assets.screens}
+      />
+      </>
+    )
+  }
+
+export const AboutSection = () => {
+  return (
+    <>
+  <SectionWrapper 
+      banner="banner03"
+      title="Hi! My name is Henry... "
+      description="...and I'm a former professional guitarist in the Philadelphia area turned software developer! 
+      I have a lifelong passion for learning. My hobbies and passions are history, film, music, and technology! 
+      This page has some content that I enjoy, including topics about mental health, history, and my own music endeavors as an independent artist."
+      youtubeLink="jtIZZs-GAOA"
+      showDesc2
+      desc2={(
+      <a target='_blank' rel="noreferrer" href="https://www.youtube.com/watch?v=jtIZZs-GAOA"><Typography fontSize={12} color='black'>(Mobile View: John Oliver pontificating on mental health advocacy)</Typography></a>
+      )}
+    />
+    <SectionWrapper 
+      title="I have a passion for helping people any way I can."
+      youtubeLink="0faCad2kKeg"
+      showDesc2
+      desc2={(
+      <a target='_blank' rel="noreferrer" href="https://www.youtube.com/watch?v=0faCad2kKeg"><Typography fontSize={12} color='black'>(Mobile View: The fascinating history of how radio and binary led to wifi and cell phones)</Typography></a>
+      )}
+      description="I thrive on change and the new challenges as well as successes it can bring. Accomplishing great things with great people is the underlying theme of my career and I value the insights of 
+      my colleagues to be tantamount to success. For the last two years, I have been learning, coding, and building..."
+      banner='banner'
+    />
+    <SectionWrapper 
+      banner='banner04'
+      titleBlack="...to invest in community-first music and artistic initiatives!"
+      youtubeLink="2xAy6lxBZLY"
+      description="Check out what I've been working on as a software developer:"
+      showBtn
+      showDesc2
+      desc2={(
+      <a target='_blank' rel="noreferrer" href="https://www.youtube.com/watch?v=2xAy6lxBZLY"><Typography fontSize={12} color='#fff'>(Mobile View: Some of my work as an independent musician)</Typography></a>
+      )}
+      route='/home'
+      btnText='Projects'
+    />
+  </>
+  )
+}
 
 export const HomeContent = () => {
 
@@ -152,33 +222,6 @@ export const HomeContent = () => {
   )
 }
 
-export const LandingContent = () => {
-    return (
-      <>
-      <Features 
-        title="Links"
-        iconUrl1={assets.linkedin}
-        iconText1="LinkedIn"
-        linkText1={"https://linkedin.com/in/henryzthatsme"}
-        iconUrl2={assets.github}
-        iconText2="Github"
-        linkText2={"https://github.com/hzhang20902"}
-        iconUrl3={assets.instagram}
-        iconText3="Instagram"
-        linkText3={"https://instagram.com/figgsboson"}
-        banner='banner02'
-      />
-      <Transfer 
-        title='Source Code For This Site'
-       
-        srcLinkFront
-        srcLinkBack
-        srcLinkExp
-        image={assets.screens}
-      />
-      </>
-    )
-  }
   
 export const AdminAccess = () => {
   const [content, setContent]  = useState([]);
@@ -250,38 +293,4 @@ export const ModBoard = () => {
           </Grid>))}
         </>
     )
-}
-
-export const AboutSection = () => {
-  return (
-  <>
-  <SectionWrapper 
-      banner="banner03"
-      title="Hi! My name is Henry... "
-      description="...and I'm a former professional guitarist in the Philadelphia area turned software developer! I have a lifelong passion for learning. My hobbies and passions are history, film, music, and technology! This page has some content that I enjoy, including topics about mental health, history, and my own music endeavors as an independent artist."
-      youtubeLink="jtIZZs-GAOA"
-      showDesc2
-      desc2="(Video Desc: Jon Oliver pontificating on mental health advocacy)"
-    />
-    <SectionWrapper 
-      title="I have a passion for helping people any way I can."
-      youtubeLink="0faCad2kKeg"
-      showDesc2
-      desc2="(Video Desc: The fascinating history of how radio and binary led to wifi and cell phones)"
-      description="I thrive on change and the new challenges as well as successes it can bring. For the last two years, I have been learning, coding, and building..."
-      banner='banner'
-    />
-    <SectionWrapper 
-      banner='banner04'
-      titleBlack="...to make funding community-first music and artistics initiatives a reality!"
-      youtubeLink="2xAy6lxBZLY"
-      description="Checkout what I've been working on as a software developer:"
-      showBtn
-      showDesc2
-      desc2="(Video Desc: Some of my work as an independent musician)"
-      route='/home'
-      btnText='Projects'
-    />
-  </>
-  )
 }

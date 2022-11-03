@@ -1,9 +1,10 @@
 import React from 'react'
+import styles from '../../styles/Global';
 
 const EmbedYoutube = ({ embedId }) => {
   return (
     // <div className='video-responsive'>
-    <iframe
+    <iframe className={styles.mobileBtn}
         width='581'
         height='320'
       src={`https://www.youtube.com/embed/${embedId}`}

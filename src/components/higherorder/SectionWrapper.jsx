@@ -13,7 +13,7 @@ const SectionWrapper = ({ title, titleBlack, description, srcLink, gitUrl, showD
     ${reverse? styles.bgWhite : styles.bgPrimary} 
     ${banner}`}>
         <div className={`
-        flex items-center 
+        flex items-center
         ${reverse? styles.boxReverseClass : styles.boxClass} 
         w-11/12 sm:w-full minmd:w-3/4`}>
             <div className={`

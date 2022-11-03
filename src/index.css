@@ -142,8 +142,9 @@ h6 {
 }
 
 iframe {
+  position: relative;
   overflow: hidden;
   display: flex;
-  flex-shrink: 1;
+  flex-direction: column;
 }
 

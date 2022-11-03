@@ -1,7 +1,7 @@
 import AuthService from "../../services/auth.service";
 import BigWaveModel from "../avatar/BigWaveModel";
 import { React, Suspense } from "react";
-import { Clock } from "../higherorder/Loader";
+import { ClockIcon } from "../higherorder/Loader";
 import { Canvas } from "@react-three/fiber";
 import SectionWrapper from "../higherorder/SectionWrapper";
 import { MainContainer } from "../higherorder/StyledComp";
@@ -35,7 +35,7 @@ const Profile = () => {
             {currentUser? (<Canvas 
                 camera={{ position: [1, 0, 13], fov: 20}}
                 style={{ width: "100%", height: '73%', zIndex: "2"}}>
-                <Suspense fallback={<Clock color='#fff' size='125' speed='0.5'/>}>
+                <Suspense fallback={<ClockIcon color='#fff' size='100' speed='0.5'/>}>
                 <BigWaveModel position={[1.15,-1.35,5]}/>
                 <pointLight color='#f6f3ea' position={[6, 12, 15]} intensity={1.3}  />
                 </Suspense>

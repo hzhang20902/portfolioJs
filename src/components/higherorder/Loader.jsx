@@ -3,7 +3,7 @@ import { Html } from '@react-three/drei'
 import { ClockLoader, PropagateLoader, RingLoader } from "react-spinners" 
 
 
-export const Clock = ({ size, color }) => {
+export const ClockIcon = ({ size, color }) => {
 
   return (
     <>

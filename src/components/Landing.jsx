@@ -34,18 +34,28 @@ const Landing = () => {
         <MainContainer>
             <div className="main">
                 <div className="overlay"></div>
-                <video src={assets.lake} autoPlay loop muted />
+                <video src={assets.lake} autoPlay loop muted/>
                 <div className='content fadeRightMini'>
                     <Logo>
                         Welcome to My Portfolio Hub
                     </Logo>   
                     <Link to={"/about"} style={{zIndex: '1'}}>
-                    <MainButton>
-                        Enter
+                    <MainButton style={{minWidth: '8em'}}>
+                        About
+                    </MainButton>
+                    </Link>
+                    <Link to={"/home"} style={{zIndex: '1'}}>
+                    <MainButton style={{minWidth: '8em'}}> 
+                        Projects
+                    </MainButton>
+                    </Link>
+                    <Link to={"/skills"} style={{zIndex: '1'}}>
+                    <MainButton style={{minWidth: '8em'}}>
+                        Skills
                     </MainButton>
                     </Link>
                     <Slogan>
-                        by Henry Zhang
+                     
                     </Slogan>
 
                     <div className="content">
@@ -54,11 +64,12 @@ const Landing = () => {
                         style={{width: "100%", height: '70%', objectFit: 'cover'}}>
                         <Suspense fallback={<ThreeDots size='25'/>}>
                             <pointLight color='#f6f3ea' position={[6, 12, 15]} intensity={1.8}  />
-                            <WavingModel position={[-0.93,-1.3,.6]}/>
+                            <WavingModel position={[-0.75,-1.3,4]}/>
                         </Suspense>
                         <OrbitControls 
                             enableZoom={false}
                             enablePan={false}
+                            enableRotate={false}
                         />
                     </Canvas>
                     </div>
