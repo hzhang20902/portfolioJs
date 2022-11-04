@@ -27,7 +27,7 @@ const Profile = () => {
             banner='banner02'
             mockupImg={null}
             showBtn
-            route='/home'
+            route='/projects'
             btnText='Projects'
             />
             </div>

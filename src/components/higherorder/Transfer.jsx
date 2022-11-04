@@ -21,7 +21,7 @@ const Transfer = ({ image, srcLinkFront, srcLinkBack, srcLinkExp, showBtn, title
           {srcLinkBack && (<a target="_blank" rel='noreferrer' href="https://github.com/hzhang20902/jwtSetup" className='nav-link'>Server Source Code</a>)}
           {srcLinkExp && (<a target="_blank" rel='noreferrer' href="https://github.com/hzhang20902/contactformapi" className='nav-link'>Express API Source Code</a>)}
         {showBtn && (
-          <Link to={"/home"} className='nav-link' onClick={()=>window.scrollY(0)}>
+          <Link to={"/projects"} className='nav-link' onClick={()=>window.scrollY(0)}>
             <MainButton className={styles.btnPrimary}>          
               <Typography variant="h5" sx={{ flexGrow: 1, fontWeight: "bold", letterSpacing: 1 }}>
                 Projects

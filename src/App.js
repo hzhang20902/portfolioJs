@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css';
@@ -16,7 +16,6 @@ import NewRegister from "./components/NewRegister";
 import NewLogin from "./components/NewLogin";
 import ErrorPage from "./components/ErrorPage";
 import AboutPage from "./components/AboutPage";
-import TopSection from "./components/earth/TopSection";
 import GlobalPage from "./components/GlobalPage";
 
 
@@ -29,14 +28,13 @@ object-fit: cover;
 `;
 
 const App = () => {
-  // const location = useLocation();
 
   return (
     <CanvasContainer>
       <NavBar />
         <Routes>
           <Route path="/" element={<Landing/>} />
-          <Route path="/home" element={<Home/>} />
+          <Route path="/projects" element={<Home/>} />
           <Route path="/login" state={true} element={<NewLogin/>} />
           <Route path="/register" element={<NewRegister/>} />
           <Route path="/profile" element={<Profile/>} />

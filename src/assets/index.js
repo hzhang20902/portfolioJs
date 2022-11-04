@@ -21,6 +21,7 @@ import java2 from './java2.png'
 import instagram from './instagram.png'
 import linkedin from './linkedin.png'
 import github from './github.png'
+import gmail from './gmail.png'
 
 export default {
   absEarth,
@@ -45,5 +46,6 @@ export default {
   java2,
   instagram,
   linkedin,
-  github
+  github,
+  gmail
 }

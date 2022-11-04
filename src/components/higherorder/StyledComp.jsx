@@ -9,8 +9,8 @@ const NavButton = styled.button`
     border: 2px solid transparent;
     transition: all 250ms ease-in-out;
     &:hover{
-        background-color: rgba(13, 78, 217, 0.94);
-        color: #3F5BE5;  
+        background-color: transparent;
+        border 2px solid white;
     }
 `;
 
@@ -23,6 +23,7 @@ const MainButton = styled(NavButton)`
     margin-top: 3em;
     &:hover {
         background-color: transparent;
+        color: rgba(13, 78, 217, 0.94);
         border: 2px solid rgba(13, 78, 217, 0.94);
   }
 `;

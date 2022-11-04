@@ -19,9 +19,9 @@ export const LandingContent = () => {
         iconUrl2={assets.github}
         iconText2="Github"
         linkText2={"https://github.com/hzhang20902"}
-        iconUrl3={assets.instagram}
-        iconText3="Instagram"
-        linkText3={"https://instagram.com/figgsboson"}
+        iconUrl3={assets.gmail}
+        iconText3="Gmail"
+        linkText3={"/contact"}
         banner='banner02'
       />
       <Transfer 
@@ -71,7 +71,7 @@ export const AboutSection = () => {
       desc2={(
       <a target='_blank' rel="noreferrer" href="https://www.youtube.com/watch?v=2xAy6lxBZLY"><Typography fontSize={12} color='#fff'>(Mobile View: Some of my work as an independent musician)</Typography></a>
       )}
-      route='/home'
+      route='/projects'
       btnText='Projects'
     />
   </>

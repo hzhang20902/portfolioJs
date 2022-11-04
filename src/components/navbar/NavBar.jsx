@@ -10,17 +10,13 @@ import BasicMenu from './MenuButton';
 import { NavButton } from '../higherorder/StyledComp';
 
 const AppB = styled(AppBar)`
- 
-  display: none;
-  border: none;
-  outline: none;
-  opacity: 0.5;
+  opacity: .6;
   &:hover{ opacity: 1;
     transition: opacity 250ms ease-in-out;}
 `;
 
 
-const sxStyle={ flexGrow: 1, fontWeight: "bold", letterSpacing: 1, color: 'white'}
+const sxStyle={ flexGrow: 1, fontWeight: "bold", letterSpacing: 1, color: "white" }
 
 
 const NavBar = () => {
@@ -32,9 +28,9 @@ const NavBar = () => {
         <BasicMenu />
 
         <NavButton className={styles.mobileBtn}>
-          <Link to={"/"} className="nav-link" onClick={()=>window.scrollY(0)}>
+          <Link to={"/#landinglinks"} className="nav-link" onClick={()=>window.scrollY(0)}>
             <Typography sx={sxStyle}>
-              Welcome
+              Home
             </Typography>
           </Link>
         </NavButton>
@@ -48,7 +44,7 @@ const NavBar = () => {
         </NavButton>
 
         <NavButton className={styles.mobileBtn}>
-          <Link to={"/home"} className="nav-link" onClick={()=>window.scrollY(0)}>
+          <Link to={"/projects"} className="nav-link" onClick={()=>window.scrollY(0)}>
             <Typography sx={sxStyle}>
             Projects
             </Typography>

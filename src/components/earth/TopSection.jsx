@@ -1,5 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components'
+import { MainButton } from '../higherorder/StyledComp';
 
 const Logo = styled.div`
     margin: 0;
@@ -21,8 +23,13 @@ const TopSection = () => {
   return (
     <Contain>
         <Logo>
-            Tech Skills:
+            Tech Stacks:
         </Logo>
+          {/* <Link to={'/contact'}>
+        <MainButton style={{bottom: 0}}>
+            Send A Msg
+        </MainButton>
+          </Link> */}
     </Contain>
   )
 }

@@ -12,9 +12,8 @@ const ErrorPage = () => {
                 mockupImg={assets.notFound}
                 banner='banner03'
                 showBtn
-                route="/home"
+                route="/"
                 btnText="Home"
-                state={false}
             />
         </SContainer>
     );

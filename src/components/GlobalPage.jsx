@@ -19,6 +19,7 @@ const GlobalPage = () => {
     setOpen(false)
   };
   const [dbc, setDbc] = useState(false)
+  
 
   return (
     <>

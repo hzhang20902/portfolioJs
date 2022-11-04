@@ -182,8 +182,8 @@ const NewRegister = () => {
    
           <Snackbar open={open} autoHideDuration={12000} onClose={handleClose}>
             <Alert severity='success'>
-            When you register, you'll be assigned a unique JSON Web Token. 
-            Even though I have access to the DB, your password is hashed and I will never be able to know what it is!
+            Upon registration, you are assigned a JSON Web Token for sessions. 
+            Your password is hashed and stored in a PostgreSQL DB.
               <IconButton size="small" aria-label="close" onClick={handleClose}>
                 <CloseIcon fontSize="small" />
               </IconButton>

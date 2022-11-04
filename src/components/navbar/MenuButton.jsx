@@ -51,7 +51,7 @@ const BasicMenu = () => {
       <IconButton
         size="large"
         edge='start'
-        color="primary"
+        sx={{color: 'white'}}
         onClick={handleClick}
       >
         <MenuIcon />
@@ -74,12 +74,12 @@ const BasicMenu = () => {
       >
 
         <MenuItem className='fadeRightMini' sx={sxStyling} onClick={()=>window.scrollY(0)} component={Link} to="/">
-        Welcome</MenuItem>
+        Home</MenuItem>
 
         <MenuItem className='fadeRightMini' sx={sxStyling} onClick={()=>window.scrollY(0)} component={Link} to="/about">
         About</MenuItem>
 
-        <MenuItem className='fadeRightMini' sx={sxStyling} onClick={()=>window.scrollY(0)} component={Link} to="/home">
+        <MenuItem className='fadeRightMini' sx={sxStyling} onClick={()=>window.scrollY(0)} component={Link} to="/projects">
         Projects</MenuItem>
 
         {currentUser && (

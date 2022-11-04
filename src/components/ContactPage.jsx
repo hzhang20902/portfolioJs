@@ -12,8 +12,8 @@ import {
   TextField,
   Typography } from '@mui/material'
 
-import MessageIcon from '@mui/icons-material/Message';
 import CloseIcon from '@mui/icons-material/Close'
+import assets from '../assets';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { SButton, MainContainer } from './higherorder/StyledComp';
@@ -115,8 +115,8 @@ const ContactPage = () => {
               flexDirection: 'column',
               alignItems: 'center',
             }}>
-            <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
-              <MessageIcon />
+            <Avatar sx={{ m: 1, bgcolor: 'white' }}>
+              <img src={assets.gmail} alt="gmail icon" style={{padding: "5px"}} />
             </Avatar>
            
 

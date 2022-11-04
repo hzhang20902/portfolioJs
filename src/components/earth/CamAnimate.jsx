@@ -16,6 +16,7 @@ const CamAnimate = ( { cubeClick, doubleClick} ) => {
     
     // const [clicked, setClicked] = useState(false)
     // const [variables, setVariables] = useState(null)
+    // const [earthlink, setEarthlink] = useState(false)
     const [mouse, setMouse] = useState(false)
     const vec = new THREE.Vector3()
 

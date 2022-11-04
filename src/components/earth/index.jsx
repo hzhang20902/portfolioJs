@@ -5,16 +5,17 @@ import Clouds from '../../textures/clouds.jpeg';
 import assets from '../../assets';
 
 import { useFrame, useLoader } from '@react-three/fiber';
-import { DoubleSide, TextureLoader } from 'three';
+import { TextureLoader } from 'three';
 import { OrbitControls, Stars } from '@react-three/drei';
 import * as THREE from 'three';
-import CamAnimate from './CamAnimate';
+import CamAnimate from './CamAnimate'
+
 
 
 
 const Earth = ({ isDbc }) => {
-
     
+
     const [button, setButton] = useState(false) 
 
     const ThreeLogo = assets.threelogo
@@ -49,7 +50,6 @@ const Earth = ({ isDbc }) => {
     const designRef = useRef();
     const apiRef = useRef();
     const reverseRef = useRef();
-    const cameraRef = useRef();
 
     const randomX = Math.round(Math.random()*10)
     const randomY = Math.round(Math.random()*10)
@@ -141,7 +141,7 @@ const Earth = ({ isDbc }) => {
             opacity={0.5}
             side={THREE.DoubleSide} />
         </mesh>
-        <mesh receiveShadow position={intPos} ref={earthRef}>
+        <mesh receiveShadow position={intPos} ref={earthRef} onClick={(e) => {}}>
             <sphereGeometry args={[4, 50, 50, 16 ]} />
             <meshPhongMaterial color='red' />
             <meshStandardMaterial 
