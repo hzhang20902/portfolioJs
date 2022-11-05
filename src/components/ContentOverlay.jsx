@@ -41,7 +41,7 @@ export const AboutSection = () => {
   <SectionWrapper 
       banner="banner03"
       title="Hi! My name is Henry... "
-      description="...and I'm a former professional guitarist in the Philadelphia area turned software developer! 
+      description="...and I'm an industry guitarist in the Philadelphia area turned software developer! 
       I have a lifelong passion for learning. My hobbies and passions are history, film, music, and technology! 
       This page has some content that I enjoy, including topics about mental health, history, and my own music endeavors as an independent artist."
       youtubeLink="jtIZZs-GAOA"
@@ -64,12 +64,12 @@ export const AboutSection = () => {
     <SectionWrapper 
       banner='banner04'
       titleBlack="...to invest in community-first music and artistic initiatives!"
-      youtubeLink="2xAy6lxBZLY"
+      youtubeLink="rulQQNQryCU"
       description="Check out what I've been working on as a software developer:"
       showBtn
       showDesc2
       desc2={(
-      <a target='_blank' rel="noreferrer" href="https://www.youtube.com/watch?v=2xAy6lxBZLY"><Typography fontSize={12} color='#fff'>(Mobile View: Some of my work as an independent musician)</Typography></a>
+      <a target='_blank' rel="noreferrer" href="https://www.youtube.com/watch?v=rulQQNQryCU"><Typography fontSize={12} color='#fff'>(Mobile View: My arrangement of Kendrick Lamar's "United in Grief")</Typography></a>
       )}
       route='/projects'
       btnText='Projects'
