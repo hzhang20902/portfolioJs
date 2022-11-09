@@ -15,16 +15,18 @@ const NavButton = styled.button`
 `;
 
 const MainButton = styled(NavButton)`
-    background-color: rgba(13, 78, 217, 0.94);
+    color: rgba(13, 78, 217, 0.94);
+    background-color: transparent
     font-size: 16px;
     font-weight: 700;
+    border: 2px solid rgba(13, 78, 217, 0.94);
     border-radius: 8px;
     padding: 8px 2em;
-    margin-top: 3em;
+    ${'' /* margin-top: 3em; */}
     &:hover {
         background-color: transparent;
         color: rgba(13, 78, 217, 0.94);
-        border: 2px solid rgba(13, 78, 217, 0.94);
+        
   }
 `;
 

@@ -24,7 +24,7 @@ const CamAnimate = ( { cubeClick, doubleClick} ) => {
        
         if (mouse || doubleClick ===false) {
             state.camera.lookAt(0,0,-40)
-            state.camera.position.lerp(vec.set(3, -2, 27), .008)
+            state.camera.position.lerp(vec.set(3, -2, 27), .01)
             state.camera.updateProjectionMatrix()
         } 
         if (doubleClick === true){

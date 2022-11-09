@@ -16,7 +16,7 @@ const AppB = styled(AppBar)`
 `;
 
 
-const sxStyle={ flexGrow: 1, fontWeight: "bold", letterSpacing: 1, color: "white" }
+const sxStyle={ flexGrow: 1, fontWeight: "bold", letterSpacing: 1, color: "rgba(13, 78, 217, 0.94)" }
 
 
 const NavBar = () => {
@@ -28,7 +28,7 @@ const NavBar = () => {
         <BasicMenu />
 
         <NavButton className={styles.mobileBtn}>
-          <Link to={"/#landinglinks"} className="nav-link" onClick={()=>window.scrollY(0)}>
+          <Link to={"/"} className="nav-link" onClick={()=>window.scrollY(0)}>
             <Typography sx={sxStyle}>
               Home
             </Typography>

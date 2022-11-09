@@ -57,7 +57,7 @@ const Features = ({
           {pText2}</p>)}
         </div>
         
-        <div className={styles.flexWrap}>
+        <div className={`${styles.flexWrap} fadeLeftMini`}>
         
           <FeatureCard 
             iconUrl={iconUrl1}

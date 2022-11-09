@@ -3,13 +3,14 @@ import GroundTexture from '../../textures/groundTexture.jpg';
 import EarthClear from '../../textures/earth_noClouds.jpg';
 import Clouds from '../../textures/clouds.jpeg';
 import assets from '../../assets';
+import MetalRivet from '../../textures/metalrivet.jpeg'
+import GreenGlass from '../../textures/greenglass.jpeg'
 
 import { useFrame, useLoader } from '@react-three/fiber';
 import { TextureLoader } from 'three';
 import { OrbitControls, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 import CamAnimate from './CamAnimate'
-
 
 
 
@@ -29,13 +30,14 @@ const Earth = ({ isDbc }) => {
 
     const [clouds,
         earthClear,
-        groundTexture, threeLogo, reactLogo, javaLogo, jLogo, expLogo, spring, postgres, tailwind ] = useLoader(
+        groundTexture, threeLogo, reactLogo, javaLogo, jLogo, expLogo, spring, postgres, tailwind, metalRivet, greenGlass ] = useLoader(
         TextureLoader, 
-        [Clouds, EarthClear, GroundTexture, ThreeLogo, ReactLogo, JavaLogo, JLogo, ExpLogo, Spring, Postgres, Tailwind]
+        [Clouds, EarthClear, GroundTexture, ThreeLogo, ReactLogo, JavaLogo, JLogo, ExpLogo, Spring, Postgres, Tailwind, MetalRivet, GreenGlass]
         );
 
     const earthRef = useRef();
     const cloudsRef = useRef();
+    const saucerOrbitRef = useRef();
 
     const reactRef = useRef();
     const javaScriptRef = useRef();    
@@ -50,6 +52,7 @@ const Earth = ({ isDbc }) => {
     const designRef = useRef();
     const apiRef = useRef();
     const reverseRef = useRef();
+    
 
     const randomX = Math.round(Math.random()*10)
     const randomY = Math.round(Math.random()*10)
@@ -73,7 +76,10 @@ const Earth = ({ isDbc }) => {
 
         //rotation
         earthRef.current.rotation.y = elapsedTime/25;
-        cloudsRef.current.rotation.y = elapsedTime/25
+        cloudsRef.current.rotation.y = elapsedTime/25;
+
+        saucerOrbitRef.current.rotation.y= elapsedTime;
+        
 
         reactR.x = cubeRotationX
         reactR.y = cubeRotationZ
@@ -127,9 +133,11 @@ const Earth = ({ isDbc }) => {
     const intPos = [0,0,0]
     
     return <>
+        {/* <pointLight color='#f6f3ea' position={[0, 0, 240]} intensity={3.1} /> */}
+        
         <CamAnimate cubeClick={button} doubleClick={isDbc}/>
         <pointLight color='#f6f3ea' position={[3, 5, 20]} intensity={7.1} />
-
+        
         <Stars radius={300} depth={60} count={50000} factor={10} saturation={0} fade={true}/>
 
         <mesh receiveShadow position={intPos} ref={cloudsRef}>
@@ -141,7 +149,7 @@ const Earth = ({ isDbc }) => {
             opacity={0.5}
             side={THREE.DoubleSide} />
         </mesh>
-        <mesh receiveShadow position={intPos} ref={earthRef} onClick={(e) => {}}>
+        <mesh receiveShadow position={intPos} ref={earthRef}>
             <sphereGeometry args={[4, 50, 50, 16 ]} />
             <meshPhongMaterial color='red' />
             <meshStandardMaterial 
@@ -214,6 +222,24 @@ const Earth = ({ isDbc }) => {
             <meshPhongMaterial 
             map={postgres}
             color="grey"/>
+        </mesh>
+        </group>
+
+        <group ref={saucerOrbitRef}>
+        <mesh position={[0,1,300]} >
+            <sphereGeometry args={[1,50,50,2]} />
+            <meshPhysicalMaterial 
+            map={greenGlass}
+            transparent={true}
+            depthWrite={true}
+            opacity={0.9}
+            color="grey"
+            />
+        </mesh>
+        <mesh position={[0,0,300]} >
+            <coneGeometry args={[7,2,60,60,false]} />
+            <meshStandardMaterial 
+            map={metalRivet}  />
         </mesh>
         </group>
         {/* <gridHelper position={[0,-5,0]} /> */}
