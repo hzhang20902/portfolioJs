@@ -135,6 +135,19 @@ export const HomeContent = () => {
           demoVid={assets.minecraft}
         />
         <SectionWrapper 
+          title='Real Estate Marketplace'
+          description="A real estate rent/buy marketplace with dynamically generated stock API packages. In progress- currently building search function."
+          showDesc2
+          desc2="Next.js, React.js, Chakra-UI, RapidAPI"
+          reverse
+          extLink
+          srcLink
+          gitUrl="https://github.com/hzhang20902/realestateNextjs"
+          btnText='App Demo'
+          route='https://nextrealestate-gamma.vercel.app/'
+          demoVid={assets.realestate}
+        />
+        <SectionWrapper 
           title='Zoom Type App'
           description="A lite-weight video chat app. Each refresh generates a new temp ID which can be used to call someone via WebRTC datastream."
           showDesc2
@@ -159,19 +172,6 @@ export const HomeContent = () => {
           btnText='App Demo'
           route='https://liftoffanimalshelterapp.vercel.app/'
           demoVid={assets.shelterApp}
-        />
-        <SectionWrapper 
-          title='NFT Market UI/UX Mobile Demo'
-          description="A frontend demo of a web3.0 store for NFTs. Visit the landing page for more info."
-          showDesc2
-          desc2="React Native, Landing: React.js, Tailwind CSS"
-          reverse
-          extLink
-          srcLink
-          gitUrl="https://github.com/hzhang20902/reactn_nft_market"
-          btnText='Landing Page'
-          route='https://cold-waterfall-0983.on.fleek.co/'
-          demoVid={assets.nftDemo}
         />
       </>
     ) : (
