@@ -178,8 +178,8 @@ export const HomeContent = () => {
       <>
       <SectionWrapper 
         title={(content)}
-        description="My projects include webstores for merchandise, browser games, and secured apps like this one.
-        Some behind the scenes work include this page locked by JWT Authentication. If you see the title loaded above, that means connection to the server has been established! Login below with the default credentials or even create your own:"
+        description="My projects include webstores for merchandise, browser games, and a real estate marketplace.
+        Some behind the scenes work include this page locked by JWT Authentication. If you see the title loaded above, that means connection to the Java/SpringBoot server has been established! Login below with the default credentials or create your own:"
         mockupImg={assets.absEarth}
         showBtn
         btnText='Login'

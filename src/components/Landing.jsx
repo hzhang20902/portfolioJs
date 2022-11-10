@@ -62,21 +62,4 @@ const Landing = () => {
     )
 }
 
-export default Landing;  
-
-//3d model, last in content div
-     {/* <div className="content">
-                    <Canvas 
-                        camera={{ position: [1, 0, 13], fov: 20 }}
-                        style={{width: "100%", height: '70%', objectFit: 'cover'}}>
-                        <Suspense fallback={<ThreeDots size='25'/>}>
-                            <pointLight color='#f6f3ea' position={[6, 12, 15]} intensity={1.8}  />
-                            <WavingModel position={[-0.5,-1.3,4]}/>
-                        </Suspense>
-                        <OrbitControls 
-                            enableZoom={false}
-                            enablePan={false}
-                            enableRotate={false}
-                        />
-                    </Canvas>
-                    </div> */}
+export default Landing;
