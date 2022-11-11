@@ -130,13 +130,13 @@ export const HomeContent = () => {
           extLink
           srcLink
           gitUrl="https://github.com/hzhang20902/minecraft3clone"
-          btnText='App Demo'
+          btnText='Game Demo'
           route='https://minecraft3clone-g8o6.vercel.app/'
           demoVid={assets.minecraft}
         />
         <SectionWrapper 
           title='Real Estate Marketplace'
-          description="A real estate rent/buy marketplace with dynamically generated stock API packages. In progress- currently building search function."
+          description="A real estate rent/buy marketplace populated with stock data from RapidAPI. Each search filter query is dynamically generated. All sample data is destructured into individual property pages."
           showDesc2
           desc2="Next.js, React.js, Chakra-UI, RapidAPI"
           reverse
@@ -144,7 +144,7 @@ export const HomeContent = () => {
           srcLink
           gitUrl="https://github.com/hzhang20902/realestateNextjs"
           btnText='App Demo'
-          route='https://nextrealestate-gamma.vercel.app/'
+          route='https://nextrealtymarket.vercel.app/'
           demoVid={assets.realestate}
         />
         <SectionWrapper 
@@ -156,7 +156,7 @@ export const HomeContent = () => {
           extLink
           srcLink
           gitUrl="https://github.com/hzhang20902/videochatappfs"
-          btnText='App Demo'
+          btnText='Chat Demo'
           route='https://effervescent-yeot-a07484.netlify.app/'
           demoVid={assets.vidChatDemo}
         />

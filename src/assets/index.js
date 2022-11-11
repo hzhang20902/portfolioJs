@@ -22,7 +22,7 @@ import instagram from './instagram.png'
 import linkedin from './linkedin.png'
 import github from './github.png'
 import gmail from './gmail.png'
-import realestate from './realestateapp.mov'
+import realestate from './realestate.mov'
 
 export default {
   absEarth,
