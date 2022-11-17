@@ -41,8 +41,7 @@ export const AboutSection = () => {
   <SectionWrapper 
       banner="banner03"
       title="Hi! My name is Henry... "
-      description="...and I'm an industry guitarist in the Philadelphia area turned software developer! 
-      I have a lifelong passion for learning. My hobbies and passions are history, film, music, and technology! 
+      description="...and I have a lifelong passion for learning. My hobbies and passions are history, film, music, and technology! 
       This page has some content that I enjoy, including topics about mental health, history, and my own music endeavors as an independent artist."
       youtubeLink="jtIZZs-GAOA"
       showDesc2
