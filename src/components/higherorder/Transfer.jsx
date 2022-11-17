@@ -18,7 +18,7 @@ const Transfer = ({ image, srcLinkFront, srcLinkBack, srcLinkExp, showBtn, title
           ${styles.h1Text}
           ${styles.blackText}`}>{title}</h1>
           {srcLinkFront && (<a target="_blank" rel='noreferrer' href="https://github.com/hzhang20902/portfolioJs" className='nav-link'>Client Source Code</a>)}
-          {srcLinkBack && (<a target="_blank" rel='noreferrer' href="https://github.com/hzhang20902/jwtSetup" className='nav-link'>Server Source Code</a>)}
+          {srcLinkBack && (<a target="_blank" rel='noreferrer' href="https://github.com/hzhang20902/jwtSetup/tree/docker" className='nav-link'>Server Source Code</a>)}
           {srcLinkExp && (<a target="_blank" rel='noreferrer' href="https://github.com/hzhang20902/contactformapi" className='nav-link'>Express API Source Code</a>)}
         {showBtn && (
           <Link to={"/projects"} className='nav-link' onClick={()=>window.scrollY(0)}>
