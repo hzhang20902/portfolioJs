@@ -40,7 +40,7 @@ export const AboutSection = () => {
     <>
   <SectionWrapper 
       banner="banner03"
-      title="Hi! My name is Henry... "
+      title="My name is Henry... "
       description="...and I have a lifelong passion for learning. My hobbies and passions are history, film, music, and technology! 
       This page has some content that I enjoy, including topics about mental health, history, and my own music endeavors as an independent artist."
       youtubeLink="jtIZZs-GAOA"
