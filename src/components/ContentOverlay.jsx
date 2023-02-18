@@ -109,6 +109,19 @@ export const HomeContent = () => {
         banner='banner'
         />
         <SectionWrapper 
+          title='Client Website'
+          description="An SPA for promotion, info, and contacting client for their small business. Commissioned and fulfilled in Feb 2023"
+          showDesc2
+          desc2="React.js, MUI, TypeScript, Express.js"
+          reverse
+          extLink
+          srcLink
+          gitUrl="https://github.com/hzhang20902/jkeim_website_vite"
+          btnText='Page Demo'
+          route='https://jkeim-website-vite.vercel.app/'
+          demoVid={assets.jkeimsite}
+        />
+        <SectionWrapper 
           title='Webstore App'
           description="A simple yet elegant webstore with stateful management of in-cart products, dynamic UI, and Stripe checkout."
           showDesc2
@@ -158,19 +171,6 @@ export const HomeContent = () => {
           btnText='Chat Demo'
           route='https://effervescent-yeot-a07484.netlify.app/'
           demoVid={assets.vidChatDemo}
-        />
-        <SectionWrapper 
-          title='Animal Shelter Volunteer App'
-          description="CRUD app created using AGILE methodology on 4-person dev team for LaunchCode bootcamp. The app is designed for volunteers to signup and log activities with shelter animal cats and dogs; and the housekeeping tasks associated."
-          showDesc2
-          desc2="React.js, MUI, Java, SpringBoot, PSQL"
-          reverse
-          extLink
-          srcLink
-          gitUrl="https://github.com/hzhang20902/animalShelterApp-frontend"
-          btnText='App Demo'
-          route='https://liftoffanimalshelterapp.vercel.app/'
-          demoVid={assets.shelterApp}
         />
       </>
     ) : (

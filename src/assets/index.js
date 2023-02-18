@@ -23,6 +23,7 @@ import linkedin from './linkedin.png'
 import github from './github.png'
 import gmail from './gmail.png'
 import realestate from './realestate.mov'
+import jkeimsite from './jkeimsite.mov'
 
 export default {
   absEarth,
@@ -49,5 +50,6 @@ export default {
   linkedin,
   github,
   gmail,
-  realestate
+  realestate,
+  jkeimsite
 }
