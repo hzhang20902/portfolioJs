@@ -110,9 +110,9 @@ export const HomeContent = () => {
         />
         <SectionWrapper 
           title='Client Website'
-          description="An SPA for promotion, info, and contacting client for their small business. Commissioned and fulfilled in Feb 2023"
+          description="An SPA for promotion, info, and contacting client for their small business."
           showDesc2
-          desc2="React.js, MUI, TypeScript, Express.js"
+          desc2="Vite, React.js, MUI, TypeScript, Express.js"
           reverse
           extLink
           srcLink
