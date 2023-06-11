@@ -53,7 +53,7 @@ const Landing = () => {
                
                 </div>
                 <div id="landinglinks">
-            <LandingContent />
+                    <LandingContent />
                 </div>
            
             </div>

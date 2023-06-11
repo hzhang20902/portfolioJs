@@ -12,6 +12,7 @@ export const LandingContent = () => {
     return (
       <>
       <Features 
+        className='linkmobile'
         title="Links"
         iconUrl1={assets.linkedin}
         iconText1="LinkedIn"

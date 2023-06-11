@@ -96,7 +96,7 @@ const NewLogin = () => {
           md={7}
           sx={{
             backgroundRepeat: 'no-repeat',
-            backgroundImage: "url(https://source.unsplash.com/random)",
+            backgroundImage: "url(https://source.unsplash.com/random/?city,night)",
             backgroundPosition: 'center',
           }}
         >
