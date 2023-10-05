@@ -12,6 +12,7 @@ export const LandingContent = () => {
     return (
       <>
       <Features 
+        className='linkmobile'
         title="Links"
         iconUrl1={assets.linkedin}
         iconText1="LinkedIn"
@@ -178,7 +179,8 @@ export const HomeContent = () => {
       <SectionWrapper 
         title={(content)}
         description="My projects include webstores for merchandise, browser games, and a real estate marketplace.
-        Some behind the scenes work include this page locked by JWT Authentication. If you see the title loaded above, that means connection to the Java/SpringBoot server has been established! Login below with the default credentials or create your own:"
+        Some behind the scenes work include this page locked by JWT Authentication. If you see the title loaded above, 
+        connection to the Java/SpringBoot server has been established! To view my work, LOGIN below with the default credentials or create your own:"
         mockupImg={assets.absEarth}
         showBtn
         btnText='Login'
@@ -247,7 +249,7 @@ export const AdminAccess = () => {
           <Features
           pText2={key.username}
           pText={`ID: ${key.id}`}
-          iconUrl1="https://source.unsplash.com/random"
+          iconUrl1="https://source.unsplash.com/random/?city,night"
           iconText1={`Email: ${key.email}`}
           showCard2
           showCard3
@@ -283,7 +285,7 @@ export const ModBoard = () => {
           <Features
           pText2={key.username}
           pText={`ID: ${key.id}`}
-          iconUrl1="https://source.unsplash.com/random"
+          iconUrl1="https://source.unsplash.com/random/?city,night"
           iconText1={`Email: ${key.email.substring(0,3)}****`}
           showCard2
           showCard3

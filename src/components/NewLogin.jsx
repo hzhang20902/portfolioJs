@@ -96,7 +96,7 @@ const NewLogin = () => {
           md={7}
           sx={{
             backgroundRepeat: 'no-repeat',
-            backgroundImage: "url(https://source.unsplash.com/random)",
+            backgroundImage: "url(https://source.unsplash.com/random/?city,night)",
             backgroundPosition: 'center',
           }}
         >
@@ -180,7 +180,7 @@ const NewLogin = () => {
           </Box>
           <Snackbar open={open} autoHideDuration={12000} onClose={handleClose}>
             <Alert severity='success'>
-            Login with the default credentials listed above, or register your own user profile!
+            Login with the default credentials listed above, or register your own user profile.
               <IconButton size="small" aria-label="close" onClick={handleClose}>
                 <CloseIcon fontSize="small" />
               </IconButton>
