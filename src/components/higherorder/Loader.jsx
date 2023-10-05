@@ -8,7 +8,7 @@ export const ClockIcon = ({ size, color }) => {
   return (
     <>
         <Html>
-            <ClockLoader color={color} size={size} />
+            <ClockLoader color='3F5BE5' size={size} />
         </Html>
     </>
   )
