@@ -16,7 +16,7 @@ export const LandingContent = () => {
         title="Links"
         iconUrl1={assets.linkedin}
         iconText1="LinkedIn"
-        linkText1={"https://linkedin.com/in/henryzthatsme"}
+        linkText1={"https://linkedin.com/in/henryz19151"}
         iconUrl2={assets.github}
         iconText2="Github"
         linkText2={"https://github.com/hzhang20902"}
