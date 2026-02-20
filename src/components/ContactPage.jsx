@@ -41,7 +41,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 const contactSubmit = (data) => {
-    return axios.post( "https://expressapicontactform.herokuapp.com/contact", {
+    return axios.post( "https://contactformapi.vercel.app/contact", {
         name: data.name,
         email: data.email,
         message: data.message,
